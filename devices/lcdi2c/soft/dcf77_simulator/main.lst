@@ -1,0 +1,943 @@
+   1               		.file	"main.cpp"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.global __do_global_ctors
+  19               		.section .ctors,"a",@progbits
+  20 0000 0000      		.word	pm(_GLOBAL__I_main_menu)
+  21               	.global	dow
+  22               	.global	dow
+  23               		.section .bss
+  26               	dow:
+  27 0000 00        		.skip 1,0
+  28               	.global	day
+  29               	.global	day
+  32               	day:
+  33 0001 00        		.skip 1,0
+  34               	.global	month
+  35               	.global	month
+  38               	month:
+  39 0002 00        		.skip 1,0
+  40               	.global	year
+  41               	.global	year
+  44               	year:
+  45 0003 00        		.skip 1,0
+  46               	.global	turbo
+  47               	.global	turbo
+  50               	turbo:
+  51 0004 00        		.skip 1,0
+  52               	.global	sec
+  53               	.global	sec
+  56               	sec:
+  57 0005 00        		.skip 1,0
+  58               	.global	min
+  59               	.global	min
+  62               	min:
+  63 0006 00        		.skip 1,0
+  64               	.global	hours
+  65               	.global	hours
+  68               	hours:
+  69 0007 00        		.skip 1,0
+  70               	.global	dcf77_sim
+  71               	.global	dcf77_sim
+  74               	dcf77_sim:
+  75 0008 0000 0000 		.skip 14,0
+  75      0000 0000 
+  75      0000 0000 
+  75      0000 
+  76               		.data
+  77               	.LC0:
+  78 0000 00        		.string	""
+  79               	.LC1:
+  80 0001 4D69 6E75 		.string	"Minut"
+  80      7400 
+  81               	.LC2:
+  82 0007 486F 7572 		.string	"Hour"
+  82      00
+  83               	.LC3:
+  84 000c 5765 4461 		.string	"WeDay"
+  84      7900 
+  85               	.LC4:
+  86 0012 4461 7900 		.string	"Day"
+  87               	.LC5:
+  88 0016 4D6F 6E74 		.string	"Month"
+  88      6800 
+  89               	.LC6:
+  90 001c 5965 6172 		.string	"Year"
+  90      00
+  91               	.global	main_menu
+  94               	main_menu:
+  95 0021 0000      		.word	.LC0
+  96 0023 0000      		.word	.LC0
+  97 0025 0000      		.word	.LC1
+  98 0027 0000      		.word	.LC2
+  99 0029 0000      		.word	.LC3
+ 100 002b 0000      		.word	.LC4
+ 101 002d 0000      		.word	.LC5
+ 102 002f 0000      		.word	.LC6
+ 103               		.lcomm changed,1
+ 104               		.lcomm paint,1
+ 105               		.lcomm menu,1
+ 108               	cycles_counter:
+ 109 0031 0400      		.word	4
+ 110               		.lcomm _ZZ11__vector_11E3ct0,1
+ 111               		.lcomm _ZZ11__vector_11E3ct1,1
+ 112               		.lcomm _ZZ11__vector_11E3rpt,1
+ 113               		.text
+ 114               	.global	__vector_11
+ 116               	__vector_11:
+ 117               	.LFB7:
+ 118               	.LM1:
+ 119               	/* prologue: frame size=0 */
+ 120 0000 1F92      		push __zero_reg__
+ 121 0002 0F92      		push __tmp_reg__
+ 122 0004 0FB6      		in __tmp_reg__,__SREG__
+ 123 0006 0F92      		push __tmp_reg__
+ 124 0008 1124      		clr __zero_reg__
+ 125 000a 2F93      		push r18
+ 126 000c 3F93      		push r19
+ 127 000e 8F93      		push r24
+ 128 0010 9F93      		push r25
+ 129               	/* prologue end (size=9) */
+ 130               	.LBB2:
+ 131               	.LBB3:
+ 132               	.LM2:
+ 133 0012 8FE6      		ldi r24,lo8(111)
+ 134 0014 82BF      		out 82-0x20,r24
+ 135               	.LM3:
+ 136 0016 26B3      		in r18,54-0x20
+ 137 0018 2095      		com r18
+ 138 001a 3091 0000 		lds r19,key_state
+ 139 001e 2327      		eor r18,r19
+ 140               	.LM4:
+ 141 0020 9091 0000 		lds r25,_ZZ11__vector_11E3ct0
+ 142 0024 9223      		and r25,r18
+ 143 0026 9095      		com r25
+ 144 0028 9093 0000 		sts _ZZ11__vector_11E3ct0,r25
+ 145               	.LM5:
+ 146 002c 8091 0000 		lds r24,_ZZ11__vector_11E3ct1
+ 147 0030 8223      		and r24,r18
+ 148 0032 8927      		eor r24,r25
+ 149 0034 8093 0000 		sts _ZZ11__vector_11E3ct1,r24
+ 150               	.LM6:
+ 151 0038 9823      		and r25,r24
+ 152 003a 2923      		and r18,r25
+ 153               	.LM7:
+ 154 003c 3227      		eor r19,r18
+ 155 003e 3093 0000 		sts key_state,r19
+ 156               	.LM8:
+ 157 0042 2323      		and r18,r19
+ 158 0044 8091 0000 		lds r24,key_press
+ 159 0048 822B      		or r24,r18
+ 160 004a 8093 0000 		sts key_press,r24
+ 161               	.LM9:
+ 162 004e 3323      		tst r19
+ 163 0050 19F4      		brne .L2
+ 164               	.LM10:
+ 165 0052 82E3      		ldi r24,lo8(50)
+ 166 0054 8093 0000 		sts _ZZ11__vector_11E3rpt,r24
+ 167               	.L2:
+ 168               	.LM11:
+ 169 0058 8091 0000 		lds r24,_ZZ11__vector_11E3rpt
+ 170 005c 8150      		subi r24,lo8(-(-1))
+ 171 005e 8093 0000 		sts _ZZ11__vector_11E3rpt,r24
+ 172 0062 8823      		tst r24
+ 173 0064 41F4      		brne .L3
+ 174               	.LM12:
+ 175 0066 84E1      		ldi r24,lo8(20)
+ 176 0068 8093 0000 		sts _ZZ11__vector_11E3rpt,r24
+ 177               	.LM13:
+ 178 006c 8091 0000 		lds r24,key_rpt
+ 179 0070 832B      		or r24,r19
+ 180 0072 8093 0000 		sts key_rpt,r24
+ 181               	.L3:
+ 182               	.LM14:
+ 183 0076 8091 0000 		lds r24,cycles_counter
+ 184 007a 9091 0000 		lds r25,(cycles_counter)+1
+ 185 007e 0197      		sbiw r24,1
+ 186 0080 9093 0000 		sts (cycles_counter)+1,r25
+ 187 0084 8093 0000 		sts cycles_counter,r24
+ 188               	.LM15:
+ 189 0088 892B      		or r24,r25
+ 190 008a 49F4      		brne .L1
+ 191               	.LM16:
+ 192 008c 84E0      		ldi r24,lo8(4)
+ 193 008e 90E0      		ldi r25,hi8(4)
+ 194 0090 9093 0000 		sts (cycles_counter)+1,r25
+ 195 0094 8093 0000 		sts cycles_counter,r24
+ 196               	.LM17:
+ 197 0098 81E0      		ldi r24,lo8(1)
+ 198 009a 8093 0000 		sts paint,r24
+ 199               	.L1:
+ 200               	.LBE3:
+ 201               	.LBE2:
+ 202               	/* epilogue: frame size=0 */
+ 203 009e 9F91      		pop r25
+ 204 00a0 8F91      		pop r24
+ 205 00a2 3F91      		pop r19
+ 206 00a4 2F91      		pop r18
+ 207 00a6 0F90      		pop __tmp_reg__
+ 208 00a8 0FBE      		out __SREG__,__tmp_reg__
+ 209 00aa 0F90      		pop __tmp_reg__
+ 210 00ac 1F90      		pop __zero_reg__
+ 211 00ae 1895      		reti
+ 212               	/* epilogue end (size=9) */
+ 213               	/* function void __vector_11() size 88 (70) */
+ 214               	.LFE7:
+ 216               		.data
+ 217               	.LC7:
+ 218 0033 252E 3264 		.string	"%.2d:%.2d:%.2d"
+ 218      3A25 2E32 
+ 218      643A 252E 
+ 218      3264 00
+ 219               	.LC8:
+ 220 0042 252E 3264 		.string	"%.2d-%.2d-%.2d %.2d"
+ 220      2D25 2E32 
+ 220      642D 252E 
+ 220      3264 2025 
+ 220      2E32 6400 
+ 221               		.text
+ 222               	.global	_Z12update_clockv
+ 224               	_Z12update_clockv:
+ 225               	.LFB8:
+ 226               	.LM18:
+ 227               	/* prologue: frame size=30 */
+ 228 00b0 0F93      		push r16
+ 229 00b2 1F93      		push r17
+ 230 00b4 CF93      		push r28
+ 231 00b6 DF93      		push r29
+ 232 00b8 CDB7      		in r28,__SP_L__
+ 233 00ba DEB7      		in r29,__SP_H__
+ 234 00bc 6E97      		sbiw r28,30
+ 235 00be 0FB6      		in __tmp_reg__,__SREG__
+ 236 00c0 F894      		cli
+ 237 00c2 DEBF      		out __SP_H__,r29
+ 238 00c4 0FBE      		out __SREG__,__tmp_reg__
+ 239 00c6 CDBF      		out __SP_L__,r28
+ 240               	/* prologue end (size=12) */
+ 241               	.LBB4:
+ 242               	.LBB5:
+ 243               	.LM19:
+ 244 00c8 8091 0000 		lds r24,sec
+ 245 00cc 9927      		clr r25
+ 246 00ce 9F93      		push r25
+ 247 00d0 8F93      		push r24
+ 248 00d2 8091 0000 		lds r24,min
+ 249 00d6 9927      		clr r25
+ 250 00d8 9F93      		push r25
+ 251 00da 8F93      		push r24
+ 252 00dc 8091 0000 		lds r24,hours
+ 253 00e0 9927      		clr r25
+ 254 00e2 9F93      		push r25
+ 255 00e4 8F93      		push r24
+ 256 00e6 80E0      		ldi r24,lo8(.LC7)
+ 257 00e8 90E0      		ldi r25,hi8(.LC7)
+ 258 00ea 9F93      		push r25
+ 259 00ec 8F93      		push r24
+ 260 00ee 8E01      		movw r16,r28
+ 261 00f0 0F5F      		subi r16,lo8(-(1))
+ 262 00f2 1F4F      		sbci r17,hi8(-(1))
+ 263 00f4 1F93      		push r17
+ 264 00f6 0F93      		push r16
+ 265 00f8 0E94 0000 		call sprintf
+ 266               	.LM20:
+ 267 00fc 2FEF      		ldi r18,lo8(-1)
+ 268 00fe A801      		movw r20,r16
+ 269 0100 6AE0      		ldi r22,lo8(10)
+ 270 0102 862F      		mov r24,r22
+ 271 0104 0E94 0000 		call ShowBigStr
+ 272               	.LM21:
+ 273 0108 8091 0000 		lds r24,dow
+ 274 010c 9927      		clr r25
+ 275 010e 9F93      		push r25
+ 276 0110 8F93      		push r24
+ 277 0112 8091 0000 		lds r24,year
+ 278 0116 9927      		clr r25
+ 279 0118 9F93      		push r25
+ 280 011a 8F93      		push r24
+ 281 011c 8091 0000 		lds r24,month
+ 282 0120 9927      		clr r25
+ 283 0122 9F93      		push r25
+ 284 0124 8F93      		push r24
+ 285 0126 8091 0000 		lds r24,day
+ 286 012a 9927      		clr r25
+ 287 012c 9F93      		push r25
+ 288 012e 8F93      		push r24
+ 289 0130 80E0      		ldi r24,lo8(.LC8)
+ 290 0132 90E0      		ldi r25,hi8(.LC8)
+ 291 0134 9F93      		push r25
+ 292 0136 8F93      		push r24
+ 293 0138 1F93      		push r17
+ 294 013a 0F93      		push r16
+ 295 013c 0E94 0000 		call sprintf
+ 296               	.LM22:
+ 297 0140 2FEF      		ldi r18,lo8(-1)
+ 298 0142 A801      		movw r20,r16
+ 299 0144 61E0      		ldi r22,lo8(1)
+ 300 0146 8AE0      		ldi r24,lo8(10)
+ 301 0148 0E94 0000 		call ShowStr
+ 302               	.LBE5:
+ 303               	.LBE4:
+ 304 014c 8DB7      		in r24,__SP_L__
+ 305 014e 9EB7      		in r25,__SP_H__
+ 306 0150 4696      		adiw r24,22
+ 307 0152 0FB6      		in __tmp_reg__,__SREG__
+ 308 0154 F894      		cli
+ 309 0156 9EBF      		out __SP_H__,r25
+ 310 0158 0FBE      		out __SREG__,__tmp_reg__
+ 311 015a 8DBF      		out __SP_L__,r24
+ 312               	/* epilogue: frame size=30 */
+ 313 015c 6E96      		adiw r28,30
+ 314 015e 0FB6      		in __tmp_reg__,__SREG__
+ 315 0160 F894      		cli
+ 316 0162 DEBF      		out __SP_H__,r29
+ 317 0164 0FBE      		out __SREG__,__tmp_reg__
+ 318 0166 CDBF      		out __SP_L__,r28
+ 319 0168 DF91      		pop r29
+ 320 016a CF91      		pop r28
+ 321 016c 1F91      		pop r17
+ 322 016e 0F91      		pop r16
+ 323 0170 0895      		ret
+ 324               	/* epilogue end (size=11) */
+ 325               	/* function void update_clock() size 97 (74) */
+ 326               	.LFE8:
+ 328               	.global	_Z10UiCallbackv
+ 330               	_Z10UiCallbackv:
+ 331               	.LFB9:
+ 332               	.LM23:
+ 333               	/* prologue: frame size=0 */
+ 334 0172 0F93      		push r16
+ 335 0174 1F93      		push r17
+ 336 0176 CF93      		push r28
+ 337 0178 DF93      		push r29
+ 338               	/* prologue end (size=4) */
+ 339               	.LBB6:
+ 340               	.LM24:
+ 341 017a 81E0      		ldi r24,lo8(1)
+ 342 017c 0E94 0000 		call get_key_press
+ 343 0180 8823      		tst r24
+ 344 0182 19F0      		breq .L7
+ 345               	.LM25:
+ 346 0184 81E0      		ldi r24,lo8(1)
+ 347 0186 8093 0000 		sts menu,r24
+ 348               	.L7:
+ 349               	.LM26:
+ 350 018a 82E0      		ldi r24,lo8(2)
+ 351 018c 0E94 0000 		call get_key_press
+ 352 0190 8823      		tst r24
+ 353 0192 19F0      		breq .L8
+ 354               	.LM27:
+ 355 0194 82E0      		ldi r24,lo8(2)
+ 356 0196 8093 0000 		sts menu,r24
+ 357               	.L8:
+ 358               	.LM28:
+ 359 019a 88E0      		ldi r24,lo8(8)
+ 360 019c 0E94 0000 		call get_key_press
+ 361 01a0 8823      		tst r24
+ 362 01a2 19F0      		breq .L9
+ 363               	.LM29:
+ 364 01a4 87E0      		ldi r24,lo8(7)
+ 365 01a6 8093 0000 		sts menu,r24
+ 366               	.L9:
+ 367               	.LM30:
+ 368 01aa 80E8      		ldi r24,lo8(-128)
+ 369 01ac 0E94 0000 		call get_key_press
+ 370 01b0 8823      		tst r24
+ 371 01b2 19F0      		breq .L10
+ 372               	.LM31:
+ 373 01b4 83E0      		ldi r24,lo8(3)
+ 374 01b6 8093 0000 		sts menu,r24
+ 375               	.L10:
+ 376               	.LM32:
+ 377 01ba 80E4      		ldi r24,lo8(64)
+ 378 01bc 0E94 0000 		call get_key_press
+ 379 01c0 8823      		tst r24
+ 380 01c2 19F0      		breq .L11
+ 381               	.LM33:
+ 382 01c4 84E0      		ldi r24,lo8(4)
+ 383 01c6 8093 0000 		sts menu,r24
+ 384               	.L11:
+ 385               	.LM34:
+ 386 01ca 80E2      		ldi r24,lo8(32)
+ 387 01cc 0E94 0000 		call get_key_press
+ 388 01d0 8823      		tst r24
+ 389 01d2 19F0      		breq .L12
+ 390               	.LM35:
+ 391 01d4 85E0      		ldi r24,lo8(5)
+ 392 01d6 8093 0000 		sts menu,r24
+ 393               	.L12:
+ 394               	.LM36:
+ 395 01da 80E1      		ldi r24,lo8(16)
+ 396 01dc 0E94 0000 		call get_key_press
+ 397 01e0 8823      		tst r24
+ 398 01e2 19F0      		breq .L13
+ 399               	.LM37:
+ 400 01e4 86E0      		ldi r24,lo8(6)
+ 401 01e6 8093 0000 		sts menu,r24
+ 402               	.L13:
+ 403               	.LM38:
+ 404 01ea 0E94 0000 		call keyboard_clear
+ 405               	.LM39:
+ 406 01ee 8091 0000 		lds r24,menu
+ 407 01f2 C82F      		mov r28,r24
+ 408 01f4 DD27      		clr r29
+ 409 01f6 C330      		cpi r28,3
+ 410 01f8 D105      		cpc r29,__zero_reg__
+ 411 01fa 09F4      		brne .+2
+ 412 01fc 85C0      		rjmp .L19
+ 413 01fe C430      		cpi r28,4
+ 414 0200 D105      		cpc r29,__zero_reg__
+ 415 0202 54F4      		brge .L25
+ 416 0204 C130      		cpi r28,1
+ 417 0206 D105      		cpc r29,__zero_reg__
+ 418 0208 69F1      		breq .L17
+ 419 020a C230      		cpi r28,2
+ 420 020c D105      		cpc r29,__zero_reg__
+ 421 020e 0CF0      		brlt .+2
+ 422 0210 5BC0      		rjmp .L18
+ 423 0212 CD2B      		or r28,r29
+ 424 0214 89F0      		breq .L15
+ 425 0216 36C1      		rjmp .L24
+ 426               	.L25:
+ 427 0218 C530      		cpi r28,5
+ 428 021a D105      		cpc r29,__zero_reg__
+ 429 021c 09F4      		brne .+2
+ 430 021e C0C0      		rjmp .L21
+ 431 0220 C530      		cpi r28,5
+ 432 0222 D105      		cpc r29,__zero_reg__
+ 433 0224 0CF4      		brge .+2
+ 434 0226 94C0      		rjmp .L20
+ 435 0228 C630      		cpi r28,6
+ 436 022a D105      		cpc r29,__zero_reg__
+ 437 022c 09F4      		brne .+2
+ 438 022e D8C0      		rjmp .L22
+ 439 0230 2797      		sbiw r28,7
+ 440 0232 09F4      		brne .+2
+ 441 0234 F6C0      		rjmp .L23
+ 442 0236 26C1      		rjmp .L24
+ 443               	.L15:
+ 444               	.LM40:
+ 445 0238 8091 0000 		lds r24,paint
+ 446 023c 8823      		tst r24
+ 447 023e 09F4      		brne .+2
+ 448 0240 23C1      		rjmp .L14
+ 449               	.LM41:
+ 450 0242 0E94 0000 		call gd_hw_clear_scr
+ 451               	.LM42:
+ 452 0246 0E94 0000 		call RepaintMenu
+ 453               	.LM43:
+ 454 024a 80E0      		ldi r24,lo8(dcf77_sim)
+ 455 024c 90E0      		ldi r25,hi8(dcf77_sim)
+ 456 024e 0E94 0000 		call _ZN14DCF77Simulator8get_secsEv
+ 457 0252 8093 0000 		sts sec,r24
+ 458               	.LM44:
+ 459 0256 0E94 0000 		call _Z12update_clockv
+ 460               	.LM45:
+ 461 025a 0E94 0000 		call gd_hw_update
+ 462               	.LM46:
+ 463 025e 1092 0000 		sts paint,__zero_reg__
+ 464               	.LM47:
+ 465 0262 12C1      		rjmp .L14
+ 466               	.L17:
+ 467               	.LM48:
+ 468 0264 40E0      		ldi r20,lo8(min)
+ 469 0266 50E0      		ldi r21,hi8(min)
+ 470 0268 60E0      		ldi r22,lo8(hours)
+ 471 026a 70E0      		ldi r23,hi8(hours)
+ 472 026c 80E0      		ldi r24,lo8(dcf77_sim)
+ 473 026e 90E0      		ldi r25,hi8(dcf77_sim)
+ 474 0270 0E94 0000 		call _ZN14DCF77Simulator8get_timeEPhS0_
+ 475               	.LM49:
+ 476 0274 8091 0000 		lds r24,hours
+ 477 0278 9927      		clr r25
+ 478 027a 9C01      		movw r18,r24
+ 479 027c 47E1      		ldi r20,lo8(23)
+ 480 027e 50E0      		ldi r21,hi8(23)
+ 481 0280 60E0      		ldi r22,lo8(0)
+ 482 0282 70E0      		ldi r23,hi8(0)
+ 483 0284 8091 0000 		lds r24,main_menu+6
+ 484 0288 9091 0000 		lds r25,(main_menu+6)+1
+ 485 028c 0E94 0000 		call IntValuesWindow
+ 486 0290 9C01      		movw r18,r24
+ 487 0292 8093 0000 		sts hours,r24
+ 488               	.LM50:
+ 489 0296 81E0      		ldi r24,lo8(1)
+ 490 0298 8093 0000 		sts changed,r24
+ 491               	.LM51:
+ 492 029c 4091 0000 		lds r20,min
+ 493 02a0 622F      		mov r22,r18
+ 494 02a2 80E0      		ldi r24,lo8(dcf77_sim)
+ 495 02a4 90E0      		ldi r25,hi8(dcf77_sim)
+ 496 02a6 0E94 0000 		call _ZN14DCF77Simulator8set_timeEhh
+ 497               	.LM52:
+ 498 02aa 0E94 0000 		call gd_hw_clear_scr
+ 499               	.LM53:
+ 500 02ae 0E94 0000 		call RepaintMenu
+ 501               	.LM54:
+ 502 02b2 80E0      		ldi r24,lo8(dcf77_sim)
+ 503 02b4 90E0      		ldi r25,hi8(dcf77_sim)
+ 504 02b6 0E94 0000 		call _ZN14DCF77Simulator8get_secsEv
+ 505 02ba 8093 0000 		sts sec,r24
+ 506               	.LM55:
+ 507 02be 0E94 0000 		call _Z12update_clockv
+ 508               	.LM56:
+ 509 02c2 0E94 0000 		call gd_hw_update
+ 510 02c6 D9C0      		rjmp .L27
+ 511               	.L18:
+ 512               	.LM57:
+ 513 02c8 40E0      		ldi r20,lo8(min)
+ 514 02ca 50E0      		ldi r21,hi8(min)
+ 515 02cc 60E0      		ldi r22,lo8(hours)
+ 516 02ce 70E0      		ldi r23,hi8(hours)
+ 517 02d0 80E0      		ldi r24,lo8(dcf77_sim)
+ 518 02d2 90E0      		ldi r25,hi8(dcf77_sim)
+ 519 02d4 0E94 0000 		call _ZN14DCF77Simulator8get_timeEPhS0_
+ 520               	.LM58:
+ 521 02d8 8091 0000 		lds r24,min
+ 522 02dc 9927      		clr r25
+ 523 02de 9C01      		movw r18,r24
+ 524 02e0 4BE3      		ldi r20,lo8(59)
+ 525 02e2 50E0      		ldi r21,hi8(59)
+ 526 02e4 60E0      		ldi r22,lo8(0)
+ 527 02e6 70E0      		ldi r23,hi8(0)
+ 528 02e8 8091 0000 		lds r24,main_menu+4
+ 529 02ec 9091 0000 		lds r25,(main_menu+4)+1
+ 530 02f0 0E94 0000 		call IntValuesWindow
+ 531 02f4 8093 0000 		sts min,r24
+ 532               	.LM59:
+ 533 02f8 482F      		mov r20,r24
+ 534 02fa 6091 0000 		lds r22,hours
+ 535 02fe 80E0      		ldi r24,lo8(dcf77_sim)
+ 536 0300 90E0      		ldi r25,hi8(dcf77_sim)
+ 537 0302 0E94 0000 		call _ZN14DCF77Simulator8set_timeEhh
+ 538 0306 A6C0      		rjmp .L26
+ 539               	.L19:
+ 540               	.LM60:
+ 541 0308 00E0      		ldi r16,lo8(dow)
+ 542 030a 10E0      		ldi r17,hi8(dow)
+ 543 030c 20E0      		ldi r18,lo8(day)
+ 544 030e 30E0      		ldi r19,hi8(day)
+ 545 0310 40E0      		ldi r20,lo8(month)
+ 546 0312 50E0      		ldi r21,hi8(month)
+ 547 0314 60E0      		ldi r22,lo8(year)
+ 548 0316 70E0      		ldi r23,hi8(year)
+ 549 0318 80E0      		ldi r24,lo8(dcf77_sim)
+ 550 031a 90E0      		ldi r25,hi8(dcf77_sim)
+ 551 031c 0E94 0000 		call _ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+ 552               	.LM61:
+ 553 0320 8091 0000 		lds r24,year
+ 554 0324 9927      		clr r25
+ 555 0326 9C01      		movw r18,r24
+ 556 0328 43E6      		ldi r20,lo8(99)
+ 557 032a 50E0      		ldi r21,hi8(99)
+ 558 032c 60E0      		ldi r22,lo8(0)
+ 559 032e 70E0      		ldi r23,hi8(0)
+ 560 0330 8091 0000 		lds r24,main_menu+14
+ 561 0334 9091 0000 		lds r25,(main_menu+14)+1
+ 562 0338 0E94 0000 		call IntValuesWindow
+ 563 033c 8093 0000 		sts year,r24
+ 564               	.LM62:
+ 565 0340 0091 0000 		lds r16,dow
+ 566 0344 2091 0000 		lds r18,day
+ 567 0348 4091 0000 		lds r20,month
+ 568 034c 682F      		mov r22,r24
+ 569 034e 23C0      		rjmp .L28
+ 570               	.L20:
+ 571               	.LM63:
+ 572 0350 00E0      		ldi r16,lo8(dow)
+ 573 0352 10E0      		ldi r17,hi8(dow)
+ 574 0354 20E0      		ldi r18,lo8(day)
+ 575 0356 30E0      		ldi r19,hi8(day)
+ 576 0358 40E0      		ldi r20,lo8(month)
+ 577 035a 50E0      		ldi r21,hi8(month)
+ 578 035c 60E0      		ldi r22,lo8(year)
+ 579 035e 70E0      		ldi r23,hi8(year)
+ 580 0360 80E0      		ldi r24,lo8(dcf77_sim)
+ 581 0362 90E0      		ldi r25,hi8(dcf77_sim)
+ 582 0364 0E94 0000 		call _ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+ 583               	.LM64:
+ 584 0368 8091 0000 		lds r24,month
+ 585 036c 9927      		clr r25
+ 586 036e 9C01      		movw r18,r24
+ 587 0370 4CE0      		ldi r20,lo8(12)
+ 588 0372 50E0      		ldi r21,hi8(12)
+ 589 0374 61E0      		ldi r22,lo8(1)
+ 590 0376 70E0      		ldi r23,hi8(1)
+ 591 0378 8091 0000 		lds r24,main_menu+12
+ 592 037c 9091 0000 		lds r25,(main_menu+12)+1
+ 593 0380 0E94 0000 		call IntValuesWindow
+ 594 0384 8093 0000 		sts month,r24
+ 595               	.LM65:
+ 596 0388 0091 0000 		lds r16,dow
+ 597 038c 2091 0000 		lds r18,day
+ 598 0390 482F      		mov r20,r24
+ 599               	.L29:
+ 600 0392 6091 0000 		lds r22,year
+ 601               	.L28:
+ 602 0396 80E0      		ldi r24,lo8(dcf77_sim)
+ 603 0398 90E0      		ldi r25,hi8(dcf77_sim)
+ 604 039a 0E94 0000 		call _ZN14DCF77Simulator8set_dateEhhhh
+ 605 039e 5AC0      		rjmp .L26
+ 606               	.L21:
+ 607               	.LM66:
+ 608 03a0 00E0      		ldi r16,lo8(dow)
+ 609 03a2 10E0      		ldi r17,hi8(dow)
+ 610 03a4 20E0      		ldi r18,lo8(day)
+ 611 03a6 30E0      		ldi r19,hi8(day)
+ 612 03a8 40E0      		ldi r20,lo8(month)
+ 613 03aa 50E0      		ldi r21,hi8(month)
+ 614 03ac 60E0      		ldi r22,lo8(year)
+ 615 03ae 70E0      		ldi r23,hi8(year)
+ 616 03b0 80E0      		ldi r24,lo8(dcf77_sim)
+ 617 03b2 90E0      		ldi r25,hi8(dcf77_sim)
+ 618 03b4 0E94 0000 		call _ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+ 619               	.LM67:
+ 620 03b8 8091 0000 		lds r24,day
+ 621 03bc 9927      		clr r25
+ 622 03be 9C01      		movw r18,r24
+ 623 03c0 4FE1      		ldi r20,lo8(31)
+ 624 03c2 50E0      		ldi r21,hi8(31)
+ 625 03c4 61E0      		ldi r22,lo8(1)
+ 626 03c6 70E0      		ldi r23,hi8(1)
+ 627 03c8 8091 0000 		lds r24,main_menu+10
+ 628 03cc 9091 0000 		lds r25,(main_menu+10)+1
+ 629 03d0 0E94 0000 		call IntValuesWindow
+ 630 03d4 8093 0000 		sts day,r24
+ 631               	.LM68:
+ 632 03d8 0091 0000 		lds r16,dow
+ 633 03dc 282F      		mov r18,r24
+ 634 03de 1EC0      		rjmp .L30
+ 635               	.L22:
+ 636               	.LM69:
+ 637 03e0 00E0      		ldi r16,lo8(dow)
+ 638 03e2 10E0      		ldi r17,hi8(dow)
+ 639 03e4 20E0      		ldi r18,lo8(day)
+ 640 03e6 30E0      		ldi r19,hi8(day)
+ 641 03e8 40E0      		ldi r20,lo8(month)
+ 642 03ea 50E0      		ldi r21,hi8(month)
+ 643 03ec 60E0      		ldi r22,lo8(year)
+ 644 03ee 70E0      		ldi r23,hi8(year)
+ 645 03f0 80E0      		ldi r24,lo8(dcf77_sim)
+ 646 03f2 90E0      		ldi r25,hi8(dcf77_sim)
+ 647 03f4 0E94 0000 		call _ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+ 648               	.LM70:
+ 649 03f8 8091 0000 		lds r24,dow
+ 650 03fc 9927      		clr r25
+ 651 03fe 9C01      		movw r18,r24
+ 652 0400 AE01      		movw r20,r28
+ 653 0402 60E0      		ldi r22,lo8(0)
+ 654 0404 70E0      		ldi r23,hi8(0)
+ 655 0406 8091 0000 		lds r24,main_menu+8
+ 656 040a 9091 0000 		lds r25,(main_menu+8)+1
+ 657 040e 0E94 0000 		call IntValuesWindow
+ 658 0412 8093 0000 		sts dow,r24
+ 659               	.LM71:
+ 660 0416 082F      		mov r16,r24
+ 661 0418 2091 0000 		lds r18,day
+ 662               	.L30:
+ 663 041c 4091 0000 		lds r20,month
+ 664 0420 B8CF      		rjmp .L29
+ 665               	.L23:
+ 666               	.LM72:
+ 667 0422 80E0      		ldi r24,lo8(dcf77_sim)
+ 668 0424 90E0      		ldi r25,hi8(dcf77_sim)
+ 669 0426 0E94 0000 		call _ZN14DCF77Simulator14get_turbo_modeEv
+ 670 042a 8093 0000 		sts turbo,r24
+ 671               	.LM73:
+ 672 042e 9927      		clr r25
+ 673 0430 9C01      		movw r18,r24
+ 674 0432 4AE0      		ldi r20,lo8(10)
+ 675 0434 50E0      		ldi r21,hi8(10)
+ 676 0436 61E0      		ldi r22,lo8(1)
+ 677 0438 70E0      		ldi r23,hi8(1)
+ 678 043a 8091 0000 		lds r24,main_menu
+ 679 043e 9091 0000 		lds r25,(main_menu)+1
+ 680 0442 0E94 0000 		call IntValuesWindow
+ 681 0446 8093 0000 		sts turbo,r24
+ 682               	.LM74:
+ 683 044a 682F      		mov r22,r24
+ 684 044c 80E0      		ldi r24,lo8(dcf77_sim)
+ 685 044e 90E0      		ldi r25,hi8(dcf77_sim)
+ 686 0450 0E94 0000 		call _ZN14DCF77Simulator14set_turbo_modeEh
+ 687               	.L26:
+ 688               	.LM75:
+ 689 0454 81E0      		ldi r24,lo8(1)
+ 690 0456 8093 0000 		sts changed,r24
+ 691               	.LM76:
+ 692 045a 0E94 0000 		call gd_hw_clear_scr
+ 693               	.LM77:
+ 694 045e 0E94 0000 		call RepaintMenu
+ 695               	.LM78:
+ 696 0462 80E0      		ldi r24,lo8(dcf77_sim)
+ 697 0464 90E0      		ldi r25,hi8(dcf77_sim)
+ 698 0466 0E94 0000 		call _ZN14DCF77Simulator8get_secsEv
+ 699 046a 8093 0000 		sts sec,r24
+ 700               	.LM79:
+ 701 046e 0E94 0000 		call _Z12update_clockv
+ 702               	.LM80:
+ 703 0472 0E94 0000 		call gd_hw_update
+ 704               	.LM81:
+ 705 0476 0E94 0000 		call keyboard_clear
+ 706               	.L27:
+ 707               	.LM82:
+ 708 047a 1092 0000 		sts menu,__zero_reg__
+ 709               	.LM83:
+ 710 047e 80E0      		ldi r24,lo8(0)
+ 711 0480 90E0      		ldi r25,hi8(0)
+ 712 0482 04C0      		rjmp .L6
+ 713               	.L24:
+ 714               	.LM84:
+ 715 0484 1092 0000 		sts menu,__zero_reg__
+ 716               	.L14:
+ 717               	.LM85:
+ 718 0488 81E0      		ldi r24,lo8(1)
+ 719 048a 90E0      		ldi r25,hi8(1)
+ 720               	.L6:
+ 721               	.LBE6:
+ 722               	/* epilogue: frame size=0 */
+ 723 048c DF91      		pop r29
+ 724 048e CF91      		pop r28
+ 725 0490 1F91      		pop r17
+ 726 0492 0F91      		pop r16
+ 727 0494 0895      		ret
+ 728               	/* epilogue end (size=5) */
+ 729               	/* function uint8_t UiCallback() size 403 (394) */
+ 730               	.LFE9:
+ 732               		.data
+ 733               	.LC9:
+ 734 0056 4443 4637 		.string	"DCF77 Simulator V0.3"
+ 734      3720 5369 
+ 734      6D75 6C61 
+ 734      746F 7220 
+ 734      5630 2E33 
+ 735               		.text
+ 736               	.global	main
+ 738               	main:
+ 739               	.LFB10:
+ 740               	.LM86:
+ 741               	/* prologue: frame size=0 */
+ 742 0496 C0E0      		ldi r28,lo8(__stack - 0)
+ 743 0498 D0E0      		ldi r29,hi8(__stack - 0)
+ 744 049a DEBF      		out __SP_H__,r29
+ 745 049c CDBF      		out __SP_L__,r28
+ 746               	/* prologue end (size=4) */
+ 747               	.LBB7:
+ 748               	.LM87:
+ 749 049e A39A      		sbi 52-0x20,3
+ 750               	.LM88:
+ 751 04a0 02E0      		ldi r16,lo8(2)
+ 752 04a2 20E1      		ldi r18,lo8(16)
+ 753 04a4 46E0      		ldi r20,lo8(6)
+ 754 04a6 69E0      		ldi r22,lo8(9)
+ 755 04a8 80E0      		ldi r24,lo8(dcf77_sim)
+ 756 04aa 90E0      		ldi r25,hi8(dcf77_sim)
+ 757 04ac 0E94 0000 		call _ZN14DCF77Simulator8set_dateEhhhh
+ 758               	.LM89:
+ 759 04b0 4BE0      		ldi r20,lo8(11)
+ 760 04b2 61E1      		ldi r22,lo8(17)
+ 761 04b4 80E0      		ldi r24,lo8(dcf77_sim)
+ 762 04b6 90E0      		ldi r25,hi8(dcf77_sim)
+ 763 04b8 0E94 0000 		call _ZN14DCF77Simulator8set_timeEhh
+ 764               	.LM90:
+ 765 04bc 0E94 0000 		call InitKeyborad
+ 766               	.LM91:
+ 767 04c0 89B7      		in r24,89-0x20
+ 768 04c2 8160      		ori r24,lo8(1)
+ 769 04c4 89BF      		out 89-0x20,r24
+ 770               	.LM92:
+ 771 04c6 8FE6      		ldi r24,lo8(111)
+ 772 04c8 82BF      		out 82-0x20,r24
+ 773               	.LM93:
+ 774 04ca 85E0      		ldi r24,lo8(5)
+ 775 04cc 83BF      		out 83-0x20,r24
+ 776               	.LM94:
+ 777 04ce 80E2      		ldi r24,lo8(32)
+ 778 04d0 88BF      		out 88-0x20,r24
+ 779               	.LM95:
+ 780 04d2 8FE2      		ldi r24,lo8(47)
+ 781 04d4 90E0      		ldi r25,hi8(47)
+ 782 04d6 0E94 0000 		call uart_init
+ 783               	.LM96:
+ 784 04da 0E94 0000 		call InitFunctionKeys
+ 785               	.LM97:
+ 786               	/* #APP */
+ 787 04de 7894      		sei
+ 788               	.LM98:
+ 789               	/* #NOAPP */
+ 790 04e0 0E94 0000 		call gInit
+ 791               	.LM99:
+ 792 04e4 81E0      		ldi r24,lo8(1)
+ 793 04e6 0E94 0000 		call gd_hw_backlight
+ 794               	.LM100:
+ 795 04ea 60E0      		ldi r22,lo8(.LC9)
+ 796 04ec 70E0      		ldi r23,hi8(.LC9)
+ 797 04ee 80E0      		ldi r24,lo8(main_menu)
+ 798 04f0 90E0      		ldi r25,hi8(main_menu)
+ 799 04f2 0E94 0000 		call AssignMenu
+ 800               	.LM101:
+ 801 04f6 0E94 0000 		call gd_hw_clear_scr
+ 802               	.LM102:
+ 803 04fa 0E94 0000 		call RepaintMenu
+ 804               	.LM103:
+ 805 04fe 0E94 0000 		call gd_hw_update
+ 806               	.LM104:
+ 807 0502 60E0      		ldi r22,lo8(pm(_Z10UiCallbackv))
+ 808 0504 70E0      		ldi r23,hi8(pm(_Z10UiCallbackv))
+ 809 0506 80E0      		ldi r24,lo8(dcf77_sim)
+ 810 0508 90E0      		ldi r25,hi8(dcf77_sim)
+ 811 050a 0E94 0000 		call _ZN14DCF77Simulator19register_uiCallbackEPFhvE
+ 812               	.LM105:
+ 813 050e 40E0      		ldi r20,lo8(min)
+ 814 0510 50E0      		ldi r21,hi8(min)
+ 815 0512 60E0      		ldi r22,lo8(hours)
+ 816 0514 70E0      		ldi r23,hi8(hours)
+ 817 0516 80E0      		ldi r24,lo8(dcf77_sim)
+ 818 0518 90E0      		ldi r25,hi8(dcf77_sim)
+ 819 051a 0E94 0000 		call _ZN14DCF77Simulator8get_timeEPhS0_
+ 820               	.LM106:
+ 821 051e 00E0      		ldi r16,lo8(dow)
+ 822 0520 10E0      		ldi r17,hi8(dow)
+ 823 0522 20E0      		ldi r18,lo8(day)
+ 824 0524 30E0      		ldi r19,hi8(day)
+ 825 0526 40E0      		ldi r20,lo8(month)
+ 826 0528 50E0      		ldi r21,hi8(month)
+ 827 052a 60E0      		ldi r22,lo8(year)
+ 828 052c 70E0      		ldi r23,hi8(year)
+ 829 052e 80E0      		ldi r24,lo8(dcf77_sim)
+ 830 0530 90E0      		ldi r25,hi8(dcf77_sim)
+ 831 0532 0E94 0000 		call _ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+ 832               	.LM107:
+ 833 0536 1092 0000 		sts changed,__zero_reg__
+ 834               	.LM108:
+ 835 053a 80E0      		ldi r24,lo8(dcf77_sim)
+ 836 053c 90E0      		ldi r25,hi8(dcf77_sim)
+ 837 053e 0E94 0000 		call _ZN14DCF77Simulator5resetEv
+ 838               	.L32:
+ 839               	.LM109:
+ 840 0542 1092 0000 		sts (dcf77_sim)+1,__zero_reg__
+ 841 0546 1092 0000 		sts dcf77_sim,__zero_reg__
+ 842               	.LM110:
+ 843 054a 8091 0000 		lds r24,changed
+ 844 054e 8823      		tst r24
+ 845 0550 31F0      		breq .L34
+ 846               	.LM111:
+ 847 0552 80E0      		ldi r24,lo8(dcf77_sim)
+ 848 0554 90E0      		ldi r25,hi8(dcf77_sim)
+ 849 0556 0E94 0000 		call _ZN14DCF77Simulator5resetEv
+ 850               	.LM112:
+ 851 055a 1092 0000 		sts changed,__zero_reg__
+ 852               	.L34:
+ 853               	.LM113:
+ 854 055e 80E0      		ldi r24,lo8(dcf77_sim)
+ 855 0560 90E0      		ldi r25,hi8(dcf77_sim)
+ 856 0562 0E94 0000 		call _ZN14DCF77Simulator8simulateEv
+ 857               	.LM114:
+ 858 0566 80E0      		ldi r24,lo8(dcf77_sim)
+ 859 0568 90E0      		ldi r25,hi8(dcf77_sim)
+ 860 056a 0E94 0000 		call _ZN14DCF77Simulator9IncMinuteEv
+ 861               	.LM115:
+ 862 056e 40E0      		ldi r20,lo8(min)
+ 863 0570 50E0      		ldi r21,hi8(min)
+ 864 0572 60E0      		ldi r22,lo8(hours)
+ 865 0574 70E0      		ldi r23,hi8(hours)
+ 866 0576 80E0      		ldi r24,lo8(dcf77_sim)
+ 867 0578 90E0      		ldi r25,hi8(dcf77_sim)
+ 868 057a 0E94 0000 		call _ZN14DCF77Simulator8get_timeEPhS0_
+ 869               	.LM116:
+ 870 057e E1CF      		rjmp .L32
+ 871               	.LBE7:
+ 872               	/* epilogue: frame size=0 */
+ 873               	/* epilogue: noreturn */
+ 874               	/* epilogue end (size=0) */
+ 875               	/* function int main() size 118 (114) */
+ 876               	.LFE10:
+ 879               	_GLOBAL__I_main_menu:
+ 880               	.LFB12:
+ 881               	.LM117:
+ 882               	/* prologue: frame size=0 */
+ 883               	/* prologue end (size=0) */
+ 884               	.LBB8:
+ 885               	.LM118:
+ 886 0580 63E0      		ldi r22,lo8(3)
+ 887 0582 70E0      		ldi r23,hi8(3)
+ 888 0584 80E0      		ldi r24,lo8(dcf77_sim)
+ 889 0586 90E0      		ldi r25,hi8(dcf77_sim)
+ 890 0588 0E94 0000 		call _ZN14DCF77SimulatorC1Ei
+ 891               	.LBE8:
+ 892               	/* epilogue: frame size=0 */
+ 893 058c 0895      		ret
+ 894               	/* epilogue end (size=1) */
+ 895               	/* function (static initializers for main.cpp) size 7 (6) */
+ 896               	.LFE12:
+ 898               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.cpp
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:879    .text:00000580 _GLOBAL__I_main_menu
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:26     .bss:00000000 dow
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:32     .bss:00000001 day
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:38     .bss:00000002 month
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:44     .bss:00000003 year
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:50     .bss:00000004 turbo
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:56     .bss:00000005 sec
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:62     .bss:00000006 min
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:68     .bss:00000007 hours
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:74     .bss:00000008 dcf77_sim
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:94     .data:00000021 main_menu
+                             .bss:00000016 changed
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:103    .bss:00000017 paint
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:104    .bss:00000018 menu
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:108    .data:00000031 cycles_counter
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:105    .bss:00000019 _ZZ11__vector_11E3ct0
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:110    .bss:0000001a _ZZ11__vector_11E3ct1
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:111    .bss:0000001b _ZZ11__vector_11E3rpt
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:116    .text:00000000 __vector_11
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:224    .text:000000b0 _Z12update_clockv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:330    .text:00000172 _Z10UiCallbackv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cceOaaaa.s:738    .text:00000496 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+__do_global_ctors
+key_state
+key_press
+key_rpt
+sprintf
+ShowBigStr
+ShowStr
+get_key_press
+keyboard_clear
+gd_hw_clear_scr
+RepaintMenu
+_ZN14DCF77Simulator8get_secsEv
+gd_hw_update
+_ZN14DCF77Simulator8get_timeEPhS0_
+IntValuesWindow
+_ZN14DCF77Simulator8set_timeEhh
+_ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+_ZN14DCF77Simulator8set_dateEhhhh
+_ZN14DCF77Simulator14get_turbo_modeEv
+_ZN14DCF77Simulator14set_turbo_modeEh
+__stack
+InitKeyborad
+uart_init
+InitFunctionKeys
+gInit
+gd_hw_backlight
+AssignMenu
+_ZN14DCF77Simulator19register_uiCallbackEPFhvE
+_ZN14DCF77Simulator5resetEv
+_ZN14DCF77Simulator8simulateEv
+_ZN14DCF77Simulator9IncMinuteEv
+_ZN14DCF77SimulatorC1Ei

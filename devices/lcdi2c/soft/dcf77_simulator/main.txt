@@ -1,0 +1,283 @@
+/*! \file main.c \brief ui2 modul main. */
+//*****************************************************************************
+//
+// File Name	: 'main.c'
+// Title		: ui2 modul main
+// Author		: Michal Harakal - Copyright (C) 2007
+// Date			: 08/30/2007
+// Revised		: 08/30/2007
+// Version		: 0.1
+// Target MCU	: Atmel AVR
+//
+// This code is distributed under the GNU Public License
+//		which can be found at http://www.gnu.org/licenses/gpl.txt
+//
+//*****************************************************************************
+
+#ifndef F_CPU
+/* wenn F_CPU nicht bereits vorher definiert (z.B. durch
+   Übergabe als Parameter zum Compiler innerhalb des Makefiles) */
+#define F_CPU 14745600UL     /* Quarz mit 14.7456 Mhz */
+#endif
+
+#include <stdio.h>
+#include <string.h>
+#include <avr/io.h>
+#include <util/delay.h>     
+#include <avr/interrupt.h>
+
+#include "TWI_slave.h"
+#include "../../../../modules/ui/soft/common/gd_driver.h"
+#include "../../../../modules/ui/soft/common/graphics.h"
+#include "../../../../modules/ui/soft/common/widgets.h"
+#include "../../../../modules/ui/soft/common/clock.h"
+#include "../../../../modules/ui/soft/common/keyboard.h"
+#include "../../../../modules/ui/soft/common/menus.h"
+#include "../status.h"
+#include "../common/dcf.h"
+
+uint16_t dips_counter= 3000;
+
+dcf_format	dcf;	//!< Controllstruktur für DCF
+time_format	time, light_time_start, light_time_end, window_time_start, window_time_end;
+uint8_t  status, windows_status;
+uint8_t  window_delay_minutes;
+uint8_t window_delay_seconds;
+
+unsigned char messageBuf[12];
+
+uint8_t ReceiveData(uint8_t *data, uint8_t expectedLength)
+{
+  return TWI_Get_Data_From_Transceiver(data, expectedLength);
+}
+
+void TWI_Act_On_Failure_In_Last_Transmission ( unsigned char TWIerrorMsg )
+{
+    TWI_Start_Transceiver();    
+    return;                     
+} 
+
+/**
+ * updates display
+ */ 
+void ReceivingTime(void) 
+{   
+  gd_hw_clear_scr();    
+  Bar(0,56,127,64);
+  ShowStr(2, 55, "Abendlicht ver. 2008", -1);  
+  ShowStr(2, 26, "Zeitempfang ... ", -1);    
+  ValueBar(0, 0, 127, 4, 60, dcf.bitcnt);
+  gd_hw_update();	  
+}
+
+void ShowTime(time_format *from,time_format *to , uint8_t x, uint8_t y)
+{
+  ShowChr(x, y, from->hours / 10 + 48, -1);    
+  ShowChr(x + 6, y, from->hours % 10 + 48, -1);    
+  ShowChr(x + 12, y, ':', -1);
+  ShowChr(x + 18, y, from->minutes / 10 + 48, -1);    
+  ShowChr(x + 24, y, from->minutes % 10 + 48, -1);    
+  ShowChr(x + 30, y, '-', -1);
+  ShowChr(x + 36, y, to->hours / 10 + 48, -1);    
+  ShowChr(x + 42, y, to->hours % 10 + 48, -1);    
+  ShowChr(x + 48, y, ':', -1);
+  ShowChr(x + 54, y, to->minutes / 10 + 48, -1);    
+  ShowChr(x + 60, y, to->minutes % 10 + 48, -1);    
+}
+
+void ShowPoti(uint8_t minutes, uint8_t seconds, uint8_t x, uint8_t y)
+{
+  ShowChr(x, y, minutes / 10 + 48, -1);    
+  ShowChr(x + 6, y, minutes % 10 + 48, -1);    
+  ShowChr(x + 12, y, ':', -1);
+  ShowChr(x + 18, y, seconds / 10 + 48, -1);    
+  ShowChr(x + 24, y, seconds % 10 + 48, -1);    
+}
+
+void UpdateDisplay(void) 
+{   
+   char auxstr[30];
+
+   uint8_t i;
+   for (i = 0; i < 30; i++)
+     auxstr[i] = '\0';
+
+    //sprintf(auxstr, "%d %s", current_slave, status_str[slaves[current_slave].status]);
+	
+    gd_hw_clear_scr();    
+    Bar(0,56,127,64);
+    switch (dcf.wkday) {
+    	case 1:
+    	  sprintf(auxstr, "     MO %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);    	
+    	  break;
+    	case 2:
+    	  sprintf(auxstr, "     DI %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);
+    	  break;
+    	case 3:
+    	  sprintf(auxstr, "     MI %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);
+    	  break;
+    	case 4:
+    	  sprintf(auxstr, "     DO %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);
+    	  break;
+    	case 5:
+    	  sprintf(auxstr, "     FR %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);
+    	  break;
+    	case 6:
+    	  sprintf(auxstr, "     SA %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);
+    	  break;
+    	case 7:
+    	  sprintf(auxstr, "     SO %.2d-%.2d-%.2d", dcf.day, dcf.month, dcf.year);
+    	  break;            
+       default:
+         return;  
+    }	
+    ShowStr(2, 55, auxstr, -1);  
+   
+    //    sprintf(auxstr, "%.2d:%.2d:%.2d", time.hours, time.minutes, time.seconds);
+    //    ShowStr(80, 55, auxstr, -1);      
+    sprintf(auxstr, "%.2d:%.2d:%.2d", time.hours, time.minutes, time.seconds);
+    ShowBigStr(64-36, 34, auxstr, -1);
+
+    /*    if ((sunset_time.hours) && (sunset_time.minutes) && (sunset_time.seconds)) {
+      sprintf(auxstr, "Licht %.2d:%.2d", sunset_time.hours, sunset_time.minutes);
+      ShowStr(2, 22, auxstr, 1);                  
+      } */     
+
+    ShowStr(1, 22, "Abendlicht", -1);            
+    ShowTime(&light_time_start, &light_time_end, 62, 22);
+
+    ShowStr(1, 12, "Rolladen", -1);            
+    ShowTime(&window_time_start, &window_time_end, 62, 12);
+
+    ShowStr(1, 2, "Poti", -1);            
+    ShowPoti(window_delay_minutes, window_delay_seconds, 62, 2);
+    gd_hw_update();	  
+}
+
+void CheckI2c(void)
+{  
+  // This loop runs forever. If the TWI is busy the execution will just continue doing other operations.
+  for(;;)
+  {   
+  	// Check if the TWI Transceiver has completed an operation.
+    if ( ! TWI_Transceiver_Busy() )                              
+    {      
+    // Check if the last operation was successful
+      if ( TWI_statusReg.lastTransOK )
+      {
+    // Check if the last operation was a reception
+        if ( TWI_statusReg.RxDataInBuf )
+        {
+         // TWI_Get_Data_From_Transceiver(messageBuf, 2);         
+    // Check if the last operation was a reception as General Call        
+          if ( TWI_statusReg.genAddressCall )
+          {
+          // Put data received out to PORTB as an example.        
+            //PORTB = messageBuf[0];                              
+          }
+    // Ends up here if the last operation was a reception as Slave Address Match                  
+          else
+          {
+          	   //UpdateDisplayReceiveData();   
+          	   ReceiveData(messageBuf, 10);
+          	   switch (messageBuf[0]) {
+          	     case CMD_SEND_TIME_DATA:    	            	   
+          	       time.hours = messageBuf[1];
+		       time.minutes = messageBuf[2];
+		       time.seconds = messageBuf[3];
+		       break;
+  		     case CMD_SEND_DATE_DATA:  
+		       dcf.day = messageBuf[1];
+		       dcf.wkday = messageBuf[2];
+		       dcf.month = messageBuf[3];
+		       dcf.year = messageBuf[4];
+		       break;
+                    case CMD_SEND_DCF_STATUS_DATA:
+                      dcf.okay = messageBuf[1];      
+		      dcf.bitcnt = messageBuf[2];      
+		      break;  
+		   case CMD_SEND_SUNSET_DATA:
+		     status = messageBuf[1];
+                     windows_status = messageBuf[2];
+		     light_time_start.hours = messageBuf[3];
+		     light_time_start.minutes = messageBuf[4];
+		     light_time_end.hours = messageBuf[5];
+		     light_time_end.minutes = messageBuf[6];
+		     break;
+		   case CMD_SEND_WINDOW_DATA:
+		     window_time_start.hours = messageBuf[1];
+		     window_time_start.minutes = messageBuf[2];
+		     window_time_end.hours = messageBuf[3];
+		     window_time_end.minutes = messageBuf[4];
+		     break;
+		   case CMD_SEND_DELAY_DATA:		     
+		     window_delay_minutes = messageBuf[1];
+		     window_delay_seconds = messageBuf[2];
+		     break;
+          	   }   
+               
+	           TWI_Start_Transceiver();  
+          }
+        }
+    // Ends up here if the last operation was a transmission                  
+        else
+        {
+          ;
+        }
+    // Check if the TWI Transceiver has already been started.
+    // If not then restart it to prepare it for new receptions.             
+        if ( ! TWI_Transceiver_Busy() )
+        {
+          TWI_Start_Transceiver();
+        }      
+      }
+    // Ends up here if the last operation completed unsuccessfully
+      else
+      {      	
+        TWI_Act_On_Failure_In_Last_Transmission( TWI_Get_State_Info() );
+      }
+    }
+    // Do something else while waiting for the TWI transceiver to complete.        
+    dips_counter--;
+    if (dips_counter == 0)
+    {
+       if (dcf.okay)
+                   UpdateDisplay();
+                else
+                  ReceivingTime();
+                     
+      dips_counter = 9000;
+    }    
+  }  
+}
+
+void Init_i2c(void)
+{
+  uint8_t TWI_slaveAddress;  
+  // Own TWI slave address
+  TWI_slaveAddress = I2C_ABEND_LCD_ADRESS;
+  // Initialise TWI module for slave operation. 
+  // Include address and/or enable General Call.
+  TWI_Slave_Initialise( (TWI_slaveAddress) | (TRUE<<TWI_GEN_BIT) ); 
+  TWI_Start_Transceiver();    	  
+}
+
+int main (void)
+{   
+  status = 0;
+  windows_status = 0;
+  // i2c bus  
+  Init_i2c();  
+  // debounced keys
+  InitFunctionKeys();
+  // graphics driver init
+  gInit();	
+  // backlight on
+  gd_hw_backlight(1);   
+  // enabled interrupts
+  sei();
+  // check data on bus
+  for(;;) {
+  	  CheckI2c();
+  }	  
+}

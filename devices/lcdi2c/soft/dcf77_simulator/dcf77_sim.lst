@@ -1,0 +1,1083 @@
+   1               		.file	"dcf77_sim.cpp"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	_ZN14DCF77SimulatorC2Ei
+  20               	_ZN14DCF77SimulatorC2Ei:
+  21               	.LFB10:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25 0000 FC01      		movw r30,r24
+  26               	.LBB2:
+  27               	.LM2:
+  28 0002 7383      		std Z+3,r23
+  29 0004 6283      		std Z+2,r22
+  30               	.LM3:
+  31 0006 8AE0      		ldi r24,lo8(10)
+  32 0008 8483      		std Z+4,r24
+  33               	.LBE2:
+  34               	/* epilogue: frame size=0 */
+  35 000a 0895      		ret
+  36               	/* epilogue end (size=1) */
+  37               	/* function DCF77Simulator::DCF77Simulator(int) size 6 (5) */
+  38               	.LFE10:
+  40               	.global	_ZN14DCF77SimulatorC1Ei
+  42               	_ZN14DCF77SimulatorC1Ei:
+  43               	.LFB11:
+  44               	.LM4:
+  45               	/* prologue: frame size=0 */
+  46               	/* prologue end (size=0) */
+  47 000c FC01      		movw r30,r24
+  48               	.LBB3:
+  49               	.LM5:
+  50 000e 7383      		std Z+3,r23
+  51 0010 6283      		std Z+2,r22
+  52               	.LM6:
+  53 0012 8AE0      		ldi r24,lo8(10)
+  54 0014 8483      		std Z+4,r24
+  55               	.LBE3:
+  56               	/* epilogue: frame size=0 */
+  57 0016 0895      		ret
+  58               	/* epilogue end (size=1) */
+  59               	/* function DCF77Simulator::DCF77Simulator(int) size 6 (5) */
+  60               	.LFE11:
+  62               	.global	_ZN14DCF77Simulator14get_turbo_modeEv
+  64               	_ZN14DCF77Simulator14get_turbo_modeEv:
+  65               	.LFB12:
+  66               	.LM7:
+  67               	/* prologue: frame size=0 */
+  68               	/* prologue end (size=0) */
+  69               	.LBB4:
+  70               	.LM8:
+  71 0018 FC01      		movw r30,r24
+  72 001a 8481      		ldd r24,Z+4
+  73               	.LBE4:
+  74               	.LM9:
+  75 001c 9927      		clr r25
+  76               	/* epilogue: frame size=0 */
+  77 001e 0895      		ret
+  78               	/* epilogue end (size=1) */
+  79               	/* function uint8_t DCF77Simulator::get_turbo_mode() size 4 (3) */
+  80               	.LFE12:
+  82               	.global	_ZN14DCF77Simulator19register_uiCallbackEPFhvE
+  84               	_ZN14DCF77Simulator19register_uiCallbackEPFhvE:
+  85               	.LFB13:
+  86               	.LM10:
+  87               	/* prologue: frame size=0 */
+  88               	/* prologue end (size=0) */
+  89               	.LBB5:
+  90               	.LM11:
+  91 0020 FC01      		movw r30,r24
+  92 0022 7587      		std Z+13,r23
+  93 0024 6487      		std Z+12,r22
+  94               	.LBE5:
+  95               	/* epilogue: frame size=0 */
+  96 0026 0895      		ret
+  97               	/* epilogue end (size=1) */
+  98               	/* function void DCF77Simulator::register_uiCallback(uint8_t (*)()) size 4 (3) */
+  99               	.LFE13:
+ 101               	.global	_ZN14DCF77Simulator8set_timeEhh
+ 103               	_ZN14DCF77Simulator8set_timeEhh:
+ 104               	.LFB14:
+ 105               	.LM12:
+ 106               	/* prologue: frame size=0 */
+ 107               	/* prologue end (size=0) */
+ 108 0028 FC01      		movw r30,r24
+ 109               	.LBB6:
+ 110               	.LM13:
+ 111 002a 6583      		std Z+5,r22
+ 112               	.LM14:
+ 113 002c 4683      		std Z+6,r20
+ 114               	.LBE6:
+ 115               	/* epilogue: frame size=0 */
+ 116 002e 0895      		ret
+ 117               	/* epilogue end (size=1) */
+ 118               	/* function void DCF77Simulator::set_time(uint8_t, uint8_t) size 4 (3) */
+ 119               	.LFE14:
+ 121               	.global	_ZN14DCF77Simulator8set_dateEhhhh
+ 123               	_ZN14DCF77Simulator8set_dateEhhhh:
+ 124               	.LFB15:
+ 125               	.LM15:
+ 126               	/* prologue: frame size=0 */
+ 127 0030 0F93      		push r16
+ 128               	/* prologue end (size=1) */
+ 129 0032 FC01      		movw r30,r24
+ 130               	.LBB7:
+ 131               	.LM16:
+ 132 0034 6087      		std Z+8,r22
+ 133               	.LM17:
+ 134 0036 4187      		std Z+9,r20
+ 135               	.LM18:
+ 136 0038 2287      		std Z+10,r18
+ 137               	.LM19:
+ 138 003a 0387      		std Z+11,r16
+ 139               	.LBE7:
+ 140               	/* epilogue: frame size=0 */
+ 141 003c 0F91      		pop r16
+ 142 003e 0895      		ret
+ 143               	/* epilogue end (size=2) */
+ 144               	/* function void DCF77Simulator::set_date(uint8_t, uint8_t, uint8_t, uint8_t) size 8 (5) */
+ 145               	.LFE15:
+ 147               	.global	_ZN14DCF77Simulator14set_turbo_modeEh
+ 149               	_ZN14DCF77Simulator14set_turbo_modeEh:
+ 150               	.LFB16:
+ 151               	.LM20:
+ 152               	/* prologue: frame size=0 */
+ 153               	/* prologue end (size=0) */
+ 154               	.LBB8:
+ 155               	.LM21:
+ 156 0040 FC01      		movw r30,r24
+ 157 0042 6483      		std Z+4,r22
+ 158               	.LBE8:
+ 159               	/* epilogue: frame size=0 */
+ 160 0044 0895      		ret
+ 161               	/* epilogue end (size=1) */
+ 162               	/* function void DCF77Simulator::set_turbo_mode(uint8_t) size 3 (2) */
+ 163               	.LFE16:
+ 165               	.global	_ZN14DCF77Simulator8get_timeEPhS0_
+ 167               	_ZN14DCF77Simulator8get_timeEPhS0_:
+ 168               	.LFB17:
+ 169               	.LM22:
+ 170               	/* prologue: frame size=0 */
+ 171 0046 CF93      		push r28
+ 172 0048 DF93      		push r29
+ 173               	/* prologue end (size=2) */
+ 174 004a FB01      		movw r30,r22
+ 175               	.LBB9:
+ 176               	.LM23:
+ 177 004c EC01      		movw r28,r24
+ 178 004e 8D81      		ldd r24,Y+5
+ 179 0050 8083      		st Z,r24
+ 180               	.LM24:
+ 181 0052 8E81      		ldd r24,Y+6
+ 182 0054 FA01      		movw r30,r20
+ 183 0056 8083      		st Z,r24
+ 184               	.LBE9:
+ 185               	/* epilogue: frame size=0 */
+ 186 0058 DF91      		pop r29
+ 187 005a CF91      		pop r28
+ 188 005c 0895      		ret
+ 189               	/* epilogue end (size=3) */
+ 190               	/* function void DCF77Simulator::get_time(uint8_t*, uint8_t*) size 12 (7) */
+ 191               	.LFE17:
+ 193               	.global	_ZN14DCF77Simulator8get_secsEv
+ 195               	_ZN14DCF77Simulator8get_secsEv:
+ 196               	.LFB18:
+ 197               	.LM25:
+ 198               	/* prologue: frame size=0 */
+ 199               	/* prologue end (size=0) */
+ 200               	.LBB10:
+ 201               	.LM26:
+ 202 005e FC01      		movw r30,r24
+ 203 0060 8781      		ldd r24,Z+7
+ 204               	.LBE10:
+ 205               	.LM27:
+ 206 0062 9927      		clr r25
+ 207               	/* epilogue: frame size=0 */
+ 208 0064 0895      		ret
+ 209               	/* epilogue end (size=1) */
+ 210               	/* function uint8_t DCF77Simulator::get_secs() size 4 (3) */
+ 211               	.LFE18:
+ 213               	.global	_ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+ 215               	_ZN14DCF77Simulator8get_dateEPhS0_S0_S0_:
+ 216               	.LFB19:
+ 217               	.LM28:
+ 218               	/* prologue: frame size=0 */
+ 219 0066 0F93      		push r16
+ 220 0068 1F93      		push r17
+ 221               	/* prologue end (size=2) */
+ 222 006a FC01      		movw r30,r24
+ 223 006c DB01      		movw r26,r22
+ 224               	.LBB11:
+ 225               	.LM29:
+ 226 006e 8085      		ldd r24,Z+8
+ 227 0070 8C93      		st X,r24
+ 228               	.LM30:
+ 229 0072 8185      		ldd r24,Z+9
+ 230 0074 DA01      		movw r26,r20
+ 231 0076 8C93      		st X,r24
+ 232               	.LM31:
+ 233 0078 8285      		ldd r24,Z+10
+ 234 007a D901      		movw r26,r18
+ 235 007c 8C93      		st X,r24
+ 236               	.LM32:
+ 237 007e 8385      		ldd r24,Z+11
+ 238 0080 F801      		movw r30,r16
+ 239 0082 8083      		st Z,r24
+ 240               	.LBE11:
+ 241               	/* epilogue: frame size=0 */
+ 242 0084 1F91      		pop r17
+ 243 0086 0F91      		pop r16
+ 244 0088 0895      		ret
+ 245               	/* epilogue end (size=3) */
+ 246               	/* function void DCF77Simulator::get_date(uint8_t*, uint8_t*, uint8_t*, uint8_t*) size 18 (13) */
+ 247               	.LFE19:
+ 249               	.global	_ZN14DCF77Simulator7sendoneEv
+ 251               	_ZN14DCF77Simulator7sendoneEv:
+ 252               	.LFB20:
+ 253               	.LM33:
+ 254               	/* prologue: frame size=0 */
+ 255 008a CF93      		push r28
+ 256 008c DF93      		push r29
+ 257               	/* prologue end (size=2) */
+ 258 008e EC01      		movw r28,r24
+ 259               	.LBB12:
+ 260               	.LBB13:
+ 261               	.LM34:
+ 262 0090 41E0      		ldi r20,lo8(1)
+ 263 0092 50E0      		ldi r21,hi8(1)
+ 264 0094 9A01      		movw r18,r20
+ 265 0096 0A80      		ldd r0,Y+2
+ 266 0098 02C0      		rjmp 2f
+ 267 009a 220F      	1:	lsl r18
+ 268 009c 331F      		rol r19
+ 269 009e 0A94      	2:	dec r0
+ 270 00a0 E2F7      		brpl 1b
+ 271 00a2 85B3      		in r24,53-0x20
+ 272 00a4 822B      		or r24,r18
+ 273 00a6 85BB      		out 53-0x20,r24
+ 274               	.LM35:
+ 275 00a8 E1E0      		ldi r30,lo8(1)
+ 276 00aa 9C81      		ldd r25,Y+4
+ 277 00ac 84E1      		ldi r24,lo8(20)
+ 278 00ae 989F      		mul r25,r24
+ 279 00b0 C001      		movw r24,r0
+ 280 00b2 1124      		clr r1
+ 281 00b4 8417      		cp r24,r20
+ 282 00b6 9507      		cpc r25,r21
+ 283 00b8 74F0      		brlt .L39
+ 284 00ba 26E6      		ldi r18,lo8(3686)
+ 285 00bc 3EE0      		ldi r19,hi8(3686)
+ 286 00be 40E0      		ldi r20,hlo8(3686)
+ 287 00c0 50E0      		ldi r21,hhi8(3686)
+ 288 00c2 BC01      		movw r22,r24
+ 289               	.L23:
+ 290               	.LBB14:
+ 291               	.LBB15:
+ 292               	.LBB16:
+ 293               	.LBB17:
+ 294               	.LBB18:
+ 295               	.LM36:
+ 296 00c4 C901      		movw r24,r18
+ 297               	/* #APP */
+ 298 00c6 0197      		1: sbiw r24,1
+ 299 00c8 F1F7      		brne 1b
+ 300               	/* #NOAPP */
+ 301               	.LBE18:
+ 302               	.LBE17:
+ 303               	.LBE16:
+ 304               	.LBE15:
+ 305               	.LBE14:
+ 306               	.LM37:
+ 307 00ca EF5F      		subi r30,lo8(-(1))
+ 308 00cc 8E2F      		mov r24,r30
+ 309 00ce 9927      		clr r25
+ 310 00d0 6817      		cp r22,r24
+ 311 00d2 7907      		cpc r23,r25
+ 312 00d4 BCF7      		brge .L23
+ 313               	.L39:
+ 314               	.LM38:
+ 315 00d6 81E0      		ldi r24,lo8(1)
+ 316 00d8 90E0      		ldi r25,hi8(1)
+ 317 00da 0A80      		ldd r0,Y+2
+ 318 00dc 02C0      		rjmp 2f
+ 319 00de 880F      	1:	lsl r24
+ 320 00e0 991F      		rol r25
+ 321 00e2 0A94      	2:	dec r0
+ 322 00e4 E2F7      		brpl 1b
+ 323 00e6 982F      		mov r25,r24
+ 324 00e8 9095      		com r25
+ 325 00ea 85B3      		in r24,53-0x20
+ 326 00ec 8923      		and r24,r25
+ 327 00ee 85BB      		out 53-0x20,r24
+ 328               	.LM39:
+ 329 00f0 EC85      		ldd r30,Y+12
+ 330 00f2 FD85      		ldd r31,Y+13
+ 331 00f4 3097      		sbiw r30,0
+ 332 00f6 31F0      		breq .L24
+ 333               	.LM40:
+ 334 00f8 0995      		icall
+ 335 00fa 8823      		tst r24
+ 336 00fc 19F4      		brne .L24
+ 337               	.LM41:
+ 338 00fe 80E0      		ldi r24,lo8(0)
+ 339 0100 90E0      		ldi r25,hi8(0)
+ 340 0102 22C0      		rjmp .L11
+ 341               	.L24:
+ 342               	.LM42:
+ 343 0104 E1E0      		ldi r30,lo8(1)
+ 344 0106 8C81      		ldd r24,Y+4
+ 345 0108 9927      		clr r25
+ 346 010a 23E0      		ldi r18,3
+ 347 010c 880F      	1:	lsl r24
+ 348 010e 991F      		rol r25
+ 349 0110 2A95      		dec r18
+ 350 0112 E1F7      		brne 1b
+ 351 0114 0097      		sbiw r24,0
+ 352 0116 61F0      		breq .L41
+ 353 0118 A0E0      		ldi r26,lo8(-28672)
+ 354 011a B0E9      		ldi r27,hi8(-28672)
+ 355 011c 9C01      		movw r18,r24
+ 356               	.L37:
+ 357               	.LBB19:
+ 358               	.LBB20:
+ 359               	.LBB21:
+ 360               	.LBB22:
+ 361               	.LBB23:
+ 362               	.LM43:
+ 363 011e CD01      		movw r24,r26
+ 364               	/* #APP */
+ 365 0120 0197      		1: sbiw r24,1
+ 366 0122 F1F7      		brne 1b
+ 367               	/* #NOAPP */
+ 368               	.LBE23:
+ 369               	.LBE22:
+ 370               	.LBE21:
+ 371               	.LBE20:
+ 372               	.LBE19:
+ 373               	.LM44:
+ 374 0124 EF5F      		subi r30,lo8(-(1))
+ 375 0126 8E2F      		mov r24,r30
+ 376 0128 9927      		clr r25
+ 377 012a 2817      		cp r18,r24
+ 378 012c 3907      		cpc r19,r25
+ 379 012e BCF7      		brge .L37
+ 380               	.L41:
+ 381               	.LM45:
+ 382 0130 8F81      		ldd r24,Y+7
+ 383 0132 8F5F      		subi r24,lo8(-(1))
+ 384 0134 8F83      		std Y+7,r24
+ 385               	.LM46:
+ 386 0136 8881      		ld r24,Y
+ 387 0138 9981      		ldd r25,Y+1
+ 388 013a 0196      		adiw r24,1
+ 389 013c 9983      		std Y+1,r25
+ 390 013e 8883      		st Y,r24
+ 391               	.LM47:
+ 392 0140 81E3      		ldi r24,lo8(49)
+ 393 0142 8CB9      		out 44-0x20,r24
+ 394               	.LM48:
+ 395 0144 81E0      		ldi r24,lo8(1)
+ 396 0146 90E0      		ldi r25,hi8(1)
+ 397               	.L11:
+ 398               	.LBE13:
+ 399               	.LBE12:
+ 400               	/* epilogue: frame size=0 */
+ 401 0148 DF91      		pop r29
+ 402 014a CF91      		pop r28
+ 403 014c 0895      		ret
+ 404               	/* epilogue end (size=3) */
+ 405               	/* function uint8_t DCF77Simulator::sendone() size 102 (97) */
+ 406               	.LFE20:
+ 408               	.global	_ZN14DCF77Simulator8sendzeroEv
+ 410               	_ZN14DCF77Simulator8sendzeroEv:
+ 411               	.LFB21:
+ 412               	.LM49:
+ 413               	/* prologue: frame size=0 */
+ 414 014e CF93      		push r28
+ 415 0150 DF93      		push r29
+ 416               	/* prologue end (size=2) */
+ 417 0152 EC01      		movw r28,r24
+ 418               	.LBB24:
+ 419               	.LBB25:
+ 420               	.LM50:
+ 421 0154 41E0      		ldi r20,lo8(1)
+ 422 0156 50E0      		ldi r21,hi8(1)
+ 423 0158 9A01      		movw r18,r20
+ 424 015a 0A80      		ldd r0,Y+2
+ 425 015c 02C0      		rjmp 2f
+ 426 015e 220F      	1:	lsl r18
+ 427 0160 331F      		rol r19
+ 428 0162 0A94      	2:	dec r0
+ 429 0164 E2F7      		brpl 1b
+ 430 0166 85B3      		in r24,53-0x20
+ 431 0168 822B      		or r24,r18
+ 432 016a 85BB      		out 53-0x20,r24
+ 433               	.LM51:
+ 434 016c E1E0      		ldi r30,lo8(1)
+ 435 016e 9C81      		ldd r25,Y+4
+ 436 0170 8AE0      		ldi r24,lo8(10)
+ 437 0172 989F      		mul r25,r24
+ 438 0174 C001      		movw r24,r0
+ 439 0176 1124      		clr r1
+ 440 0178 8417      		cp r24,r20
+ 441 017a 9507      		cpc r25,r21
+ 442 017c 74F0      		brlt .L70
+ 443 017e 26E6      		ldi r18,lo8(3686)
+ 444 0180 3EE0      		ldi r19,hi8(3686)
+ 445 0182 40E0      		ldi r20,hlo8(3686)
+ 446 0184 50E0      		ldi r21,hhi8(3686)
+ 447 0186 BC01      		movw r22,r24
+ 448               	.L54:
+ 449               	.LBB26:
+ 450               	.LBB27:
+ 451               	.LBB28:
+ 452               	.LBB29:
+ 453               	.LBB30:
+ 454               	.LM52:
+ 455 0188 C901      		movw r24,r18
+ 456               	/* #APP */
+ 457 018a 0197      		1: sbiw r24,1
+ 458 018c F1F7      		brne 1b
+ 459               	/* #NOAPP */
+ 460               	.LBE30:
+ 461               	.LBE29:
+ 462               	.LBE28:
+ 463               	.LBE27:
+ 464               	.LBE26:
+ 465               	.LM53:
+ 466 018e EF5F      		subi r30,lo8(-(1))
+ 467 0190 8E2F      		mov r24,r30
+ 468 0192 9927      		clr r25
+ 469 0194 6817      		cp r22,r24
+ 470 0196 7907      		cpc r23,r25
+ 471 0198 BCF7      		brge .L54
+ 472               	.L70:
+ 473               	.LM54:
+ 474 019a 81E0      		ldi r24,lo8(1)
+ 475 019c 90E0      		ldi r25,hi8(1)
+ 476 019e 0A80      		ldd r0,Y+2
+ 477 01a0 02C0      		rjmp 2f
+ 478 01a2 880F      	1:	lsl r24
+ 479 01a4 991F      		rol r25
+ 480 01a6 0A94      	2:	dec r0
+ 481 01a8 E2F7      		brpl 1b
+ 482 01aa 982F      		mov r25,r24
+ 483 01ac 9095      		com r25
+ 484 01ae 85B3      		in r24,53-0x20
+ 485 01b0 8923      		and r24,r25
+ 486 01b2 85BB      		out 53-0x20,r24
+ 487               	.LM55:
+ 488 01b4 EC85      		ldd r30,Y+12
+ 489 01b6 FD85      		ldd r31,Y+13
+ 490 01b8 3097      		sbiw r30,0
+ 491 01ba 31F0      		breq .L55
+ 492               	.LM56:
+ 493 01bc 0995      		icall
+ 494 01be 8823      		tst r24
+ 495 01c0 19F4      		brne .L55
+ 496               	.LM57:
+ 497 01c2 80E0      		ldi r24,lo8(0)
+ 498 01c4 90E0      		ldi r25,hi8(0)
+ 499 01c6 20C0      		rjmp .L42
+ 500               	.L55:
+ 501               	.LM58:
+ 502 01c8 E1E0      		ldi r30,lo8(1)
+ 503 01ca 9C81      		ldd r25,Y+4
+ 504 01cc 89E0      		ldi r24,lo8(9)
+ 505 01ce 989F      		mul r25,r24
+ 506 01d0 C001      		movw r24,r0
+ 507 01d2 1124      		clr r1
+ 508 01d4 0097      		sbiw r24,0
+ 509 01d6 61F0      		breq .L72
+ 510 01d8 A0E0      		ldi r26,lo8(-28672)
+ 511 01da B0E9      		ldi r27,hi8(-28672)
+ 512 01dc 9C01      		movw r18,r24
+ 513               	.L68:
+ 514               	.LBB31:
+ 515               	.LBB32:
+ 516               	.LBB33:
+ 517               	.LBB34:
+ 518               	.LBB35:
+ 519               	.LM59:
+ 520 01de CD01      		movw r24,r26
+ 521               	/* #APP */
+ 522 01e0 0197      		1: sbiw r24,1
+ 523 01e2 F1F7      		brne 1b
+ 524               	/* #NOAPP */
+ 525               	.LBE35:
+ 526               	.LBE34:
+ 527               	.LBE33:
+ 528               	.LBE32:
+ 529               	.LBE31:
+ 530               	.LM60:
+ 531 01e4 EF5F      		subi r30,lo8(-(1))
+ 532 01e6 8E2F      		mov r24,r30
+ 533 01e8 9927      		clr r25
+ 534 01ea 2817      		cp r18,r24
+ 535 01ec 3907      		cpc r19,r25
+ 536 01ee BCF7      		brge .L68
+ 537               	.L72:
+ 538               	.LM61:
+ 539 01f0 8F81      		ldd r24,Y+7
+ 540 01f2 8F5F      		subi r24,lo8(-(1))
+ 541 01f4 8F83      		std Y+7,r24
+ 542               	.LM62:
+ 543 01f6 8881      		ld r24,Y
+ 544 01f8 9981      		ldd r25,Y+1
+ 545 01fa 0196      		adiw r24,1
+ 546 01fc 9983      		std Y+1,r25
+ 547 01fe 8883      		st Y,r24
+ 548               	.LM63:
+ 549 0200 80E3      		ldi r24,lo8(48)
+ 550 0202 8CB9      		out 44-0x20,r24
+ 551               	.LM64:
+ 552 0204 81E0      		ldi r24,lo8(1)
+ 553 0206 90E0      		ldi r25,hi8(1)
+ 554               	.L42:
+ 555               	.LBE25:
+ 556               	.LBE24:
+ 557               	/* epilogue: frame size=0 */
+ 558 0208 DF91      		pop r29
+ 559 020a CF91      		pop r28
+ 560 020c 0895      		ret
+ 561               	/* epilogue end (size=3) */
+ 562               	/* function uint8_t DCF77Simulator::sendzero() size 100 (95) */
+ 563               	.LFE21:
+ 565               	.global	_ZN14DCF77Simulator5resetEv
+ 567               	_ZN14DCF77Simulator5resetEv:
+ 568               	.LFB22:
+ 569               	.LM65:
+ 570               	/* prologue: frame size=0 */
+ 571               	/* prologue end (size=0) */
+ 572 020e DC01      		movw r26,r24
+ 573               	.LBB36:
+ 574               	.LBB37:
+ 575               	.LM66:
+ 576 0210 41E0      		ldi r20,lo8(1)
+ 577 0212 FC01      		movw r30,r24
+ 578 0214 9481      		ldd r25,Z+4
+ 579 0216 84E1      		ldi r24,lo8(20)
+ 580 0218 989F      		mul r25,r24
+ 581 021a C001      		movw r24,r0
+ 582 021c 1124      		clr r1
+ 583 021e 0097      		sbiw r24,0
+ 584 0220 61F0      		breq .L87
+ 585 0222 E0E0      		ldi r30,lo8(-28672)
+ 586 0224 F0E9      		ldi r31,hi8(-28672)
+ 587 0226 9C01      		movw r18,r24
+ 588               	.L85:
+ 589               	.LBB38:
+ 590               	.LBB39:
+ 591               	.LBB40:
+ 592               	.LBB41:
+ 593               	.LBB42:
+ 594               	.LM67:
+ 595 0228 CF01      		movw r24,r30
+ 596               	/* #APP */
+ 597 022a 0197      		1: sbiw r24,1
+ 598 022c F1F7      		brne 1b
+ 599               	/* #NOAPP */
+ 600               	.LBE42:
+ 601               	.LBE41:
+ 602               	.LBE40:
+ 603               	.LBE39:
+ 604               	.LBE38:
+ 605               	.LM68:
+ 606 022e 4F5F      		subi r20,lo8(-(1))
+ 607 0230 842F      		mov r24,r20
+ 608 0232 9927      		clr r25
+ 609 0234 2817      		cp r18,r24
+ 610 0236 3907      		cpc r19,r25
+ 611 0238 BCF7      		brge .L85
+ 612               	.L87:
+ 613               	.LM69:
+ 614 023a FD01      		movw r30,r26
+ 615 023c 1782      		std Z+7,__zero_reg__
+ 616               	.LBE37:
+ 617               	.LBE36:
+ 618               	/* epilogue: frame size=0 */
+ 619 023e 0895      		ret
+ 620               	/* epilogue end (size=1) */
+ 621               	/* function void DCF77Simulator::reset() size 27 (26) */
+ 622               	.LFE22:
+ 624               	.global	_Z17Convert2PacketBCDh
+ 626               	_Z17Convert2PacketBCDh:
+ 627               	.LFB23:
+ 628               	.LM70:
+ 629               	/* prologue: frame size=0 */
+ 630               	/* prologue end (size=0) */
+ 631 0240 382F      		mov r19,r24
+ 632               	.LBB43:
+ 633               	.LBB44:
+ 634               	.LM71:
+ 635 0242 6AE0      		ldi r22,lo8(10)
+ 636 0244 0E94 0000 		call __udivmodqi4
+ 637 0248 292F      		mov r18,r25
+ 638               	.LM72:
+ 639 024a 832F      		mov r24,r19
+ 640 024c 9927      		clr r25
+ 641 024e 821B      		sub r24,r18
+ 642 0250 9109      		sbc r25,__zero_reg__
+ 643 0252 6AE0      		ldi r22,lo8(10)
+ 644 0254 70E0      		ldi r23,hi8(10)
+ 645 0256 0E94 0000 		call __divmodhi4
+ 646 025a CB01      		movw r24,r22
+ 647 025c 34E0      		ldi r19,4
+ 648 025e 880F      	1:	lsl r24
+ 649 0260 991F      		rol r25
+ 650 0262 3A95      		dec r19
+ 651 0264 E1F7      		brne 1b
+ 652 0266 280F      		add r18,r24
+ 653               	.LBE44:
+ 654               	.LBE43:
+ 655               	.LM73:
+ 656 0268 822F      		mov r24,r18
+ 657 026a 9927      		clr r25
+ 658               	/* epilogue: frame size=0 */
+ 659 026c 0895      		ret
+ 660               	/* epilogue end (size=1) */
+ 661               	/* function uint8_t Convert2PacketBCD(uint8_t) size 23 (22) */
+ 662               	.LFE23:
+ 664               	.global	_ZN14DCF77Simulator8simulateEv
+ 666               	_ZN14DCF77Simulator8simulateEv:
+ 667               	.LFB24:
+ 668               	.LM74:
+ 669               	/* prologue: frame size=0 */
+ 670 026e AF92      		push r10
+ 671 0270 BF92      		push r11
+ 672 0272 CF92      		push r12
+ 673 0274 DF92      		push r13
+ 674 0276 EF92      		push r14
+ 675 0278 FF92      		push r15
+ 676 027a 0F93      		push r16
+ 677 027c 1F93      		push r17
+ 678 027e CF93      		push r28
+ 679 0280 DF93      		push r29
+ 680               	/* prologue end (size=10) */
+ 681 0282 EC01      		movw r28,r24
+ 682               	.LBB45:
+ 683               	.LBB46:
+ 684               	.LM75:
+ 685 0284 8E81      		ldd r24,Y+6
+ 686 0286 0E94 0000 		call _Z17Convert2PacketBCDh
+ 687 028a F82E      		mov r15,r24
+ 688               	.LM76:
+ 689 028c 8D81      		ldd r24,Y+5
+ 690 028e 0E94 0000 		call _Z17Convert2PacketBCDh
+ 691 0292 E82E      		mov r14,r24
+ 692               	.LM77:
+ 693 0294 8A85      		ldd r24,Y+10
+ 694 0296 0E94 0000 		call _Z17Convert2PacketBCDh
+ 695 029a D82E      		mov r13,r24
+ 696               	.LM78:
+ 697 029c 8B85      		ldd r24,Y+11
+ 698 029e 0E94 0000 		call _Z17Convert2PacketBCDh
+ 699 02a2 C82E      		mov r12,r24
+ 700               	.LM79:
+ 701 02a4 8985      		ldd r24,Y+9
+ 702 02a6 0E94 0000 		call _Z17Convert2PacketBCDh
+ 703 02aa B82E      		mov r11,r24
+ 704               	.LM80:
+ 705 02ac 8885      		ldd r24,Y+8
+ 706 02ae 0E94 0000 		call _Z17Convert2PacketBCDh
+ 707 02b2 A82E      		mov r10,r24
+ 708               	.LM81:
+ 709 02b4 1F82      		std Y+7,__zero_reg__
+ 710               	.LM82:
+ 711 02b6 11E0      		ldi r17,lo8(1)
+ 712               	.L94:
+ 713               	.LM83:
+ 714 02b8 CE01      		movw r24,r28
+ 715 02ba 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 716 02be 8823      		tst r24
+ 717 02c0 09F4      		brne .+2
+ 718 02c2 E3C0      		rjmp .L89
+ 719               	.LM84:
+ 720 02c4 1F5F      		subi r17,lo8(-(1))
+ 721 02c6 1531      		cpi r17,lo8(21)
+ 722 02c8 B8F3      		brlo .L94
+ 723               	.LM85:
+ 724 02ca CE01      		movw r24,r28
+ 725 02cc 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 726 02d0 8823      		tst r24
+ 727 02d2 09F4      		brne .+2
+ 728 02d4 DAC0      		rjmp .L89
+ 729               	.LM86:
+ 730 02d6 00E0      		ldi r16,lo8(0)
+ 731               	.LM87:
+ 732 02d8 11E0      		ldi r17,lo8(1)
+ 733               	.L103:
+ 734               	.LM88:
+ 735 02da 8F2D      		mov r24,r15
+ 736 02dc 9927      		clr r25
+ 737 02de 8170      		andi r24,lo8(1)
+ 738 02e0 9070      		andi r25,hi8(1)
+ 739 02e2 8823      		tst r24
+ 740 02e4 49F0      		breq .L99
+ 741               	.LM89:
+ 742 02e6 CE01      		movw r24,r28
+ 743 02e8 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 744 02ec 8823      		tst r24
+ 745 02ee 09F4      		brne .+2
+ 746 02f0 CCC0      		rjmp .L89
+ 747               	.LM90:
+ 748 02f2 81E0      		ldi r24,lo8(1)
+ 749 02f4 0827      		eor r16,r24
+ 750 02f6 06C0      		rjmp .L101
+ 751               	.L99:
+ 752               	.LM91:
+ 753 02f8 CE01      		movw r24,r28
+ 754 02fa 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 755 02fe 8823      		tst r24
+ 756 0300 09F4      		brne .+2
+ 757 0302 C3C0      		rjmp .L89
+ 758               	.L101:
+ 759               	.LM92:
+ 760 0304 F694      		lsr r15
+ 761               	.LM93:
+ 762 0306 1F5F      		subi r17,lo8(-(1))
+ 763 0308 1830      		cpi r17,lo8(8)
+ 764 030a 38F3      		brlo .L103
+ 765               	.LM94:
+ 766 030c 0023      		tst r16
+ 767 030e 31F0      		breq .L104
+ 768               	.LM95:
+ 769 0310 CE01      		movw r24,r28
+ 770 0312 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 771 0316 8823      		tst r24
+ 772 0318 39F4      		brne .L106
+ 773               	.LM96:
+ 774 031a B7C0      		rjmp .L89
+ 775               	.L104:
+ 776               	.LM97:
+ 777 031c CE01      		movw r24,r28
+ 778 031e 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 779 0322 8823      		tst r24
+ 780 0324 09F4      		brne .+2
+ 781 0326 B1C0      		rjmp .L89
+ 782               	.L106:
+ 783               	.LM98:
+ 784 0328 00E0      		ldi r16,lo8(0)
+ 785               	.LM99:
+ 786 032a 11E0      		ldi r17,lo8(1)
+ 787               	.L115:
+ 788               	.LM100:
+ 789 032c 8E2D      		mov r24,r14
+ 790 032e 9927      		clr r25
+ 791 0330 8170      		andi r24,lo8(1)
+ 792 0332 9070      		andi r25,hi8(1)
+ 793 0334 8823      		tst r24
+ 794 0336 49F0      		breq .L111
+ 795               	.LM101:
+ 796 0338 CE01      		movw r24,r28
+ 797 033a 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 798 033e 8823      		tst r24
+ 799 0340 09F4      		brne .+2
+ 800 0342 A3C0      		rjmp .L89
+ 801               	.LM102:
+ 802 0344 81E0      		ldi r24,lo8(1)
+ 803 0346 0827      		eor r16,r24
+ 804 0348 06C0      		rjmp .L113
+ 805               	.L111:
+ 806               	.LM103:
+ 807 034a CE01      		movw r24,r28
+ 808 034c 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 809 0350 8823      		tst r24
+ 810 0352 09F4      		brne .+2
+ 811 0354 9AC0      		rjmp .L89
+ 812               	.L113:
+ 813               	.LM104:
+ 814 0356 E694      		lsr r14
+ 815               	.LM105:
+ 816 0358 1F5F      		subi r17,lo8(-(1))
+ 817 035a 1730      		cpi r17,lo8(7)
+ 818 035c 38F3      		brlo .L115
+ 819               	.LM106:
+ 820 035e 0023      		tst r16
+ 821 0360 31F0      		breq .L116
+ 822               	.LM107:
+ 823 0362 CE01      		movw r24,r28
+ 824 0364 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 825 0368 8823      		tst r24
+ 826 036a 39F4      		brne .L118
+ 827               	.LM108:
+ 828 036c 8EC0      		rjmp .L89
+ 829               	.L116:
+ 830               	.LM109:
+ 831 036e CE01      		movw r24,r28
+ 832 0370 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 833 0374 8823      		tst r24
+ 834 0376 09F4      		brne .+2
+ 835 0378 88C0      		rjmp .L89
+ 836               	.L118:
+ 837               	.LM110:
+ 838 037a 00E0      		ldi r16,lo8(0)
+ 839               	.LM111:
+ 840 037c 11E0      		ldi r17,lo8(1)
+ 841               	.L127:
+ 842               	.LM112:
+ 843 037e 8D2D      		mov r24,r13
+ 844 0380 9927      		clr r25
+ 845 0382 8170      		andi r24,lo8(1)
+ 846 0384 9070      		andi r25,hi8(1)
+ 847 0386 8823      		tst r24
+ 848 0388 49F0      		breq .L123
+ 849               	.LM113:
+ 850 038a CE01      		movw r24,r28
+ 851 038c 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 852 0390 8823      		tst r24
+ 853 0392 09F4      		brne .+2
+ 854 0394 7AC0      		rjmp .L89
+ 855               	.LM114:
+ 856 0396 81E0      		ldi r24,lo8(1)
+ 857 0398 0827      		eor r16,r24
+ 858 039a 06C0      		rjmp .L125
+ 859               	.L123:
+ 860               	.LM115:
+ 861 039c CE01      		movw r24,r28
+ 862 039e 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 863 03a2 8823      		tst r24
+ 864 03a4 09F4      		brne .+2
+ 865 03a6 71C0      		rjmp .L89
+ 866               	.L125:
+ 867               	.LM116:
+ 868 03a8 D694      		lsr r13
+ 869               	.LM117:
+ 870 03aa 1F5F      		subi r17,lo8(-(1))
+ 871 03ac 1730      		cpi r17,lo8(7)
+ 872 03ae 38F3      		brlo .L127
+ 873               	.LM118:
+ 874 03b0 11E0      		ldi r17,lo8(1)
+ 875               	.L135:
+ 876               	.LM119:
+ 877 03b2 8C2D      		mov r24,r12
+ 878 03b4 9927      		clr r25
+ 879 03b6 8170      		andi r24,lo8(1)
+ 880 03b8 9070      		andi r25,hi8(1)
+ 881 03ba 8823      		tst r24
+ 882 03bc 49F0      		breq .L131
+ 883               	.LM120:
+ 884 03be CE01      		movw r24,r28
+ 885 03c0 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 886 03c4 8823      		tst r24
+ 887 03c6 09F4      		brne .+2
+ 888 03c8 60C0      		rjmp .L89
+ 889               	.LM121:
+ 890 03ca 81E0      		ldi r24,lo8(1)
+ 891 03cc 0827      		eor r16,r24
+ 892 03ce 06C0      		rjmp .L133
+ 893               	.L131:
+ 894               	.LM122:
+ 895 03d0 CE01      		movw r24,r28
+ 896 03d2 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 897 03d6 8823      		tst r24
+ 898 03d8 09F4      		brne .+2
+ 899 03da 57C0      		rjmp .L89
+ 900               	.L133:
+ 901               	.LM123:
+ 902 03dc C694      		lsr r12
+ 903               	.LM124:
+ 904 03de 1F5F      		subi r17,lo8(-(1))
+ 905 03e0 1430      		cpi r17,lo8(4)
+ 906 03e2 38F3      		brlo .L135
+ 907               	.LM125:
+ 908 03e4 11E0      		ldi r17,lo8(1)
+ 909               	.L143:
+ 910               	.LM126:
+ 911 03e6 8B2D      		mov r24,r11
+ 912 03e8 9927      		clr r25
+ 913 03ea 8170      		andi r24,lo8(1)
+ 914 03ec 9070      		andi r25,hi8(1)
+ 915 03ee 8823      		tst r24
+ 916 03f0 49F0      		breq .L139
+ 917               	.LM127:
+ 918 03f2 CE01      		movw r24,r28
+ 919 03f4 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 920 03f8 8823      		tst r24
+ 921 03fa 09F4      		brne .+2
+ 922 03fc 46C0      		rjmp .L89
+ 923               	.LM128:
+ 924 03fe 81E0      		ldi r24,lo8(1)
+ 925 0400 0827      		eor r16,r24
+ 926 0402 06C0      		rjmp .L141
+ 927               	.L139:
+ 928               	.LM129:
+ 929 0404 CE01      		movw r24,r28
+ 930 0406 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 931 040a 8823      		tst r24
+ 932 040c 09F4      		brne .+2
+ 933 040e 3DC0      		rjmp .L89
+ 934               	.L141:
+ 935               	.LM130:
+ 936 0410 B694      		lsr r11
+ 937               	.LM131:
+ 938 0412 1F5F      		subi r17,lo8(-(1))
+ 939 0414 1630      		cpi r17,lo8(6)
+ 940 0416 38F3      		brlo .L143
+ 941               	.LM132:
+ 942 0418 11E0      		ldi r17,lo8(1)
+ 943               	.L151:
+ 944               	.LM133:
+ 945 041a 8A2D      		mov r24,r10
+ 946 041c 9927      		clr r25
+ 947 041e 8170      		andi r24,lo8(1)
+ 948 0420 9070      		andi r25,hi8(1)
+ 949 0422 8823      		tst r24
+ 950 0424 41F0      		breq .L147
+ 951               	.LM134:
+ 952 0426 CE01      		movw r24,r28
+ 953 0428 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 954 042c 8823      		tst r24
+ 955 042e 69F1      		breq .L89
+ 956               	.LM135:
+ 957 0430 81E0      		ldi r24,lo8(1)
+ 958 0432 0827      		eor r16,r24
+ 959 0434 05C0      		rjmp .L149
+ 960               	.L147:
+ 961               	.LM136:
+ 962 0436 CE01      		movw r24,r28
+ 963 0438 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 964 043c 8823      		tst r24
+ 965 043e 29F1      		breq .L89
+ 966               	.L149:
+ 967               	.LM137:
+ 968 0440 A694      		lsr r10
+ 969               	.LM138:
+ 970 0442 1F5F      		subi r17,lo8(-(1))
+ 971 0444 1930      		cpi r17,lo8(9)
+ 972 0446 48F3      		brlo .L151
+ 973               	.LM139:
+ 974 0448 0023      		tst r16
+ 975 044a 31F0      		breq .L152
+ 976               	.LM140:
+ 977 044c CE01      		movw r24,r28
+ 978 044e 0E94 0000 		call _ZN14DCF77Simulator7sendoneEv
+ 979 0452 8823      		tst r24
+ 980 0454 31F4      		brne .L154
+ 981               	.LM141:
+ 982 0456 19C0      		rjmp .L89
+ 983               	.L152:
+ 984               	.LM142:
+ 985 0458 CE01      		movw r24,r28
+ 986 045a 0E94 0000 		call _ZN14DCF77Simulator8sendzeroEv
+ 987 045e 8823      		tst r24
+ 988 0460 A1F0      		breq .L89
+ 989               	.L154:
+ 990               	.LM143:
+ 991 0462 10E0      		ldi r17,lo8(0)
+ 992 0464 9C81      		ldd r25,Y+4
+ 993 0466 8AE0      		ldi r24,lo8(10)
+ 994 0468 989F      		mul r25,r24
+ 995 046a C001      		movw r24,r0
+ 996 046c 1124      		clr r1
+ 997 046e 0097      		sbiw r24,0
+ 998 0470 61F0      		breq .L89
+ 999 0472 E0E0      		ldi r30,lo8(-28672)
+ 1000 0474 F0E9      		ldi r31,hi8(-28672)
+ 1001 0476 9C01      		movw r18,r24
+ 1002               	.L167:
+ 1003               	.LBB47:
+ 1004               	.LBB48:
+ 1005               	.LBB49:
+ 1006               	.LBB50:
+ 1007               	.LBB51:
+ 1008               	.LM144:
+ 1009 0478 CF01      		movw r24,r30
+ 1010               	/* #APP */
+ 1011 047a 0197      		1: sbiw r24,1
+ 1012 047c F1F7      		brne 1b
+ 1013               	/* #NOAPP */
+ 1014               	.LBE51:
+ 1015               	.LBE50:
+ 1016               	.LBE49:
+ 1017               	.LBE48:
+ 1018               	.LBE47:
+ 1019               	.LM145:
+ 1020 047e 1F5F      		subi r17,lo8(-(1))
+ 1021 0480 812F      		mov r24,r17
+ 1022 0482 9927      		clr r25
+ 1023 0484 8217      		cp r24,r18
+ 1024 0486 9307      		cpc r25,r19
+ 1025 0488 BCF3      		brlt .L167
+ 1026               	.L89:
+ 1027               	.LBE46:
+ 1028               	.LBE45:
+ 1029               	/* epilogue: frame size=0 */
+ 1030 048a DF91      		pop r29
+ 1031 048c CF91      		pop r28
+ 1032 048e 1F91      		pop r17
+ 1033 0490 0F91      		pop r16
+ 1034 0492 FF90      		pop r15
+ 1035 0494 EF90      		pop r14
+ 1036 0496 DF90      		pop r13
+ 1037 0498 CF90      		pop r12
+ 1038 049a BF90      		pop r11
+ 1039 049c AF90      		pop r10
+ 1040 049e 0895      		ret
+ 1041               	/* epilogue end (size=11) */
+ 1042               	/* function void DCF77Simulator::simulate() size 282 (261) */
+ 1043               	.LFE24:
+ 1045               	.global	_ZN14DCF77Simulator10TestMusterEv
+ 1047               	_ZN14DCF77Simulator10TestMusterEv:
+ 1048               	.LFB25:
+ 1049               	.LM146:
+ 1050               	/* prologue: frame size=0 */
+ 1051               	/* prologue end (size=0) */
+ 1052               	/* epilogue: frame size=0 */
+ 1053 04a0 0895      		ret
+ 1054               	/* epilogue end (size=1) */
+ 1055               	/* function void DCF77Simulator::TestMuster() size 1 (0) */
+ 1056               	.LFE25:
+ 1058               	.global	_ZN14DCF77Simulator9IncMinuteEv
+ 1060               	_ZN14DCF77Simulator9IncMinuteEv:
+ 1061               	.LFB26:
+ 1062               	.LM147:
+ 1063               	/* prologue: frame size=0 */
+ 1064               	/* prologue end (size=0) */
+ 1065 04a2 FC01      		movw r30,r24
+ 1066               	.LBB52:
+ 1067               	.LM148:
+ 1068 04a4 8681      		ldd r24,Z+6
+ 1069 04a6 8F5F      		subi r24,lo8(-(1))
+ 1070 04a8 8683      		std Z+6,r24
+ 1071               	.LM149:
+ 1072 04aa 8C33      		cpi r24,lo8(60)
+ 1073 04ac 38F0      		brlo .L184
+ 1074               	.LM150:
+ 1075 04ae 1682      		std Z+6,__zero_reg__
+ 1076               	.LM151:
+ 1077 04b0 8581      		ldd r24,Z+5
+ 1078 04b2 8F5F      		subi r24,lo8(-(1))
+ 1079 04b4 8583      		std Z+5,r24
+ 1080               	.LM152:
+ 1081 04b6 8831      		cpi r24,lo8(24)
+ 1082 04b8 08F0      		brlo .L184
+ 1083               	.LM153:
+ 1084 04ba 1582      		std Z+5,__zero_reg__
+ 1085               	.L184:
+ 1086 04bc 0895      		ret
+ 1087               	.LBE52:
+ 1088               	/* epilogue: frame size=0 */
+ 1089               	/* epilogue: noreturn */
+ 1090               	/* epilogue end (size=0) */
+ 1091               	/* function void DCF77Simulator::IncMinute() size 14 (14) */
+ 1092               	.LFE26:
+ 1094               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 dcf77_sim.cpp
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:20     .text:00000000 _ZN14DCF77SimulatorC2Ei
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:42     .text:0000000c _ZN14DCF77SimulatorC1Ei
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:64     .text:00000018 _ZN14DCF77Simulator14get_turbo_modeEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:84     .text:00000020 _ZN14DCF77Simulator19register_uiCallbackEPFhvE
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:103    .text:00000028 _ZN14DCF77Simulator8set_timeEhh
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:123    .text:00000030 _ZN14DCF77Simulator8set_dateEhhhh
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:149    .text:00000040 _ZN14DCF77Simulator14set_turbo_modeEh
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:167    .text:00000046 _ZN14DCF77Simulator8get_timeEPhS0_
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:195    .text:0000005e _ZN14DCF77Simulator8get_secsEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:215    .text:00000066 _ZN14DCF77Simulator8get_dateEPhS0_S0_S0_
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:251    .text:0000008a _ZN14DCF77Simulator7sendoneEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:410    .text:0000014e _ZN14DCF77Simulator8sendzeroEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:567    .text:0000020e _ZN14DCF77Simulator5resetEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:626    .text:00000240 _Z17Convert2PacketBCDh
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:666    .text:0000026e _ZN14DCF77Simulator8simulateEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:1047   .text:000004a0 _ZN14DCF77Simulator10TestMusterEv
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccQVaaaa.s:1060   .text:000004a2 _ZN14DCF77Simulator9IncMinuteEv
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+__udivmodqi4
+__divmodhi4

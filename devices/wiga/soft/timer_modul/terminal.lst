@@ -1,0 +1,330 @@
+   1               		.file	"terminal.c"
+   2               		.arch atmega16
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	_Z10AsciiToHexhh
+  20               	_Z10AsciiToHexhh:
+  21               	.LFB5:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LBB2:
+  26               	.LBB3:
+  27               	.LM2:
+  28 0000 8A33      		cpi r24,lo8(58)
+  29 0002 10F4      		brsh .L2
+  30               	.LM3:
+  31 0004 8053      		subi r24,lo8(-(-48))
+  32 0006 01C0      		rjmp .L3
+  33               	.L2:
+  34               	.LM4:
+  35 0008 8755      		subi r24,lo8(-(-87))
+  36               	.L3:
+  37               	.LM5:
+  38 000a 8295      		swap r24
+  39 000c 807F      		andi r24,0xf0
+  40               	.LM6:
+  41 000e 6A33      		cpi r22,lo8(58)
+  42 0010 10F4      		brsh .L4
+  43               	.LM7:
+  44 0012 6053      		subi r22,lo8(-(-48))
+  45 0014 01C0      		rjmp .L5
+  46               	.L4:
+  47               	.LM8:
+  48 0016 6755      		subi r22,lo8(-(-87))
+  49               	.L5:
+  50               	.LM9:
+  51 0018 6F70      		andi r22,lo8(15)
+  52               	.LM10:
+  53 001a 862B      		or r24,r22
+  54               	.LBE3:
+  55               	.LBE2:
+  56               	.LM11:
+  57 001c 9927      		clr r25
+  58               	/* epilogue: frame size=0 */
+  59 001e 0895      		ret
+  60               	/* epilogue end (size=1) */
+  61               	/* function unsigned char AsciiToHex(unsigned char, unsigned char) size 16 (15) */
+  62               	.LFE5:
+  64               	.global	_Z7SendHexh
+  66               	_Z7SendHexh:
+  67               	.LFB6:
+  68               	.LM12:
+  69               	/* prologue: frame size=0 */
+  70 0020 CF93      		push r28
+  71               	/* prologue end (size=1) */
+  72               	.LBB4:
+  73               	.LBB5:
+  74               	.LM13:
+  75 0022 982F      		mov r25,r24
+  76 0024 9295      		swap r25
+  77 0026 9F70      		andi r25,0x0f
+  78               	.LM14:
+  79 0028 C82F      		mov r28,r24
+  80 002a CF70      		andi r28,lo8(15)
+  81               	.LM15:
+  82 002c 9A30      		cpi r25,lo8(10)
+  83 002e 18F4      		brsh .L7
+  84               	.LM16:
+  85 0030 892F      		mov r24,r25
+  86 0032 805D      		subi r24,lo8(-(48))
+  87 0034 02C0      		rjmp .L11
+  88               	.L7:
+  89               	.LM17:
+  90 0036 892F      		mov r24,r25
+  91 0038 895A      		subi r24,lo8(-(87))
+  92               	.L11:
+  93 003a 0E94 0000 		call _Z9uart_putch
+  94               	.LM18:
+  95 003e CA30      		cpi r28,lo8(10)
+  96 0040 18F4      		brsh .L9
+  97               	.LM19:
+  98 0042 8C2F      		mov r24,r28
+  99 0044 805D      		subi r24,lo8(-(48))
+ 100 0046 02C0      		rjmp .L12
+ 101               	.L9:
+ 102               	.LM20:
+ 103 0048 8C2F      		mov r24,r28
+ 104 004a 895A      		subi r24,lo8(-(87))
+ 105               	.L12:
+ 106 004c 0E94 0000 		call _Z9uart_putch
+ 107               	.LBE5:
+ 108               	.LBE4:
+ 109               	/* epilogue: frame size=0 */
+ 110 0050 CF91      		pop r28
+ 111 0052 0895      		ret
+ 112               	/* epilogue end (size=2) */
+ 113               	/* function void SendHex(unsigned char) size 26 (23) */
+ 114               	.LFE6:
+ 116               		.section	.progmem.data,"a",@progbits
+ 119               	_ZZ8TerminalE3__c:
+ 120 0000 7661 6C75 		.string	"value:"
+ 120      653A 00
+ 123               	_ZZ8TerminalE3__c_0:
+ 124 0007 7265 7375 		.string	"result:"
+ 124      6C74 3A00 
+ 127               	_ZZ8TerminalE3__c_1:
+ 128 000f 0D0A 00   		.string	"\r\n"
+ 131               	_ZZ8TerminalE3__c_2:
+ 132 0012 7475 7262 		.string	"turbo mode:"
+ 132      6F20 6D6F 
+ 132      6465 3A00 
+ 135               	_ZZ8TerminalE3__c_3:
+ 136 001e 0D0A 00   		.string	"\r\n"
+ 139               	_ZZ8TerminalE3__c_4:
+ 140 0021 616E 616C 		.string	"analog delay:"
+ 140      6F67 2064 
+ 140      656C 6179 
+ 140      3A00 
+ 143               	_ZZ8TerminalE3__c_5:
+ 144 002f 0D0A 00   		.string	"\r\n"
+ 147               	_ZZ8TerminalE3__c_6:
+ 148 0032 7420 6463 		.string	"t dcf turbo mode <t> 10=default 1 = 10x faster"
+ 148      6620 7475 
+ 148      7262 6F20 
+ 148      6D6F 6465 
+ 148      203C 743E 
+ 151               	_ZZ8TerminalE3__c_7:
+ 152 0061 6420 6465 		.string	"d debug level <l> 0=off 1=\r\n"
+ 152      6275 6720 
+ 152      6C65 7665 
+ 152      6C20 3C6C 
+ 152      3E20 303D 
+ 155               	_ZZ8TerminalE3__c_8:
+ 156 007e 77        		.ascii	"w"
+ 157 007f 2077 7269 		.string	" write virtual Register <h,l>(address) <h,l> (value) e.g 05 00\r\n"
+ 157      7465 2076 
+ 157      6972 7475 
+ 157      616C 2052 
+ 157      6567 6973 
+ 160               	_ZZ8TerminalE3__c_9:
+ 161 00c0 7220 7265 		.string	"r read virtual Register <h,l> e.g. 02 ( RID)\r\n"
+ 161      6164 2076 
+ 161      6972 7475 
+ 161      616C 2052 
+ 161      6567 6973 
+ 164               	_ZZ8TerminalE3__c_10:
+ 165 00ef 756E 6B6E 		.string	"unknown command\r\n"
+ 165      6F77 6E20 
+ 165      636F 6D6D 
+ 165      616E 640D 
+ 165      0A00 
+ 166               		.text
+ 167               	.global	Terminal
+ 169               	Terminal:
+ 170               	.LFB7:
+ 171               	.LM21:
+ 172               	/* prologue: frame size=0 */
+ 173 0054 CF93      		push r28
+ 174               	/* prologue end (size=1) */
+ 175               	.LBB6:
+ 176               	.LBB7:
+ 177               	.LBB8:
+ 178               	.LM22:
+ 179 0056 9927      		clr r25
+ 180 0058 8836      		cpi r24,104
+ 181 005a 9105      		cpc r25,__zero_reg__
+ 182 005c 09F4      		brne .+2
+ 183 005e 57C0      		rjmp .L18
+ 184               	.LM23:
+ 185 0060 8936      		cpi r24,105
+ 186 0062 9105      		cpc r25,__zero_reg__
+ 187 0064 24F4      		brge .L20
+ 188 0066 8136      		cpi r24,97
+ 189 0068 9105      		cpc r25,__zero_reg__
+ 190 006a D9F1      		breq .L17
+ 191 006c 5FC0      		rjmp .L19
+ 192               	.L20:
+ 193 006e 8437      		cpi r24,116
+ 194 0070 9105      		cpc r25,__zero_reg__
+ 195 0072 61F1      		breq .L16
+ 196 0074 8737      		cpi r24,119
+ 197 0076 9105      		cpc r25,__zero_reg__
+ 198 0078 09F0      		breq .+2
+ 199 007a 58C0      		rjmp .L19
+ 200               	.LBB9:
+ 201               	.LM24:
+ 202 007c 0E94 0000 		call _Z9uart_getcv
+ 203 0080 C82F      		mov r28,r24
+ 204               	.LM25:
+ 205 0082 0E94 0000 		call _Z9uart_getcv
+ 206 0086 682F      		mov r22,r24
+ 207               	.LM26:
+ 208 0088 8C2F      		mov r24,r28
+ 209 008a 0E94 0000 		call _Z10AsciiToHexhh
+ 210 008e 0E94 0000 		call _Z7SendHexh
+ 211               	.LM27:
+ 212 0092 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c)
+ 213 0094 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c)
+ 214 0096 9F93      		push r25
+ 215 0098 8F93      		push r24
+ 216 009a 0E94 0000 		call printf
+ 217               	.LM28:
+ 218 009e 0E94 0000 		call _Z9uart_getcv
+ 219 00a2 C82F      		mov r28,r24
+ 220               	.LM29:
+ 221 00a4 0E94 0000 		call _Z9uart_getcv
+ 222 00a8 682F      		mov r22,r24
+ 223               	.LM30:
+ 224 00aa 8C2F      		mov r24,r28
+ 225 00ac 0E94 0000 		call _Z10AsciiToHexhh
+ 226 00b0 0E94 0000 		call _Z7SendHexh
+ 227               	.LM31:
+ 228 00b4 0F90      		pop __tmp_reg__
+ 229 00b6 0F90      		pop __tmp_reg__
+ 230 00b8 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_0)
+ 231 00ba 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_0)
+ 232 00bc 0E94 0000 		call _Z8uart_putPc
+ 233               	.LM32:
+ 234 00c0 80E0      		ldi r24,lo8(0)
+ 235 00c2 0E94 0000 		call _Z7SendHexh
+ 236               	.LM33:
+ 237 00c6 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_1)
+ 238 00c8 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_1)
+ 239 00ca 32C0      		rjmp .L21
+ 240               	.L16:
+ 241               	.LM34:
+ 242 00cc 0E94 0000 		call _Z9uart_getcv
+ 243               	.LM35:
+ 244 00d0 0E94 0000 		call _Z9uart_getcv
+ 245               	.LM36:
+ 246 00d4 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_2)
+ 247 00d6 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_2)
+ 248 00d8 0E94 0000 		call _Z8uart_putPc
+ 249               	.LM37:
+ 250 00dc 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_3)
+ 251 00de 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_3)
+ 252 00e0 27C0      		rjmp .L21
+ 253               	.L17:
+ 254               	.LM38:
+ 255 00e2 0E94 0000 		call _Z9uart_getcv
+ 256 00e6 C82F      		mov r28,r24
+ 257               	.LM39:
+ 258 00e8 0E94 0000 		call _Z9uart_getcv
+ 259 00ec 682F      		mov r22,r24
+ 260               	.LM40:
+ 261 00ee 8C2F      		mov r24,r28
+ 262 00f0 0E94 0000 		call _Z10AsciiToHexhh
+ 263 00f4 0E94 0000 		call _Z7SendHexh
+ 264               	.LM41:
+ 265 00f8 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_4)
+ 266 00fa 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_4)
+ 267 00fc 0E94 0000 		call _Z8uart_putPc
+ 268               	.LM42:
+ 269 0100 8091 0000 		lds r24,analog_factor
+ 270 0104 0E94 0000 		call _Z7SendHexh
+ 271               	.LM43:
+ 272 0108 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_5)
+ 273 010a 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_5)
+ 274 010c 11C0      		rjmp .L21
+ 275               	.L18:
+ 276               	.LM44:
+ 277 010e 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_6)
+ 278 0110 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_6)
+ 279 0112 0E94 0000 		call _Z8uart_putPc
+ 280               	.LM45:
+ 281 0116 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_7)
+ 282 0118 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_7)
+ 283 011a 0E94 0000 		call _Z8uart_putPc
+ 284               	.LM46:
+ 285 011e 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_8)
+ 286 0120 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_8)
+ 287 0122 0E94 0000 		call _Z8uart_putPc
+ 288               	.LM47:
+ 289 0126 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_9)
+ 290 0128 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_9)
+ 291 012a 02C0      		rjmp .L21
+ 292               	.L19:
+ 293               	.LM48:
+ 294 012c 80E0      		ldi r24,lo8(_ZZ8TerminalE3__c_10)
+ 295 012e 90E0      		ldi r25,hi8(_ZZ8TerminalE3__c_10)
+ 296               	.L21:
+ 297 0130 0E94 0000 		call _Z8uart_putPc
+ 298               	.LBE9:
+ 299               	.LBE8:
+ 300               	.LBE7:
+ 301               	.LBE6:
+ 302               	/* epilogue: frame size=0 */
+ 303 0134 CF91      		pop r28
+ 304 0136 0895      		ret
+ 305               	/* epilogue end (size=2) */
+ 306               	/* function void Terminal(char) size 114 (111) */
+ 307               	.LFE7:
+ 309               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 terminal.c
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:20     .text:00000000 _Z10AsciiToHexhh
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:66     .text:00000020 _Z7SendHexh
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:119    .progmem.data:00000000 _ZZ8TerminalE3__c
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:123    .progmem.data:00000007 _ZZ8TerminalE3__c_0
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:127    .progmem.data:0000000f _ZZ8TerminalE3__c_1
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:131    .progmem.data:00000012 _ZZ8TerminalE3__c_2
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:135    .progmem.data:0000001e _ZZ8TerminalE3__c_3
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:139    .progmem.data:00000021 _ZZ8TerminalE3__c_4
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:143    .progmem.data:0000002f _ZZ8TerminalE3__c_5
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:147    .progmem.data:00000032 _ZZ8TerminalE3__c_6
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:151    .progmem.data:00000061 _ZZ8TerminalE3__c_7
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:155    .progmem.data:0000007e _ZZ8TerminalE3__c_8
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:160    .progmem.data:000000c0 _ZZ8TerminalE3__c_9
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:164    .progmem.data:000000ef _ZZ8TerminalE3__c_10
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccIHaaaa.s:169    .text:00000054 Terminal
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+_Z9uart_putch
+_Z9uart_getcv
+printf
+_Z8uart_putPc
+analog_factor

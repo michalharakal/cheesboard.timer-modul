@@ -1,0 +1,220 @@
+   1               		.file	"bresenham.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	bresenham_init
+  20               	bresenham_init:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 481B      		sub r20,r24
+  27 0002 4093 0000 		sts dx,r20
+  28 0006 4423      		tst r20
+  29 0008 59F0      		breq .L2
+  30               	.LM3:
+  31 000a 47FF      		sbrs r20,7
+  32 000c 05C0      		rjmp .L3
+  33               	.LM4:
+  34 000e 4195      		neg r20
+  35 0010 4093 0000 		sts dx,r20
+  36               	.LM5:
+  37 0014 8FEF      		ldi r24,lo8(-1)
+  38 0016 01C0      		rjmp .L12
+  39               	.L3:
+  40               	.LM6:
+  41 0018 81E0      		ldi r24,lo8(1)
+  42               	.L12:
+  43 001a 8093 0000 		sts s1,r24
+  44 001e 02C0      		rjmp .L5
+  45               	.L2:
+  46               	.LM7:
+  47 0020 4093 0000 		sts s1,r20
+  48               	.L5:
+  49               	.LM8:
+  50 0024 261B      		sub r18,r22
+  51 0026 2093 0000 		sts dy,r18
+  52 002a 2223      		tst r18
+  53 002c 59F0      		breq .L6
+  54               	.LM9:
+  55 002e 27FF      		sbrs r18,7
+  56 0030 05C0      		rjmp .L7
+  57               	.LM10:
+  58 0032 2195      		neg r18
+  59 0034 2093 0000 		sts dy,r18
+  60               	.LM11:
+  61 0038 8FEF      		ldi r24,lo8(-1)
+  62 003a 01C0      		rjmp .L13
+  63               	.L7:
+  64               	.LM12:
+  65 003c 81E0      		ldi r24,lo8(1)
+  66               	.L13:
+  67 003e 8093 0000 		sts s2,r24
+  68 0042 02C0      		rjmp .L9
+  69               	.L6:
+  70               	.LM13:
+  71 0044 2093 0000 		sts s2,r18
+  72               	.L9:
+  73               	.LM14:
+  74 0048 8091 0000 		lds r24,dy
+  75 004c 9091 0000 		lds r25,dx
+  76 0050 9817      		cp r25,r24
+  77 0052 44F4      		brge .L10
+  78               	.LM15:
+  79 0054 8093 0000 		sts dx,r24
+  80               	.LM16:
+  81 0058 9093 0000 		sts dy,r25
+  82               	.LM17:
+  83 005c 81E0      		ldi r24,lo8(1)
+  84 005e 8093 0000 		sts swapdir,r24
+  85 0062 02C0      		rjmp .L11
+  86               	.L10:
+  87               	.LM18:
+  88 0064 1092 0000 		sts swapdir,__zero_reg__
+  89               	.L11:
+  90               	.LM19:
+  91 0068 2091 0000 		lds r18,dx
+  92 006c 2093 0000 		sts i,r18
+  93               	.LM20:
+  94 0070 8091 0000 		lds r24,dy
+  95 0074 9927      		clr r25
+  96 0076 87FD      		sbrc r24,7
+  97 0078 9095      		com r25
+  98 007a 880F      		lsl r24
+  99 007c 991F      		rol r25
+ 100 007e 8093 0000 		sts dy,r24
+ 101               	.LM21:
+ 102 0082 821B      		sub r24,r18
+ 103 0084 8093 0000 		sts err,r24
+ 104               	.LM22:
+ 105 0088 822F      		mov r24,r18
+ 106 008a 9927      		clr r25
+ 107 008c 87FD      		sbrc r24,7
+ 108 008e 9095      		com r25
+ 109 0090 880F      		lsl r24
+ 110 0092 991F      		rol r25
+ 111 0094 8093 0000 		sts dx,r24
+ 112               	/* epilogue: frame size=0 */
+ 113 0098 0895      		ret
+ 114               	/* epilogue end (size=1) */
+ 115               	/* function bresenham_init size 77 (76) */
+ 116               	.LFE2:
+ 118               	.global	bresenham_next
+ 120               	bresenham_next:
+ 121               	.LFB3:
+ 122               	.LM23:
+ 123               	/* prologue: frame size=0 */
+ 124               	/* prologue end (size=0) */
+ 125 009a DC01      		movw r26,r24
+ 126 009c FB01      		movw r30,r22
+ 127               	.LM24:
+ 128 009e 1C92      		st X,__zero_reg__
+ 129               	.LM25:
+ 130 00a0 1082      		st Z,__zero_reg__
+ 131               	.LM26:
+ 132 00a2 8091 0000 		lds r24,i
+ 133 00a6 87FF      		sbrs r24,7
+ 134 00a8 03C0      		rjmp .L15
+ 135               	.LM27:
+ 136 00aa 8FEF      		ldi r24,lo8(-1)
+ 137 00ac 9FEF      		ldi r25,hi8(-1)
+ 138 00ae 0895      		ret
+ 139               	.L15:
+ 140               	.LM28:
+ 141 00b0 8091 0000 		lds r24,err
+ 142 00b4 87FD      		sbrc r24,7
+ 143 00b6 12C0      		rjmp .L16
+ 144               	.LM29:
+ 145 00b8 8091 0000 		lds r24,swapdir
+ 146 00bc 8823      		tst r24
+ 147 00be 21F0      		breq .L17
+ 148               	.LM30:
+ 149 00c0 8091 0000 		lds r24,s1
+ 150 00c4 8C93      		st X,r24
+ 151 00c6 03C0      		rjmp .L18
+ 152               	.L17:
+ 153               	.LM31:
+ 154 00c8 8091 0000 		lds r24,s2
+ 155 00cc 8083      		st Z,r24
+ 156               	.L18:
+ 157               	.LM32:
+ 158 00ce 8091 0000 		lds r24,err
+ 159 00d2 9091 0000 		lds r25,dx
+ 160 00d6 891B      		sub r24,r25
+ 161 00d8 8093 0000 		sts err,r24
+ 162               	.L16:
+ 163               	.LM33:
+ 164 00dc 8091 0000 		lds r24,swapdir
+ 165 00e0 8823      		tst r24
+ 166 00e2 21F0      		breq .L19
+ 167               	.LM34:
+ 168 00e4 8091 0000 		lds r24,s2
+ 169 00e8 8083      		st Z,r24
+ 170 00ea 03C0      		rjmp .L20
+ 171               	.L19:
+ 172               	.LM35:
+ 173 00ec 8091 0000 		lds r24,s1
+ 174 00f0 8C93      		st X,r24
+ 175               	.L20:
+ 176               	.LM36:
+ 177 00f2 8091 0000 		lds r24,err
+ 178 00f6 9091 0000 		lds r25,dy
+ 179 00fa 890F      		add r24,r25
+ 180 00fc 8093 0000 		sts err,r24
+ 181               	.LM37:
+ 182 0100 8091 0000 		lds r24,i
+ 183 0104 8150      		subi r24,lo8(-(-1))
+ 184 0106 8093 0000 		sts i,r24
+ 185               	.LM38:
+ 186 010a 9927      		clr r25
+ 187 010c 87FD      		sbrc r24,7
+ 188 010e 9095      		com r25
+ 189 0110 8095      		com r24
+ 190 0112 9095      		com r25
+ 191 0114 8827      		clr r24
+ 192 0116 990F      		lsl r25
+ 193 0118 881F      		rol r24
+ 194 011a 9927      		clr r25
+ 195 011c 0197      		sbiw r24,1
+ 196               	.LM39:
+ 197 011e 0895      		ret
+ 198               	/* epilogue: frame size=0 */
+ 199               	/* epilogue: noreturn */
+ 200               	/* epilogue end (size=0) */
+ 201               	/* function bresenham_next size 67 (67) */
+ 202               	.LFE3:
+ 204               		.comm dx,1,1
+ 205               		.comm dy,1,1
+ 206               		.comm s1,1,1
+ 207               		.comm s2,1,1
+ 208               		.comm swapdir,1,1
+ 209               		.comm err,1,1
+ 210               		.comm i,1,1
+ 211               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 bresenham.c
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:20     .text:00000000 bresenham_init
+                            *COM*:00000001 dx
+                            *COM*:00000001 s1
+                            *COM*:00000001 dy
+                            *COM*:00000001 s2
+                            *COM*:00000001 swapdir
+                            *COM*:00000001 i
+                            *COM*:00000001 err
+C:\DOKUME~1\peter\LOKALE~1\Temp/cccraaaa.s:120    .text:0000009a bresenham_next
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

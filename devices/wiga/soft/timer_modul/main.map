@@ -1,0 +1,830 @@
+Archive member included because of file (symbol)
+
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_exit.o)
+                              main.o (exit)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+                              keys.o (__do_copy_data)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+                              keys.o (__do_clear_bss)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+                              ../common/uart.o (fdevopen)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(iob.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o) (__iob)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+                              terminal.o (printf)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o) (vfprintf)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o) (calloc)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o) (malloc)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strlen_P.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strlen_P)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strnlen_P)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(memset.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o) (memset)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strnlen)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fputc.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (fputc)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodsi4.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (__udivmodsi4)
+
+Allocating common symbols
+Common symbol       size              file
+
+__brkval            0x2               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__flp               0x2               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__iob               0x6               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(iob.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+LOAD keys.o
+LOAD terminal.o
+LOAD ../common/dcf.o
+LOAD ../common/caux.o
+LOAD ../common/uart.o
+LOAD ../common/twimaster.o
+LOAD main.o
+LOAD rolade.o
+LOAD tim_analog.o
+LOAD C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a
+LOAD C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libm.a
+LOAD C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a
+LOAD C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a
+LOAD C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x2aec
+ *(.vectors)
+ .vectors       0x00000000       0x54 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+                0x00000054                __ctors_start = .
+ *(.ctors)
+                0x00000054                __ctors_end = .
+                0x00000054                __dtors_start = .
+ *(.dtors)
+                0x00000054                __dtors_end = .
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x00000054      0x101 terminal.o
+                0x00000156                . = ALIGN (0x2)
+ *fill*         0x00000155        0x1 00
+ *(.init0)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000156        0xc C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+ *(.init3)
+ *(.init4)
+ .init4         0x00000162       0x16 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+                0x00000162                __do_copy_data
+ .init4         0x00000178       0x10 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+                0x00000178                __do_clear_bss
+ *(.init5)
+ *(.init6)
+ *(.init7)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000188        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+ *(.text)
+ .text          0x0000018c        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                0x0000018c                __vector_1
+                0x0000018c                __vector_12
+                0x0000018c                __bad_interrupt
+                0x0000018c                __vector_6
+                0x0000018c                __vector_3
+                0x0000018c                __vector_13
+                0x0000018c                __vector_17
+                0x0000018c                __vector_19
+                0x0000018c                __vector_7
+                0x0000018c                __vector_5
+                0x0000018c                __vector_4
+                0x0000018c                __vector_15
+                0x0000018c                __vector_8
+                0x0000018c                __vector_14
+                0x0000018c                __vector_10
+                0x0000018c                __vector_16
+                0x0000018c                __vector_18
+                0x0000018c                __vector_20
+ .text          0x00000190       0x96 keys.o
+                0x000001ac                get_key_rpt(unsigned char)
+                0x000001e4                KeyDebounceTimerHandler
+                0x000001d8                get_key_long(unsigned char)
+                0x00000190                get_key_press
+                0x000001c4                get_key_short(unsigned char)
+ .text          0x00000226      0x138 terminal.o
+                0x00000246                SendHex(unsigned char)
+                0x00000226                AsciiToHex(unsigned char, unsigned char)
+                0x0000027a                Terminal
+ .text          0x0000035e      0x4a4 ../common/dcf.o
+                0x00000692                check_parity(unsigned char)
+                0x000006d4                check_dcf
+                0x0000035e                init_dcf
+                0x0000039a                __vector_2
+                0x000006aa                bcd2dez(unsigned char)
+ .text          0x00000802      0x222 ../common/caux.o
+                0x0000094e                Handle_Takt_1_Sec()
+                0x000009bc                HandleUART()
+                0x00000990                RegisterCallback10MiliSec
+                0x0000099e                RegisterCallbackMainIdle
+                0x00000968                Handle_Takt_10_MiliSec()
+                0x00000922                Init8Timer
+                0x000009a8                RegisterUserUart
+                0x00000808                ReadAD
+                0x000009b2                RegisterTimer8
+                0x00000864                __vector_9
+                0x00000982                RegisterCallback1Sec
+                0x000009e0                ExecuteMain
+                0x00000802                i2c_ReadAD
+ .text          0x00000a24      0x184 ../common/uart.o
+                0x00000ade                uart_putc(unsigned char)
+                0x00000afe                uart_putc(char, __file*)
+                0x00000ace                uart_getc_wait()
+                0x00000aaa                uart_get(char*, unsigned char)
+                0x00000b64                __vector_11
+                0x00000a50                uart_getc()
+                0x00000b44                uart_init(unsigned int)
+                0x00000b22                uart_put(char*)
+                0x00000a24                uart_data_ready()
+                0x00000a7e                uart_get_lastc()
+                0x00000a44                uart_clear_receive_buffer()
+ .text          0x00000ba8       0xf2 ../common/twimaster.o
+                0x00000c7a                i2c_readAck()
+                0x00000c5a                i2c_write(unsigned char)
+                0x00000c36                i2c_rep_start(unsigned char)
+                0x00000bb0                i2c_start(unsigned char)
+                0x00000be8                i2c_start_wait(unsigned char)
+                0x00000c3e                i2c_stop()
+                0x00000ba8                i2c_init()
+                0x00000c8a                i2c_readNak()
+ .text          0x00000c9a      0xd56 main.o
+                0x00001124                NewPowerOnStatus(PowerOnStatus)
+                0x00001094                ZeitZumBewaessern()
+                0x00001010                GetSensorStartFromDate()
+                0x00001080                ZeitInAbendInterval()
+                0x00000e64                i2c_send_data()
+                0x0000141c                Takt_10_MiliSec()
+                0x0000137c                Takt_1_Sec()
+                0x00000f52                TimeEventInInterval(time_format*, time_format*)
+                0x00000dd8                i2c_send_abend_window_data()
+                0x000010a6                WindowZeitInAbendInterval()
+                0x00000e26                i2c_send_watering_data()
+                0x00001952                InitIO()
+                0x00001772                MainIdle()
+                0x00000ecc                Update_LEDs()
+                0x0000123a                NewStatus(Status)
+                0x00001774                InitVariables()
+                0x00001996                main
+                0x00000ca2                i2c_send_time_data()
+                0x00000c9a                LichtAn()
+                0x00000ce6                i2c_send_date_data()
+                0x00000d32                i2c_send_dcf_status_data()
+                0x00000c9e                LichtAus()
+                0x00000fb2                GetBewaessernZeitFromDate()
+                0x00000d76                i2c_send_abend_sunset_data()
+                0x000011a8                NewWateringStatus(WateringOnStatus)
+                0x000013f0                TripleLed(int, int)
+ .text          0x000019f0      0x622 rolade.o
+                0x00001ae8                IsTimeEvent(time_format*)
+                0x00001c5a                Rolade::NewState(RollerStatus)
+                0x00001ec8                Rolade::SetAutomatik(unsigned char)
+                0x00001e8c                Rolade::UpdateRegulatingStatus(unsigned char, unsigned char)
+                0x00001bc0                IsInInterval(time_format*, time_format*)
+                0x00001a68                Rolade::Down()
+                0x00001c30                GetWindwoUpTimeFromWeekOfDay(time_format*)
+                0x00001b30                IsTimeLess(time_format*)
+                0x00001f44                Rolade::IsTimeAutomaticStart()
+                0x00001b78                IsTimeGreater(unsigned char, time_format*)
+                0x00001cfe                Rolade::Init()
+                0x00001f90                Rolade::UpdateStatus(unsigned char, unsigned char, unsigned char)
+                0x00001c20                Rolade::SetAutomaticInterval(unsigned char, unsigned char, unsigned char, unsigned char)
+                0x00001f58                Rolade::IsTimeForMorning()
+                0x000019f0                Rolade::Up()
+                0x00001adc                Rolade::SetPin(unsigned char)
+                0x00001f4e                Rolade::IsTimeAutomaticEnd()
+                0x00001ddc                Rolade::NewRegulState(RegulatingStatus)
+ .text          0x00002012      0x192 tim_analog.o
+                0x00002012                TimedAnalog::IsSignalHigh()
+                0x00002194                TimedAnalog::LowDa()
+                0x00002170                TimedAnalog::SetChannel(unsigned char, unsigned char)
+                0x0000218c                TimedAnalog::Clean()
+                0x0000204c                TimedAnalog::AnalogSignal()
+                0x0000212e                TimedAnalog::SetTreshold(unsigned int, unsigned long, unsigned long)
+                0x0000219c                TimedAnalog::HighDa()
+ .text          0x000021a4       0x8e C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+                0x000021a4                fdevopen
+ .text          0x00002232       0x2a C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+                0x00002232                printf
+ .text          0x0000225c      0x57a C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x0000225c                vfprintf
+ .text          0x000027d6       0x38 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+                0x000027d6                calloc
+ .text          0x0000280e      0x1ec C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x0000280e                malloc
+                0x00002942                free
+ .text          0x000029fa       0x12 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strlen_P.o)
+                0x000029fa                strlen_P
+ .text          0x00002a0c       0x16 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x00002a0c                strnlen_P
+ .text          0x00002a22       0x14 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x00002a22                memset
+ .text          0x00002a36       0x16 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x00002a36                strnlen
+ .text          0x00002a4c       0x5a C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x00002a4c                fputc
+                0x00002aa6                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00002aa6       0x44 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodsi4.o)
+                0x00002aa6                __udivmodsi4
+                0x00002aea                . = ALIGN (0x2)
+ *(.fini9)
+ *(.fini8)
+ *(.fini7)
+ *(.fini6)
+ *(.fini5)
+ *(.fini4)
+ *(.fini3)
+ *(.fini2)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00002aea        0x2 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_exit.o)
+                0x00002aec                _etext = .
+
+.data           0x00800060      0x138 load address 0x00002aec
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060       0x94 main.o
+                0x00800060                analog_factor
+ .data          0x008000f4       0x9e rolade.o
+ .data          0x00800192        0x6 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800194                __malloc_heap_start
+                0x00800192                __malloc_heap_end
+                0x00800196                __malloc_margin
+ *(.gnu.linkonce.d*)
+                0x00800198                . = ALIGN (0x2)
+                0x00800198                _edata = .
+                0x00800198                PROVIDE (__data_end, .)
+
+.bss            0x00800198      0x13b
+                0x00800198                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800198        0x6 keys.o
+                0x00800198                key_press
+ .bss           0x0080019e       0x1e ../common/dcf.o
+                0x008001ba                db_tcnt2
+                0x0080019f                time
+                0x0080019e                puls_factor
+                0x008001a3                dcf
+ .bss           0x008001bc       0x13 ../common/caux.o
+                0x008001bc                timer1_counter
+ .bss           0x008001cf       0x22 ../common/uart.o
+ .bss           0x008001f1       0xd8 main.o
+                0x008002a0                BeweassernZeit
+                0x008002be                sunset_time
+                0x008002ba                window_time
+                0x0080029e                i2c_counter
+                0x0080029f                cnt
+                0x008002ac                SensorCheckStart
+                0x008002a4                WindowUpTime
+                0x00800221                dOutput
+                0x008002b0                first_time
+                0x008002b2                bewaessern_count
+                0x0080022b                aInput
+                0x008002a8                SensorCheckEnd
+                0x008001f1                rollade
+                0x008002b4                power_on_led
+                0x008002b1                current_day
+                0x008002b6                roller_shutters_delay
+ *(COMMON)
+ COMMON         0x008002c9        0x6 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(iob.o)
+                0x008002c9                __iob
+ COMMON         0x008002cf        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x008002cf                __brkval
+                0x008002d1                __flp
+                0x008002d3                PROVIDE (__bss_end, .)
+                0x00002aec                __data_load_start = LOADADDR (.data)
+                0x00002c24                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008002d3        0x0
+                0x008002d3                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008002d3                PROVIDE (__noinit_end, .)
+                0x008002d3                _end = .
+                0x008002d3                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.stab           0x00000000      0x36c
+ *(.stab)
+ .stab          0x00000000      0x36c C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+
+.stabstr        0x00000000       0x84
+ *(.stabstr)
+ .stabstr       0x00000000       0x84 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xb4
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x14 keys.o
+ .debug_aranges
+                0x00000014       0x14 terminal.o
+ .debug_aranges
+                0x00000028       0x14 ../common/dcf.o
+ .debug_aranges
+                0x0000003c       0x14 ../common/caux.o
+ .debug_aranges
+                0x00000050       0x14 ../common/uart.o
+ .debug_aranges
+                0x00000064       0x14 ../common/twimaster.o
+ .debug_aranges
+                0x00000078       0x14 main.o
+ .debug_aranges
+                0x0000008c       0x14 rolade.o
+ .debug_aranges
+                0x000000a0       0x14 tim_analog.o
+
+.debug_pubnames
+                0x00000000      0x98f
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x81 keys.o
+ .debug_pubnames
+                0x00000081       0x3a terminal.o
+ .debug_pubnames
+                0x000000bb       0x87 ../common/dcf.o
+ .debug_pubnames
+                0x00000142      0x129 ../common/caux.o
+ .debug_pubnames
+                0x0000026b       0xcc ../common/uart.o
+ .debug_pubnames
+                0x00000337       0x8d ../common/twimaster.o
+ .debug_pubnames
+                0x000003c4      0x343 main.o
+ .debug_pubnames
+                0x00000707      0x1bb rolade.o
+ .debug_pubnames
+                0x000008c2       0xcd tim_analog.o
+
+.debug_info     0x00000000     0x2d88
+ *(.debug_info)
+ .debug_info    0x00000000      0x1c5 keys.o
+ .debug_info    0x000001c5      0x1c4 terminal.o
+ .debug_info    0x00000389      0x3cb ../common/dcf.o
+ .debug_info    0x00000754      0x387 ../common/caux.o
+ .debug_info    0x00000adb      0x44c ../common/uart.o
+ .debug_info    0x00000f27      0x1c0 ../common/twimaster.o
+ .debug_info    0x000010e7      0xf27 main.o
+ .debug_info    0x0000200e      0x98e rolade.o
+ .debug_info    0x0000299c      0x3ec tim_analog.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xd5f
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xe1 keys.o
+ .debug_abbrev  0x000000e1       0xfb terminal.o
+ .debug_abbrev  0x000001dc      0x16a ../common/dcf.o
+ .debug_abbrev  0x00000346      0x155 ../common/caux.o
+ .debug_abbrev  0x0000049b      0x1be ../common/uart.o
+ .debug_abbrev  0x00000659       0xcb ../common/twimaster.o
+ .debug_abbrev  0x00000724      0x2c3 main.o
+ .debug_abbrev  0x000009e7      0x235 rolade.o
+ .debug_abbrev  0x00000c1c      0x143 tim_analog.o
+
+.debug_line     0x00000000     0x1c93
+ *(.debug_line)
+ .debug_line    0x00000000      0x16b keys.o
+ .debug_line    0x0000016b      0x233 terminal.o
+ .debug_line    0x0000039e      0x338 ../common/dcf.o
+ .debug_line    0x000006d6      0x288 ../common/caux.o
+ .debug_line    0x0000095e      0x23f ../common/uart.o
+ .debug_line    0x00000b9d      0x1bf ../common/twimaster.o
+ .debug_line    0x00000d5c      0x966 main.o
+ .debug_line    0x000016c2      0x3af rolade.o
+ .debug_line    0x00001a71      0x222 tim_analog.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x00000000     0x137a
+ *(.debug_str)
+ .debug_str     0x00000000      0x155 keys.o
+                                0x19b (size before relaxing)
+ .debug_str     0x00000155       0x77 terminal.o
+                                0x18c (size before relaxing)
+ .debug_str     0x000001cc       0xec ../common/dcf.o
+                                0x20e (size before relaxing)
+ .debug_str     0x000002b8      0x1da ../common/caux.o
+                                0x2fd (size before relaxing)
+ .debug_str     0x00000492      0x1de ../common/uart.o
+                                0x325 (size before relaxing)
+ .debug_str     0x00000670       0xfd ../common/twimaster.o
+                                0x1ee (size before relaxing)
+ .debug_str     0x0000076d      0xa97 main.o
+                                0xcc6 (size before relaxing)
+ .debug_str     0x00001204      0x167 rolade.o
+                                0x634 (size before relaxing)
+ .debug_str     0x0000136b        0xf tim_analog.o
+                                0x314 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+
+Cross Reference Table
+
+Symbol                                            File
+AsciiToHex(unsigned char, unsigned char)          terminal.o
+BeweassernZeit                                    main.o
+ExecuteMain                                       ../common/caux.o
+                                                  main.o
+GetBewaessernZeitFromDate()                       main.o
+GetSensorStartFromDate()                          main.o
+GetWindwoUpTimeFromWeekOfDay(time_format*)        rolade.o
+                                                  main.o
+HandleUART()                                      ../common/caux.o
+Handle_Takt_10_MiliSec()                          ../common/caux.o
+Handle_Takt_1_Sec()                               ../common/caux.o
+Init8Timer                                        ../common/caux.o
+InitIO()                                          main.o
+InitVariables()                                   main.o
+IsInInterval(time_format*, time_format*)          rolade.o
+IsTimeEvent(time_format*)                         rolade.o
+IsTimeGreater(unsigned char, time_format*)        rolade.o
+IsTimeLess(time_format*)                          rolade.o
+KeyDebounceTimerHandler                           keys.o
+                                                  main.o
+LichtAn()                                         main.o
+LichtAus()                                        main.o
+MainIdle()                                        main.o
+NewPowerOnStatus(PowerOnStatus)                   main.o
+NewStatus(Status)                                 main.o
+NewWateringStatus(WateringOnStatus)               main.o
+ReadAD                                            ../common/caux.o
+                                                  tim_analog.o
+RegisterCallback10MiliSec                         ../common/caux.o
+                                                  main.o
+RegisterCallback1Sec                              ../common/caux.o
+                                                  main.o
+RegisterCallbackMainIdle                          ../common/caux.o
+RegisterTimer8                                    ../common/caux.o
+                                                  main.o
+RegisterUserUart                                  ../common/caux.o
+                                                  main.o
+Rolade::Down()                                    rolade.o
+Rolade::Init()                                    rolade.o
+                                                  main.o
+Rolade::IsTimeAutomaticEnd()                      rolade.o
+Rolade::IsTimeAutomaticStart()                    rolade.o
+Rolade::IsTimeForMorning()                        rolade.o
+Rolade::NewRegulState(RegulatingStatus)           rolade.o
+Rolade::NewState(RollerStatus)                    rolade.o
+Rolade::SetAutomaticInterval(unsigned char, unsigned char, unsigned char, unsigned char) rolade.o
+                                                  main.o
+Rolade::SetAutomatik(unsigned char)               rolade.o
+                                                  main.o
+Rolade::SetPin(unsigned char)                     rolade.o
+                                                  main.o
+Rolade::Up()                                      rolade.o
+Rolade::UpdateRegulatingStatus(unsigned char, unsigned char) rolade.o
+Rolade::UpdateStatus(unsigned char, unsigned char, unsigned char) rolade.o
+                                                  main.o
+SendHex(unsigned char)                            terminal.o
+SensorCheckEnd                                    main.o
+SensorCheckStart                                  main.o
+Takt_10_MiliSec()                                 main.o
+Takt_1_Sec()                                      main.o
+Terminal                                          terminal.o
+                                                  main.o
+TimeEventInInterval(time_format*, time_format*)   main.o
+TimedAnalog::AnalogSignal()                       tim_analog.o
+                                                  main.o
+TimedAnalog::Clean()                              tim_analog.o
+TimedAnalog::HighDa()                             tim_analog.o
+                                                  main.o
+TimedAnalog::IsSignalHigh()                       tim_analog.o
+                                                  main.o
+TimedAnalog::LowDa()                              tim_analog.o
+                                                  main.o
+TimedAnalog::SetChannel(unsigned char, unsigned char) tim_analog.o
+                                                  main.o
+TimedAnalog::SetTreshold(unsigned int, unsigned long, unsigned long) tim_analog.o
+                                                  main.o
+TripleLed(int, int)                               main.o
+Update_LEDs()                                     main.o
+WindowUpTime                                      main.o
+WindowZeitInAbendInterval()                       main.o
+ZeitInAbendInterval()                             main.o
+ZeitZumBewaessern()                               main.o
+__bad_interrupt                                   C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__brkval                                          C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__bss_end                                         C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+__bss_start                                       C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+__data_end                                        C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+__data_load_start                                 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+__data_start                                      C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+__do_clear_bss                                    C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fputc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(iob.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+                                                  tim_analog.o
+                                                  rolade.o
+                                                  main.o
+                                                  ../common/twimaster.o
+                                                  ../common/uart.o
+                                                  ../common/caux.o
+                                                  ../common/dcf.o
+                                                  terminal.o
+                                                  keys.o
+__do_copy_data                                    C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fputc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(iob.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+                                                  tim_analog.o
+                                                  rolade.o
+                                                  main.o
+                                                  ../common/twimaster.o
+                                                  ../common/uart.o
+                                                  ../common/caux.o
+                                                  ../common/dcf.o
+                                                  terminal.o
+                                                  keys.o
+__flp                                             C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__heap_end                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__heap_start                                      C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__init                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__iob                                             C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(iob.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+__malloc_heap_end                                 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__malloc_heap_start                               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__malloc_margin                                   C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__stack                                           C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                                                  main.o
+__udivmodsi4                                      C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodsi4.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+__vector_1                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_10                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_11                                       ../common/uart.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_12                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_13                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_14                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_15                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_16                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_17                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_18                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_19                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_2                                        ../common/dcf.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_20                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_3                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_4                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_5                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_6                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_7                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_8                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_9                                        ../common/caux.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_default                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vectors                                         C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+_exit                                             C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_exit.o)
+aInput                                            main.o
+analog_factor                                     main.o
+                                                  terminal.o
+bcd2dez(unsigned char)                            ../common/dcf.o
+bewaessern_count                                  main.o
+calloc                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+check_dcf                                         ../common/dcf.o
+                                                  main.o
+check_parity(unsigned char)                       ../common/dcf.o
+cnt                                               main.o
+current_day                                       main.o
+dOutput                                           main.o
+db_tcnt2                                          ../common/dcf.o
+dcf                                               ../common/dcf.o
+                                                  rolade.o
+                                                  main.o
+exit                                              C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_exit.o)
+                                                  main.o
+fdevopen                                          C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fdevopen.o)
+                                                  ../common/uart.o
+first_time                                        main.o
+fputc                                             C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(fputc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+free                                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+get_key_long(unsigned char)                       keys.o
+get_key_press                                     keys.o
+                                                  main.o
+get_key_rpt(unsigned char)                        keys.o
+get_key_short(unsigned char)                      keys.o
+i2c_ReadAD                                        ../common/caux.o
+i2c_counter                                       main.o
+i2c_init()                                        ../common/twimaster.o
+                                                  main.o
+i2c_readAck()                                     ../common/twimaster.o
+i2c_readNak()                                     ../common/twimaster.o
+i2c_rep_start(unsigned char)                      ../common/twimaster.o
+i2c_send_abend_sunset_data()                      main.o
+i2c_send_abend_window_data()                      main.o
+i2c_send_data()                                   main.o
+i2c_send_date_data()                              main.o
+i2c_send_dcf_status_data()                        main.o
+i2c_send_time_data()                              main.o
+i2c_send_watering_data()                          main.o
+i2c_start(unsigned char)                          ../common/twimaster.o
+                                                  main.o
+i2c_start_wait(unsigned char)                     ../common/twimaster.o
+i2c_stop()                                        ../common/twimaster.o
+                                                  main.o
+i2c_write(unsigned char)                          ../common/twimaster.o
+                                                  main.o
+init_dcf                                          ../common/dcf.o
+                                                  main.o
+key_press                                         keys.o
+main                                              main.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+malloc                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+memset                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(memset.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(calloc.o)
+power_on_led                                      main.o
+printf                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+                                                  rolade.o
+                                                  main.o
+                                                  terminal.o
+puls_factor                                       ../common/dcf.o
+rollade                                           main.o
+roller_shutters_delay                             main.o
+strlen_P                                          C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strlen_P.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+strnlen                                           C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+strnlen_P                                         C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+sunset_time                                       main.o
+time                                              ../common/dcf.o
+                                                  rolade.o
+                                                  main.o
+timer1_counter                                    ../common/caux.o
+uart_clear_receive_buffer()                       ../common/uart.o
+uart_data_ready()                                 ../common/uart.o
+                                                  ../common/caux.o
+uart_get(char*, unsigned char)                    ../common/uart.o
+uart_get_lastc()                                  ../common/uart.o
+                                                  ../common/caux.o
+uart_getc()                                       ../common/uart.o
+                                                  ../common/caux.o
+                                                  terminal.o
+uart_getc_wait()                                  ../common/uart.o
+uart_init(unsigned int)                           ../common/uart.o
+                                                  main.o
+uart_put(char*)                                   ../common/uart.o
+                                                  terminal.o
+uart_putc(char, __file*)                          ../common/uart.o
+uart_putc(unsigned char)                          ../common/uart.o
+                                                  terminal.o
+vfprintf                                          C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(printf.o)
+window_time                                       main.o

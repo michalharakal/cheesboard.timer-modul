@@ -1,0 +1,149 @@
+   1               		.file	"menus.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	RepaintMenu
+  20               	RepaintMenu:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24 0000 EF92      		push r14
+  25 0002 FF92      		push r15
+  26 0004 1F93      		push r17
+  27 0006 CF93      		push r28
+  28 0008 DF93      		push r29
+  29               	/* prologue end (size=5) */
+  30               	.LM2:
+  31 000a 20E4      		ldi r18,lo8(64)
+  32 000c 4FE7      		ldi r20,lo8(127)
+  33 000e 68E3      		ldi r22,lo8(56)
+  34 0010 80E0      		ldi r24,lo8(0)
+  35 0012 0E94 0000 		call Bar
+  36               	.LM3:
+  37 0016 2FEF      		ldi r18,lo8(-1)
+  38 0018 4091 0000 		lds r20,menu_name
+  39 001c 5091 0000 		lds r21,(menu_name)+1
+  40 0020 67E3      		ldi r22,lo8(55)
+  41 0022 84E0      		ldi r24,lo8(4)
+  42 0024 0E94 0000 		call ShowStr
+  43 0028 C0E0      		ldi r28,lo8(0)
+  44 002a D0E0      		ldi r29,hi8(0)
+  45 002c 13E0      		ldi r17,lo8(3)
+  46 002e 90E0      		ldi r25,lo8(curr_menu)
+  47 0030 E92E      		mov r14,r25
+  48 0032 90E0      		ldi r25,hi8(curr_menu)
+  49 0034 F92E      		mov r15,r25
+  50               	.L6:
+  51               	.LM4:
+  52 0036 D701      		movw r26,r14
+  53 0038 ED91      		ld r30,X+
+  54 003a FD91      		ld r31,X+
+  55 003c 7D01      		movw r14,r26
+  56 003e 8081      		ld r24,Z
+  57 0040 8823      		tst r24
+  58 0042 31F0      		breq .L4
+  59               	.LM5:
+  60 0044 20E0      		ldi r18,lo8(0)
+  61 0046 AF01      		movw r20,r30
+  62 0048 6C2F      		mov r22,r28
+  63 004a 822F      		mov r24,r18
+  64 004c 0E94 0000 		call MenuButton
+  65               	.L4:
+  66               	.LM6:
+  67 0050 1150      		subi r17,lo8(-(-1))
+  68 0052 2E96      		adiw r28,14
+  69 0054 17FF      		sbrs r17,7
+  70 0056 EFCF      		rjmp .L6
+  71 0058 C0E0      		ldi r28,lo8(0)
+  72 005a D0E0      		ldi r29,hi8(0)
+  73 005c 13E0      		ldi r17,lo8(3)
+  74 005e 80E0      		ldi r24,lo8(curr_menu+8)
+  75 0060 E82E      		mov r14,r24
+  76 0062 80E0      		ldi r24,hi8(curr_menu+8)
+  77 0064 F82E      		mov r15,r24
+  78               	.L11:
+  79               	.LM7:
+  80 0066 D701      		movw r26,r14
+  81 0068 ED91      		ld r30,X+
+  82 006a FD91      		ld r31,X+
+  83 006c 7D01      		movw r14,r26
+  84 006e 8081      		ld r24,Z
+  85 0070 8823      		tst r24
+  86 0072 31F0      		breq .L9
+  87               	.LM8:
+  88 0074 20E0      		ldi r18,lo8(0)
+  89 0076 AF01      		movw r20,r30
+  90 0078 6C2F      		mov r22,r28
+  91 007a 8EE5      		ldi r24,lo8(94)
+  92 007c 0E94 0000 		call MenuButton
+  93               	.L9:
+  94               	.LM9:
+  95 0080 1150      		subi r17,lo8(-(-1))
+  96 0082 2E96      		adiw r28,14
+  97 0084 17FF      		sbrs r17,7
+  98 0086 EFCF      		rjmp .L11
+  99               	/* epilogue: frame size=0 */
+ 100 0088 DF91      		pop r29
+ 101 008a CF91      		pop r28
+ 102 008c 1F91      		pop r17
+ 103 008e FF90      		pop r15
+ 104 0090 EF90      		pop r14
+ 105 0092 0895      		ret
+ 106               	/* epilogue end (size=6) */
+ 107               	/* function RepaintMenu size 74 (63) */
+ 108               	.LFE2:
+ 110               	.global	AssignMenu
+ 112               	AssignMenu:
+ 113               	.LFB3:
+ 114               	.LM10:
+ 115               	/* prologue: frame size=0 */
+ 116               	/* prologue end (size=0) */
+ 117               	.LM11:
+ 118 0094 7093 0000 		sts (menu_name)+1,r23
+ 119 0098 6093 0000 		sts menu_name,r22
+ 120 009c 27E0      		ldi r18,lo8(7)
+ 121 009e A0E0      		ldi r26,lo8(curr_menu)
+ 122 00a0 B0E0      		ldi r27,hi8(curr_menu)
+ 123 00a2 FC01      		movw r30,r24
+ 124               	.L20:
+ 125               	.LM12:
+ 126 00a4 8191      		ld r24,Z+
+ 127 00a6 9191      		ld r25,Z+
+ 128 00a8 8D93      		st X+,r24
+ 129 00aa 9D93      		st X+,r25
+ 130               	.LM13:
+ 131 00ac 2150      		subi r18,lo8(-(-1))
+ 132 00ae 27FF      		sbrs r18,7
+ 133 00b0 F9CF      		rjmp .L20
+ 134               	/* epilogue: frame size=0 */
+ 135 00b2 0895      		ret
+ 136               	/* epilogue end (size=1) */
+ 137               	/* function AssignMenu size 16 (15) */
+ 138               	.LFE3:
+ 140               		.lcomm curr_menu,16
+ 141               		.lcomm menu_name,2
+ 142               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 menus.c
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:20     .text:00000000 RepaintMenu
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:140    .bss:00000010 menu_name
+                             .bss:00000000 curr_menu
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccCUaaaa.s:112    .text:00000094 AssignMenu
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+Bar
+ShowStr
+MenuButton

@@ -1,0 +1,406 @@
+   1               		.file	"uart.c"
+   2               		.arch atmega16
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.lcomm USART_RxBuf,32
+  19               		.lcomm USART_RxTail,1
+  20               		.lcomm USART_RxHead,1
+  21               	.global	_Z15uart_data_readyv
+  23               	_Z15uart_data_readyv:
+  24               	.LFB3:
+  25               	.LM1:
+  26               	/* prologue: frame size=0 */
+  27               	/* prologue end (size=0) */
+  28               	.LBB2:
+  29               	.LM2:
+  30 0000 40E0      		ldi r20,lo8(0)
+  31 0002 50E0      		ldi r21,hi8(0)
+  32 0004 8091 0000 		lds r24,USART_RxHead
+  33 0008 282F      		mov r18,r24
+  34 000a 3327      		clr r19
+  35 000c 8091 0000 		lds r24,USART_RxTail
+  36 0010 9927      		clr r25
+  37 0012 2817      		cp r18,r24
+  38 0014 3907      		cpc r19,r25
+  39 0016 11F0      		breq .L2
+  40               	.LM3:
+  41 0018 41E0      		ldi r20,lo8(1)
+  42 001a 50E0      		ldi r21,hi8(1)
+  43               	.L2:
+  44               	.LBE2:
+  45               	.LM4:
+  46 001c CA01      		movw r24,r20
+  47               	/* epilogue: frame size=0 */
+  48 001e 0895      		ret
+  49               	/* epilogue end (size=1) */
+  50               	/* function unsigned char uart_data_ready() size 16 (15) */
+  51               	.LFE3:
+  53               	.global	_Z25uart_clear_receive_bufferv
+  55               	_Z25uart_clear_receive_bufferv:
+  56               	.LFB4:
+  57               	.LM5:
+  58               	/* prologue: frame size=0 */
+  59               	/* prologue end (size=0) */
+  60               	.LBB3:
+  61               	.LBB4:
+  62               	.LM6:
+  63 0020 80E0      		ldi r24,lo8(0)
+  64               	.LM7:
+  65 0022 8093 0000 		sts USART_RxTail,r24
+  66               	.LM8:
+  67 0026 8093 0000 		sts USART_RxHead,r24
+  68               	.LBE4:
+  69               	.LBE3:
+  70               	/* epilogue: frame size=0 */
+  71 002a 0895      		ret
+  72               	/* epilogue end (size=1) */
+  73               	/* function void uart_clear_receive_buffer() size 6 (5) */
+  74               	.LFE4:
+  76               	.global	_Z9uart_getcv
+  78               	_Z9uart_getcv:
+  79               	.LFB5:
+  80               	.LM9:
+  81               	/* prologue: frame size=0 */
+  82               	/* prologue end (size=0) */
+  83               	.L5:
+  84               	.LBB5:
+  85               	.LBB6:
+  86               	.LM10:
+  87 002c 8091 0000 		lds r24,USART_RxHead
+  88 0030 282F      		mov r18,r24
+  89 0032 3327      		clr r19
+  90 0034 8091 0000 		lds r24,USART_RxTail
+  91 0038 9927      		clr r25
+  92 003a 2817      		cp r18,r24
+  93 003c 3907      		cpc r19,r25
+  94 003e B1F3      		breq .L5
+  95               	.LM11:
+  96 0040 8091 0000 		lds r24,USART_RxTail
+  97 0044 8F5F      		subi r24,lo8(-(1))
+  98 0046 8F71      		andi r24,lo8(31)
+  99               	.LM12:
+ 100 0048 8093 0000 		sts USART_RxTail,r24
+ 101               	.LM13:
+ 102 004c E82F      		mov r30,r24
+ 103 004e FF27      		clr r31
+ 104 0050 E050      		subi r30,lo8(-(USART_RxBuf))
+ 105 0052 F040      		sbci r31,hi8(-(USART_RxBuf))
+ 106 0054 8081      		ld r24,Z
+ 107               	.LBE6:
+ 108               	.LBE5:
+ 109               	.LM14:
+ 110 0056 9927      		clr r25
+ 111               	/* epilogue: frame size=0 */
+ 112 0058 0895      		ret
+ 113               	/* epilogue end (size=1) */
+ 114               	/* function unsigned char uart_getc() size 23 (22) */
+ 115               	.LFE5:
+ 117               	.global	_Z14uart_get_lastcv
+ 119               	_Z14uart_get_lastcv:
+ 120               	.LFB6:
+ 121               	.LM15:
+ 122               	/* prologue: frame size=0 */
+ 123               	/* prologue end (size=0) */
+ 124               	.LBB7:
+ 125               	.LM16:
+ 126 005a 8091 0000 		lds r24,USART_RxHead
+ 127 005e 282F      		mov r18,r24
+ 128 0060 3327      		clr r19
+ 129 0062 8091 0000 		lds r24,USART_RxTail
+ 130 0066 9927      		clr r25
+ 131 0068 2817      		cp r18,r24
+ 132 006a 3907      		cpc r19,r25
+ 133 006c 19F4      		brne .L9
+ 134               	.LM17:
+ 135 006e 80E0      		ldi r24,lo8(0)
+ 136 0070 90E0      		ldi r25,hi8(0)
+ 137 0072 0895      		ret
+ 138               	.L9:
+ 139               	.LM18:
+ 140 0074 8091 0000 		lds r24,USART_RxHead
+ 141 0078 E82F      		mov r30,r24
+ 142 007a FF27      		clr r31
+ 143 007c E050      		subi r30,lo8(-(USART_RxBuf))
+ 144 007e F040      		sbci r31,hi8(-(USART_RxBuf))
+ 145 0080 8081      		ld r24,Z
+ 146 0082 9927      		clr r25
+ 147               	.LBE7:
+ 148               	.LM19:
+ 149 0084 0895      		ret
+ 150               	/* epilogue: frame size=0 */
+ 151               	/* epilogue: noreturn */
+ 152               	/* epilogue end (size=0) */
+ 153               	/* function unsigned char uart_get_lastc() size 22 (22) */
+ 154               	.LFE6:
+ 156               	.global	_Z8uart_getPch
+ 158               	_Z8uart_getPch:
+ 159               	.LFB7:
+ 160               	.LM20:
+ 161               	/* prologue: frame size=0 */
+ 162 0086 0F93      		push r16
+ 163 0088 1F93      		push r17
+ 164 008a CF93      		push r28
+ 165               	/* prologue end (size=3) */
+ 166 008c 8C01      		movw r16,r24
+ 167 008e C62F      		mov r28,r22
+ 168               	.LBB8:
+ 169               	.LM21:
+ 170 0090 6623      		tst r22
+ 171 0092 39F0      		breq .L16
+ 172               	.L14:
+ 173               	.LM22:
+ 174 0094 0E94 0000 		call _Z9uart_getcv
+ 175 0098 F801      		movw r30,r16
+ 176 009a 8193      		st Z+,r24
+ 177 009c 8F01      		movw r16,r30
+ 178               	.LM23:
+ 179 009e C150      		subi r28,lo8(-(-1))
+ 180 00a0 C9F7      		brne .L14
+ 181               	.L16:
+ 182               	.LBE8:
+ 183               	/* epilogue: frame size=0 */
+ 184 00a2 CF91      		pop r28
+ 185 00a4 1F91      		pop r17
+ 186 00a6 0F91      		pop r16
+ 187 00a8 0895      		ret
+ 188               	/* epilogue end (size=4) */
+ 189               	/* function void uart_get(char*, unsigned char) size 19 (12) */
+ 190               	.LFE7:
+ 192               	.global	_Z14uart_getc_waitv
+ 194               	_Z14uart_getc_waitv:
+ 195               	.LFB8:
+ 196               	.LM24:
+ 197               	/* prologue: frame size=0 */
+ 198               	/* prologue end (size=0) */
+ 199               	.L18:
+ 200               	.LBB9:
+ 201               	.LM25:
+ 202 00aa 0E94 0000 		call _Z15uart_data_readyv
+ 203 00ae 8823      		tst r24
+ 204 00b0 E1F3      		breq .L18
+ 205               	.LM26:
+ 206 00b2 0E94 0000 		call _Z9uart_getcv
+ 207               	.LBE9:
+ 208               	.LM27:
+ 209 00b6 9927      		clr r25
+ 210               	/* epilogue: frame size=0 */
+ 211 00b8 0895      		ret
+ 212               	/* epilogue end (size=1) */
+ 213               	/* function uint8_t uart_getc_wait() size 8 (7) */
+ 214               	.LFE8:
+ 216               	.global	_Z9uart_putch
+ 218               	_Z9uart_putch:
+ 219               	.LFB9:
+ 220               	.LM28:
+ 221               	/* prologue: frame size=0 */
+ 222               	/* prologue end (size=0) */
+ 223 00ba 482F      		mov r20,r24
+ 224 00bc 21E0      		ldi r18,lo8(1)
+ 225 00be 30E0      		ldi r19,hi8(1)
+ 226               	.L22:
+ 227               	.LBB10:
+ 228               	.LM29:
+ 229 00c0 8BB1      		in r24,43-0x20
+ 230 00c2 9927      		clr r25
+ 231 00c4 55E0      		ldi r21,5
+ 232 00c6 9695      	1:	lsr r25
+ 233 00c8 8795      		ror r24
+ 234 00ca 5A95      		dec r21
+ 235 00cc E1F7      		brne 1b
+ 236 00ce 8227      		eor r24,r18
+ 237 00d0 9327      		eor r25,r19
+ 238 00d2 80FD      		sbrc r24,0
+ 239 00d4 F5CF      		rjmp .L22
+ 240               	.LM30:
+ 241 00d6 4CB9      		out 44-0x20,r20
+ 242               	.LBE10:
+ 243               	/* epilogue: frame size=0 */
+ 244 00d8 0895      		ret
+ 245               	/* epilogue end (size=1) */
+ 246               	/* function void uart_putc(unsigned char) size 16 (15) */
+ 247               	.LFE9:
+ 249               	.global	_Z9uart_putccP6__file
+ 251               	_Z9uart_putccP6__file:
+ 252               	.LFB10:
+ 253               	.LM31:
+ 254               	/* prologue: frame size=0 */
+ 255               	/* prologue end (size=0) */
+ 256 00da 482F      		mov r20,r24
+ 257 00dc 21E0      		ldi r18,lo8(1)
+ 258 00de 30E0      		ldi r19,hi8(1)
+ 259               	.L26:
+ 260               	.LBB11:
+ 261               	.LM32:
+ 262 00e0 8BB1      		in r24,43-0x20
+ 263 00e2 9927      		clr r25
+ 264 00e4 65E0      		ldi r22,5
+ 265 00e6 9695      	1:	lsr r25
+ 266 00e8 8795      		ror r24
+ 267 00ea 6A95      		dec r22
+ 268 00ec E1F7      		brne 1b
+ 269 00ee 8227      		eor r24,r18
+ 270 00f0 9327      		eor r25,r19
+ 271 00f2 80FD      		sbrc r24,0
+ 272 00f4 F5CF      		rjmp .L26
+ 273               	.LM33:
+ 274 00f6 4CB9      		out 44-0x20,r20
+ 275               	.LBE11:
+ 276               	.LM34:
+ 277 00f8 80E0      		ldi r24,lo8(0)
+ 278 00fa 90E0      		ldi r25,hi8(0)
+ 279               	/* epilogue: frame size=0 */
+ 280 00fc 0895      		ret
+ 281               	/* epilogue end (size=1) */
+ 282               	/* function int uart_putc(char, __file*) size 18 (17) */
+ 283               	.LFE10:
+ 285               	.global	_Z8uart_putPc
+ 287               	_Z8uart_putPc:
+ 288               	.LFB11:
+ 289               	.LM35:
+ 290               	/* prologue: frame size=0 */
+ 291 00fe CF93      		push r28
+ 292 0100 DF93      		push r29
+ 293               	/* prologue end (size=2) */
+ 294 0102 EC01      		movw r28,r24
+ 295               	.LBB12:
+ 296               	.LM36:
+ 297 0104 8881      		ld r24,Y
+ 298 0106 8823      		tst r24
+ 299 0108 41F0      		breq .L34
+ 300               	.L32:
+ 301               	.LM37:
+ 302 010a 60E0      		ldi r22,lo8(0)
+ 303 010c 70E0      		ldi r23,hi8(0)
+ 304 010e 8991      		ld r24,Y+
+ 305 0110 0E94 0000 		call _Z9uart_putccP6__file
+ 306               	.LM38:
+ 307 0114 8881      		ld r24,Y
+ 308 0116 8823      		tst r24
+ 309 0118 C1F7      		brne .L32
+ 310               	.L34:
+ 311               	.LBE12:
+ 312               	/* epilogue: frame size=0 */
+ 313 011a DF91      		pop r29
+ 314 011c CF91      		pop r28
+ 315 011e 0895      		ret
+ 316               	/* epilogue end (size=3) */
+ 317               	/* function void uart_put(char*) size 17 (12) */
+ 318               	.LFE11:
+ 320               	.global	_Z9uart_initj
+ 322               	_Z9uart_initj:
+ 323               	.LFB12:
+ 324               	.LM39:
+ 325               	/* prologue: frame size=0 */
+ 326               	/* prologue end (size=0) */
+ 327               	.LBB13:
+ 328               	.LBB14:
+ 329               	.LM40:
+ 330 0120 89B9      		out 41-0x20,r24
+ 331               	.LM41:
+ 332 0122 539A      		sbi 42-0x20,3
+ 333               	.LM42:
+ 334 0124 549A      		sbi 42-0x20,4
+ 335               	.LM43:
+ 336 0126 579A      		sbi 42-0x20,7
+ 337               	.LM44:
+ 338 0128 80E0      		ldi r24,lo8(0)
+ 339               	.LM45:
+ 340 012a 8093 0000 		sts USART_RxTail,r24
+ 341               	.LM46:
+ 342 012e 8093 0000 		sts USART_RxHead,r24
+ 343               	.LM47:
+ 344 0132 60E0      		ldi r22,lo8(0)
+ 345 0134 70E0      		ldi r23,hi8(0)
+ 346 0136 80E0      		ldi r24,lo8(pm(_Z9uart_putccP6__file))
+ 347 0138 90E0      		ldi r25,hi8(pm(_Z9uart_putccP6__file))
+ 348 013a 0E94 0000 		call fdevopen
+ 349               	.LBE14:
+ 350               	.LBE13:
+ 351               	/* epilogue: frame size=0 */
+ 352 013e 0895      		ret
+ 353               	/* epilogue end (size=1) */
+ 354               	/* function void uart_init(unsigned int) size 16 (15) */
+ 355               	.LFE12:
+ 357               	.global	__vector_11
+ 359               	__vector_11:
+ 360               	.LFB13:
+ 361               	.LM48:
+ 362               	/* prologue: frame size=0 */
+ 363 0140 1F92      		push __zero_reg__
+ 364 0142 0F92      		push __tmp_reg__
+ 365 0144 0FB6      		in __tmp_reg__,__SREG__
+ 366 0146 0F92      		push __tmp_reg__
+ 367 0148 1124      		clr __zero_reg__
+ 368 014a 2F93      		push r18
+ 369 014c 8F93      		push r24
+ 370 014e 9F93      		push r25
+ 371 0150 EF93      		push r30
+ 372 0152 FF93      		push r31
+ 373               	/* prologue end (size=10) */
+ 374               	.LBB15:
+ 375               	.LBB16:
+ 376               	.LM49:
+ 377 0154 9CB1      		in r25,44-0x20
+ 378               	.LM50:
+ 379 0156 8091 0000 		lds r24,USART_RxHead
+ 380 015a 8F5F      		subi r24,lo8(-(1))
+ 381 015c 8F71      		andi r24,lo8(31)
+ 382               	.LM51:
+ 383 015e 8093 0000 		sts USART_RxHead,r24
+ 384               	.LM52:
+ 385 0162 2091 0000 		lds r18,USART_RxTail
+ 386               	.LM53:
+ 387 0166 E0E0      		ldi r30,lo8(USART_RxBuf)
+ 388 0168 F0E0      		ldi r31,hi8(USART_RxBuf)
+ 389 016a E80F      		add r30,r24
+ 390 016c F11D      		adc r31,__zero_reg__
+ 391 016e 9083      		st Z,r25
+ 392               	.LBE16:
+ 393               	.LBE15:
+ 394               	/* epilogue: frame size=0 */
+ 395 0170 FF91      		pop r31
+ 396 0172 EF91      		pop r30
+ 397 0174 9F91      		pop r25
+ 398 0176 8F91      		pop r24
+ 399 0178 2F91      		pop r18
+ 400 017a 0F90      		pop __tmp_reg__
+ 401 017c 0FBE      		out __SREG__,__tmp_reg__
+ 402 017e 0F90      		pop __tmp_reg__
+ 403 0180 1F90      		pop __zero_reg__
+ 404 0182 1895      		reti
+ 405               	/* epilogue end (size=10) */
+ 406               	/* function void __vector_11() size 34 (14) */
+ 407               	.LFE13:
+ 409               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 uart.c
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:7      *ABS*:00000001 __zero_reg__
+                             .bss:00000000 USART_RxBuf
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:18     .bss:00000020 USART_RxTail
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:19     .bss:00000021 USART_RxHead
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:23     .text:00000000 _Z15uart_data_readyv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:55     .text:00000020 _Z25uart_clear_receive_bufferv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:78     .text:0000002c _Z9uart_getcv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:119    .text:0000005a _Z14uart_get_lastcv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:158    .text:00000086 _Z8uart_getPch
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:194    .text:000000aa _Z14uart_getc_waitv
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:218    .text:000000ba _Z9uart_putch
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:251    .text:000000da _Z9uart_putccP6__file
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:287    .text:000000fe _Z8uart_putPc
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:322    .text:00000120 _Z9uart_initj
+C:\DOKUME~1\peter\LOKALE~1\Temp/cc4Waaaa.s:359    .text:00000140 __vector_11
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+fdevopen

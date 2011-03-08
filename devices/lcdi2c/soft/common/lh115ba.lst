@@ -1,0 +1,453 @@
+   1               		.file	"lh115ba.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	lh155_transfer
+  20               	lh155_transfer:
+  21               	.LFB6:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 90E0      		ldi r25,lo8(0)
+  27               	.LM3:
+  28 0002 8111      		cpse r24,__zero_reg__
+  29               	.LM4:
+  30 0004 90E8      		ldi r25,lo8(-128)
+  31               	.L2:
+  32               	.LM5:
+  33 0006 6BBB      		out 59-0x20,r22
+  34               	.LM6:
+  35 0008 9798      		cbi 50-0x20,7
+  36               	.LM7:
+  37 000a 82B3      		in r24,50-0x20
+  38 000c 892B      		or r24,r25
+  39 000e 8064      		ori r24,lo8(64)
+  40 0010 82BB      		out 50-0x20,r24
+  41               	.LM8:
+  42 0012 9698      		cbi 50-0x20,6
+  43               	.LM9:
+  44 0014 969A      		sbi 50-0x20,6
+  45               	/* epilogue: frame size=0 */
+  46 0016 0895      		ret
+  47               	/* epilogue end (size=1) */
+  48               	/* function lh155_transfer size 13 (12) */
+  49               	.LFE6:
+  51               	.global	lh155_writecmd
+  53               	lh155_writecmd:
+  54               	.LFB7:
+  55               	.LM10:
+  56               	/* prologue: frame size=0 */
+  57               	/* prologue end (size=0) */
+  58               	.LM11:
+  59 0018 682F      		mov r22,r24
+  60 001a 81E0      		ldi r24,lo8(1)
+  61 001c 0E94 0000 		call lh155_transfer
+  62               	/* epilogue: frame size=0 */
+  63 0020 0895      		ret
+  64               	/* epilogue end (size=1) */
+  65               	/* function lh155_writecmd size 5 (4) */
+  66               	.LFE7:
+  68               	.global	lh155_writedata
+  70               	lh155_writedata:
+  71               	.LFB8:
+  72               	.LM12:
+  73               	/* prologue: frame size=0 */
+  74               	/* prologue end (size=0) */
+  75               	.LM13:
+  76 0022 682F      		mov r22,r24
+  77 0024 80E0      		ldi r24,lo8(0)
+  78 0026 0E94 0000 		call lh155_transfer
+  79               	/* epilogue: frame size=0 */
+  80 002a 0895      		ret
+  81               	/* epilogue end (size=1) */
+  82               	/* function lh155_writedata size 5 (4) */
+  83               	.LFE8:
+  85               	.global	lh155_init
+  87               	lh155_init:
+  88               	.LFB9:
+  89               	.LM14:
+  90               	/* prologue: frame size=0 */
+  91               	/* prologue end (size=0) */
+  92               	.LM15:
+  93 002c 80EF      		ldi r24,lo8(-16)
+  94 002e 0E94 0000 		call lh155_writecmd
+  95               	.LM16:
+  96 0032 80E0      		ldi r24,lo8(0)
+  97 0034 0E94 0000 		call lh155_writecmd
+  98               	.LM17:
+  99 0038 80E2      		ldi r24,lo8(32)
+ 100 003a 0E94 0000 		call lh155_writecmd
+ 101               	.LM18:
+ 102 003e 80E3      		ldi r24,lo8(48)
+ 103 0040 0E94 0000 		call lh155_writecmd
+ 104               	.LM19:
+ 105 0044 80E4      		ldi r24,lo8(64)
+ 106 0046 0E94 0000 		call lh155_writecmd
+ 107               	.LM20:
+ 108 004a 80E5      		ldi r24,lo8(80)
+ 109 004c 0E94 0000 		call lh155_writecmd
+ 110               	.LM21:
+ 111 0050 81E6      		ldi r24,lo8(97)
+ 112 0052 0E94 0000 		call lh155_writecmd
+ 113               	.LM22:
+ 114 0056 80E7      		ldi r24,lo8(112)
+ 115 0058 0E94 0000 		call lh155_writecmd
+ 116               	.LM23:
+ 117 005c 80EF      		ldi r24,lo8(-16)
+ 118 005e 0E94 0000 		call lh155_writecmd
+ 119               	.LM24:
+ 120 0062 81E8      		ldi r24,lo8(-127)
+ 121 0064 0E94 0000 		call lh155_writecmd
+ 122               	.LM25:
+ 123 0068 82E9      		ldi r24,lo8(-110)
+ 124 006a 0E94 0000 		call lh155_writecmd
+ 125               	.LM26:
+ 126 006e 83EA      		ldi r24,lo8(-93)
+ 127 0070 0E94 0000 		call lh155_writecmd
+ 128               	.LM27:
+ 129 0074 82EB      		ldi r24,lo8(-78)
+ 130 0076 0E94 0000 		call lh155_writecmd
+ 131               	.LM28:
+ 132 007a 8EED      		ldi r24,lo8(-34)
+ 133 007c 0E94 0000 		call lh155_writecmd
+ 134               	.LM29:
+ 135 0080 80EE      		ldi r24,lo8(-32)
+ 136 0082 0E94 0000 		call lh155_writecmd
+ 137               	.LM30:
+ 138 0086 81EF      		ldi r24,lo8(-15)
+ 139 0088 0E94 0000 		call lh155_writecmd
+ 140               	.LM31:
+ 141 008c 80EE      		ldi r24,lo8(-32)
+ 142 008e 0E94 0000 		call lh155_writecmd
+ 143               	.LM32:
+ 144 0092 80EF      		ldi r24,lo8(-16)
+ 145 0094 0E94 0000 		call lh155_writecmd
+ 146               	/* epilogue: frame size=0 */
+ 147 0098 0895      		ret
+ 148               	/* epilogue end (size=1) */
+ 149               	/* function lh155_init size 55 (54) */
+ 150               	.LFE9:
+ 152               	.global	gd_hw_init
+ 154               	gd_hw_init:
+ 155               	.LFB10:
+ 156               	.LM33:
+ 157               	/* prologue: frame size=0 */
+ 158               	/* prologue end (size=0) */
+ 159 009a FC01      		movw r30,r24
+ 160               	.LM34:
+ 161 009c 80E8      		ldi r24,lo8(-128)
+ 162 009e 8083      		st Z,r24
+ 163               	.LM35:
+ 164 00a0 80E4      		ldi r24,lo8(64)
+ 165 00a2 8183      		std Z+1,r24
+ 166               	.LM36:
+ 167 00a4 81E0      		ldi r24,lo8(1)
+ 168 00a6 8283      		std Z+2,r24
+ 169               	.LM37:
+ 170 00a8 1382      		std Z+3,__zero_reg__
+ 171               	.LM38:
+ 172 00aa 8483      		std Z+4,r24
+ 173               	.LM39:
+ 174 00ac 1086      		std Z+8,__zero_reg__
+ 175               	.LM40:
+ 176 00ae 1582      		std Z+5,__zero_reg__
+ 177               	.LM41:
+ 178 00b0 8FEF      		ldi r24,lo8(-1)
+ 179 00b2 8ABB      		out 58-0x20,r24
+ 180               	.LM42:
+ 181 00b4 80EE      		ldi r24,lo8(-32)
+ 182 00b6 81BB      		out 49-0x20,r24
+ 183               	.LM43:
+ 184 00b8 0E94 0000 		call lh155_init
+ 185               	/* epilogue: frame size=0 */
+ 186 00bc 0895      		ret
+ 187               	/* epilogue end (size=1) */
+ 188               	/* function gd_hw_init size 18 (17) */
+ 189               	.LFE10:
+ 191               	.global	gd_hw_update
+ 193               	gd_hw_update:
+ 194               	.LFB11:
+ 195               	.LM44:
+ 196               	/* prologue: frame size=0 */
+ 197 00be 0F93      		push r16
+ 198 00c0 1F93      		push r17
+ 199 00c2 CF93      		push r28
+ 200 00c4 DF93      		push r29
+ 201               	/* prologue end (size=4) */
+ 202               	.LM45:
+ 203 00c6 00E0      		ldi r16,lo8(0)
+ 204               	.L15:
+ 205               	.LM46:
+ 206 00c8 802F      		mov r24,r16
+ 207 00ca 8F70      		andi r24,lo8(15)
+ 208 00cc 8062      		ori r24,lo8(32)
+ 209 00ce 0E94 0000 		call lh155_writecmd
+ 210               	.LM47:
+ 211 00d2 802F      		mov r24,r16
+ 212 00d4 8295      		swap r24
+ 213 00d6 8F70      		andi r24,0x0f
+ 214 00d8 8063      		ori r24,lo8(48)
+ 215 00da 0E94 0000 		call lh155_writecmd
+ 216               	.LM48:
+ 217 00de 80E0      		ldi r24,lo8(0)
+ 218 00e0 0E94 0000 		call lh155_writecmd
+ 219 00e4 C0E0      		ldi r28,lo8(0)
+ 220 00e6 D0E0      		ldi r29,hi8(0)
+ 221 00e8 1FE0      		ldi r17,lo8(15)
+ 222               	.L14:
+ 223               	.LM49:
+ 224 00ea E02F      		mov r30,r16
+ 225 00ec FF27      		clr r31
+ 226 00ee 84E0      		ldi r24,4
+ 227 00f0 EE0F      	1:	lsl r30
+ 228 00f2 FF1F      		rol r31
+ 229 00f4 8A95      		dec r24
+ 230 00f6 E1F7      		brne 1b
+ 231 00f8 EC0F      		add r30,r28
+ 232 00fa FD1F      		adc r31,r29
+ 233 00fc E050      		subi r30,lo8(-(scrbuf))
+ 234 00fe F040      		sbci r31,hi8(-(scrbuf))
+ 235               	.LM50:
+ 236 0100 8081      		ld r24,Z
+ 237 0102 0E94 0000 		call lh155_writedata
+ 238               	.LM51:
+ 239 0106 1150      		subi r17,lo8(-(-1))
+ 240 0108 2196      		adiw r28,1
+ 241 010a 17FF      		sbrs r17,7
+ 242 010c EECF      		rjmp .L14
+ 243               	.LM52:
+ 244 010e 0F5F      		subi r16,lo8(-(1))
+ 245 0110 0034      		cpi r16,lo8(64)
+ 246 0112 D0F2      		brlo .L15
+ 247               	/* epilogue: frame size=0 */
+ 248 0114 DF91      		pop r29
+ 249 0116 CF91      		pop r28
+ 250 0118 1F91      		pop r17
+ 251 011a 0F91      		pop r16
+ 252 011c 0895      		ret
+ 253               	/* epilogue end (size=5) */
+ 254               	/* function gd_hw_update size 48 (39) */
+ 255               	.LFE11:
+ 257               	.global	gd_hw_set_pixel
+ 259               	gd_hw_set_pixel:
+ 260               	.LFB13:
+ 261               	.LM53:
+ 262               	/* prologue: frame size=0 */
+ 263               	/* prologue end (size=0) */
+ 264 011e 982F      		mov r25,r24
+ 265               	.LM54:
+ 266 0120 87FD      		sbrc r24,7
+ 267 0122 3CC0      		rjmp .L20
+ 268               	.LM55:
+ 269 0124 6034      		cpi r22,lo8(64)
+ 270 0126 D0F5      		brsh .L20
+ 271               	.LM56:
+ 272 0128 8695      		lsr r24
+ 273 012a 8695      		lsr r24
+ 274 012c 8695      		lsr r24
+ 275               	.LM57:
+ 276 012e A62F      		mov r26,r22
+ 277 0130 BB27      		clr r27
+ 278 0132 682F      		mov r22,r24
+ 279 0134 7727      		clr r23
+ 280 0136 FD01      		movw r30,r26
+ 281 0138 24E0      		ldi r18,4
+ 282 013a EE0F      	1:	lsl r30
+ 283 013c FF1F      		rol r31
+ 284 013e 2A95      		dec r18
+ 285 0140 E1F7      		brne 1b
+ 286 0142 E60F      		add r30,r22
+ 287 0144 F71F      		adc r31,r23
+ 288 0146 E050      		subi r30,lo8(-(scrbuf))
+ 289 0148 F040      		sbci r31,hi8(-(scrbuf))
+ 290 014a E081      		ld r30,Z
+ 291               	.LM58:
+ 292 014c 9770      		andi r25,lo8(7)
+ 293 014e 27E0      		ldi r18,lo8(7)
+ 294 0150 30E0      		ldi r19,hi8(7)
+ 295 0152 291B      		sub r18,r25
+ 296 0154 3109      		sbc r19,__zero_reg__
+ 297 0156 81E0      		ldi r24,lo8(1)
+ 298 0158 90E0      		ldi r25,hi8(1)
+ 299 015a 02C0      		rjmp 2f
+ 300 015c 880F      	1:	lsl r24
+ 301 015e 991F      		rol r25
+ 302 0160 2A95      	2:	dec r18
+ 303 0162 E2F7      		brpl 1b
+ 304               	.LM59:
+ 305 0164 5527      		clr r21
+ 306 0166 47FD      		sbrc r20,7
+ 307 0168 5095      		com r21
+ 308 016a 4115      		cp r20,__zero_reg__
+ 309 016c 5105      		cpc r21,__zero_reg__
+ 310 016e 21F0      		breq .L24
+ 311 0170 4130      		cpi r20,1
+ 312 0172 5105      		cpc r21,__zero_reg__
+ 313 0174 21F0      		breq .L25
+ 314 0176 05C0      		rjmp .L26
+ 315               	.L24:
+ 316               	.LM60:
+ 317 0178 8095      		com r24
+ 318 017a 8E23      		and r24,r30
+ 319               	.LM61:
+ 320 017c 03C0      		rjmp .L23
+ 321               	.L25:
+ 322               	.LM62:
+ 323 017e 8E2B      		or r24,r30
+ 324               	.LM63:
+ 325 0180 01C0      		rjmp .L23
+ 326               	.L26:
+ 327               	.LM64:
+ 328 0182 8E27      		eor r24,r30
+ 329               	.L23:
+ 330               	.LM65:
+ 331 0184 E817      		cp r30,r24
+ 332 0186 51F0      		breq .L20
+ 333               	.LM66:
+ 334 0188 94E0      		ldi r25,4
+ 335 018a AA0F      	1:	lsl r26
+ 336 018c BB1F      		rol r27
+ 337 018e 9A95      		dec r25
+ 338 0190 E1F7      		brne 1b
+ 339 0192 A60F      		add r26,r22
+ 340 0194 B71F      		adc r27,r23
+ 341 0196 A050      		subi r26,lo8(-(scrbuf))
+ 342 0198 B040      		sbci r27,hi8(-(scrbuf))
+ 343 019a 8C93      		st X,r24
+ 344               	.L20:
+ 345 019c 0895      		ret
+ 346               	/* epilogue: frame size=0 */
+ 347               	/* epilogue: noreturn */
+ 348               	/* epilogue end (size=0) */
+ 349               	/* function gd_hw_set_pixel size 65 (65) */
+ 350               	.LFE13:
+ 352               	.global	gd_hw_clear_scr
+ 354               	gd_hw_clear_scr:
+ 355               	.LFB12:
+ 356               	.LM67:
+ 357               	/* prologue: frame size=0 */
+ 358 019e 1F93      		push r17
+ 359 01a0 CF93      		push r28
+ 360               	/* prologue end (size=2) */
+ 361               	.LM68:
+ 362 01a2 10E0      		ldi r17,lo8(0)
+ 363               	.L36:
+ 364               	.LM69:
+ 365 01a4 C0E0      		ldi r28,lo8(0)
+ 366               	.L35:
+ 367               	.LM70:
+ 368 01a6 40E0      		ldi r20,lo8(0)
+ 369 01a8 6C2F      		mov r22,r28
+ 370 01aa 812F      		mov r24,r17
+ 371 01ac 0E94 0000 		call gd_hw_set_pixel
+ 372               	.LM71:
+ 373 01b0 CF5F      		subi r28,lo8(-(1))
+ 374 01b2 C034      		cpi r28,lo8(64)
+ 375 01b4 C0F3      		brlo .L35
+ 376               	.LM72:
+ 377 01b6 1F5F      		subi r17,lo8(-(1))
+ 378 01b8 17FF      		sbrs r17,7
+ 379 01ba F4CF      		rjmp .L36
+ 380               	/* epilogue: frame size=0 */
+ 381 01bc CF91      		pop r28
+ 382 01be 1F91      		pop r17
+ 383 01c0 0895      		ret
+ 384               	/* epilogue end (size=3) */
+ 385               	/* function gd_hw_clear_scr size 18 (13) */
+ 386               	.LFE12:
+ 388               	.global	gd_hw_get_pixel
+ 390               	gd_hw_get_pixel:
+ 391               	.LFB14:
+ 392               	.LM73:
+ 393               	/* prologue: frame size=0 */
+ 394               	/* prologue end (size=0) */
+ 395 01c2 282F      		mov r18,r24
+ 396               	.LM74:
+ 397 01c4 E62F      		mov r30,r22
+ 398 01c6 FF27      		clr r31
+ 399 01c8 822F      		mov r24,r18
+ 400 01ca 8695      		lsr r24
+ 401 01cc 8695      		lsr r24
+ 402 01ce 8695      		lsr r24
+ 403 01d0 34E0      		ldi r19,4
+ 404 01d2 EE0F      	1:	lsl r30
+ 405 01d4 FF1F      		rol r31
+ 406 01d6 3A95      		dec r19
+ 407 01d8 E1F7      		brne 1b
+ 408 01da E80F      		add r30,r24
+ 409 01dc F11D      		adc r31,__zero_reg__
+ 410 01de E050      		subi r30,lo8(-(scrbuf))
+ 411 01e0 F040      		sbci r31,hi8(-(scrbuf))
+ 412 01e2 2770      		andi r18,lo8(7)
+ 413 01e4 87E0      		ldi r24,lo8(7)
+ 414 01e6 90E0      		ldi r25,hi8(7)
+ 415 01e8 821B      		sub r24,r18
+ 416 01ea 9109      		sbc r25,__zero_reg__
+ 417 01ec 21E0      		ldi r18,lo8(1)
+ 418 01ee 30E0      		ldi r19,hi8(1)
+ 419 01f0 02C0      		rjmp 2f
+ 420 01f2 220F      	1:	lsl r18
+ 421 01f4 331F      		rol r19
+ 422 01f6 8A95      	2:	dec r24
+ 423 01f8 E2F7      		brpl 1b
+ 424 01fa 8081      		ld r24,Z
+ 425 01fc 822B      		or r24,r18
+ 426               	.LM75:
+ 427 01fe 9927      		clr r25
+ 428               	/* epilogue: frame size=0 */
+ 429 0200 0895      		ret
+ 430               	/* epilogue end (size=1) */
+ 431               	/* function gd_hw_get_pixel size 33 (32) */
+ 432               	.LFE14:
+ 434               	.global	gd_hw_backlight
+ 436               	gd_hw_backlight:
+ 437               	.LFB15:
+ 438               	.LM76:
+ 439               	/* prologue: frame size=0 */
+ 440               	/* prologue end (size=0) */
+ 441               	.LM77:
+ 442 0202 8823      		tst r24
+ 443 0204 11F0      		breq .L43
+ 444               	.LM78:
+ 445 0206 959A      		sbi 50-0x20,5
+ 446 0208 0895      		ret
+ 447               	.L43:
+ 448               	.LM79:
+ 449 020a 9598      		cbi 50-0x20,5
+ 450 020c 0895      		ret
+ 451               	/* epilogue: frame size=0 */
+ 452               	/* epilogue: noreturn */
+ 453               	/* epilogue end (size=0) */
+ 454               	/* function gd_hw_backlight size 6 (6) */
+ 455               	.LFE15:
+ 457               		.lcomm scrbuf,1024
+ 458               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 lh115ba.c
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:20     .text:00000000 lh155_transfer
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:53     .text:00000018 lh155_writecmd
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:70     .text:00000022 lh155_writedata
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:87     .text:0000002c lh155_init
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:154    .text:0000009a gd_hw_init
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:193    .text:000000be gd_hw_update
+                             .bss:00000000 scrbuf
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:259    .text:0000011e gd_hw_set_pixel
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:354    .text:0000019e gd_hw_clear_scr
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:390    .text:000001c2 gd_hw_get_pixel
+C:\DOKUME~1\peter\LOKALE~1\Temp/ccGwaaaa.s:436    .text:00000202 gd_hw_backlight
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
