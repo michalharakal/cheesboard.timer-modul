@@ -11,15 +11,28 @@
 // 07.03.2011, Rolladen hoch 7:00
 
 #include <stdio.h>
-#include <avr/io.h>
-#include <avr/pgmspace.h>
 
-#include "rolade.h"
-#include "../common/dcf.h"
+#include "rolade.hpp"
 
-#define ROLLADEN_PORT      PORTB
 
 #define DEBUG 1
+
+
+void GetWindwoUpTimeFromWeekOfDay(time_format *pEvent)
+{
+    pEvent->hours = 7; // im Sommer 6:30, 
+    pEvent->minutes = 00; // im Winter 7:20 // ab 12.12.2010: 7:45 // ab 07.03.2011: 7:00
+    switch (dcf.wkday) {
+    	case 6:  // SA
+			pEvent->hours = 7;
+			pEvent->minutes = 30;   // war 45; ab 17.07.10: 30; ab 12.12.2010: 45
+			break;
+    	case 7:  //SO
+			pEvent->hours = 8;
+			pEvent->minutes = 00;
+			break;            
+	}
+}
 
 
 void Rolade::Up(void)
@@ -28,7 +41,7 @@ void Rolade::Up(void)
   printf("%.2d:%.2d:%.2d - ", time.hours, time.minutes, time.seconds);
   printf("Up pin%d\r\n", _pin);
 #endif   
-  ROLLADEN_PORT &= ~(1 << _pin);
+  //ROLLADEN_PORT &= ~(1 << _pin);
 }
 
 void Rolade::Down(void)
@@ -37,7 +50,7 @@ void Rolade::Down(void)
   printf("%.2d:%.2d:%.2d - ", time.hours, time.minutes, time.seconds);
   printf("Down pin%d\r\n", _pin);
 #endif     
-  ROLLADEN_PORT |= (1 << _pin);
+  //ROLLADEN_PORT |= (1 << _pin);
 }
 
 
@@ -84,22 +97,6 @@ void Rolade::SetAutomaticInterval(uint8_t h_start, uint8_t m_start, uint8_t h_en
   _automatic_start.minutes = m_start;
   _automatic_end.hours = h_end;
   _automatic_end.minutes = m_end;
-}
-
-void GetWindwoUpTimeFromWeekOfDay(time_format *pEvent)
-{
-    pEvent->hours = 7; // im Sommer 6:30, 
-    pEvent->minutes = 00; // im Winter 7:20 // ab 12.12.2010: 7:45 // ab 07.03.2011: 7:00
-    switch (dcf.wkday) {
-    	case 6:  // SA
-    	  pEvent->hours = 7;
-          pEvent->minutes = 30;   // war 45; ab 17.07.10: 30; ab 12.12.2010: 45
-    	  break;
-    	case 7:  //SO
-    	  pEvent->hours = 8;
-          pEvent->minutes = 00;
-    	  break;            
-	}
 }
 
 void Rolade::Init(void)

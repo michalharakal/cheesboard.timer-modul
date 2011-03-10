@@ -1,0 +1,164 @@
+Tserialization
+v7
+r0
+t321402293.478007
+cCheck dependencies
+cCompileC build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/main.o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/rolade.o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/serialization normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/inttypes.h
+c000000004BBD2CE900000000000027D1
+t1270689001
+s10193
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004BBD2CE90000000000004174
+t1270689001
+s16756
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/serialization
+t2
+s0
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/dcf.o
+t2
+s0
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/main.o
+t1299709493
+s4644
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/rolade.o
+t1299709493
+s15980
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/serialization.LinkFileList
+c000000004D77FE35000000000000016A
+t1299709493
+s362
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c
+c000000004A414E6C0000000000001CC7
+t1245793900
+s7367
+i<inttypes.h>
+i<avr/io.h>
+i<stdio.h>
+i<avr/interrupt.h>
+i"dcf.h"
+i"dcfconf.h"
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.h
+c000000004A54BDCC0000000000000AEA
+t1247067596
+s2794
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp
+c000000004D77FD2B0000000000000055
+t1299709227
+s85
+i"rolade.hpp"
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp
+c000000004D77FE2C000000000000166C
+t1299709484
+s5740
+i<stdio.h>
+i"rolade.hpp"
+
+N/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.hpp
+c000000004D77F79500000000000004FF
+t1299707797
+s1279
+i<inttypes.h>
+i"dcf.h"
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies321402293#321402293#0(0"0(0#1#0"8607835968#0"0#
+
+CCompileC build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/dcf.o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c normal x86_64 c com.apple.compilers.gcc.4_2
+s321400599.054696
+e321400599.242339
+r0
+xCompileC
+xbuild/serialization.build/Debug/serialization.build/Objects-normal/x86_64/dcf.o
+x/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:26:20: error: avr/io.h: No such file or directory
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:28:27: error: avr/interrupt.h: No such file or directory
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:30:21: error: dcfconf.h: No such file or directory
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c: In function 'init_dcf':
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: 'MCUCR' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: (Each undeclared identifier is reported only once
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: for each function it appears in.)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: 'ISC11' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:68: error: 'GICR' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:68: error: 'INT1' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c: At top level:
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:77: warning: return type defaults to 'int'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c: In function 'SIGNAL':
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:77: warning: type of 'SIG_INTERRUPT1' defaults to 'int'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:80: error: 'MCUCR' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:80: error: 'ISC11' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:83: error: expected expression before 'uint16_t'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:100: error: 'TCNT0' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:104: error: expected expression before 'uint16_t'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:105: error: 'ISC10' undeclared (first use in this function)
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:113: error: expected expression before 'uint8_t'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:113: error: expected expression before 'uint8_t'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:125: error: expected expression before 'uint8_t'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:125: error: expected expression before 'uint8_t'
+o/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:175: warning: control reaches end of non-void function
+lSLF07#2@112"Compile /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c321400599#321400599#0(3873"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:26:20: error: avr/io.h: No such file or directory/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:28:27: error: avr/interrupt.h: No such file or directory/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:30:21: error: dcfconf.h: No such file or directory/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c: In function 'init_dcf':/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: 'MCUCR' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: (Each undeclared identifier is reported only once/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: for each function it appears in.)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:67: error: 'ISC11' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:68: error: 'GICR' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:68: error: 'INT1' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c: At top level:/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:77: warning: return type defaults to 'int'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c: In function 'SIGNAL':/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:77: warning: type of 'SIG_INTERRUPT1' defaults to 'int'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:80: error: 'MCUCR' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:80: error: 'ISC11' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:83: error: expected expression before 'uint16_t'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:100: error: 'TCNT0' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:104: error: expected expression before 'uint16_t'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:105: error: 'ISC10' undeclared (first use in this function)/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:113: error: expected expression before 'uint8_t'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:113: error: expected expression before 'uint8_t'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:125: error: expected expression before 'uint8_t'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:125: error: expected expression before 'uint8_t'/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c:175: warning: control reaches end of non-void function21(4@35"Avr/io.h: No such file or directory321400599#0#155#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#26#0#26#0#28"*: No such file or directory0(4@42"Avr/interrupt.h: No such file or directory321400599#155#162#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#28#0#28#0#28"*: No such file or directory0(4@36"Dcfconf.h: No such file or directory321400599#317#156#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#30#0#30#0#28"*: No such file or directory0(4@47"'MCUCR' undeclared (first use in this function)321400599#603#164#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#67#0#67#0#43"'*' undeclared (first use in this function)0(4@47"'ISC11' undeclared (first use in this function)321400599#1083#164#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#67#0#67#0#43"'*' undeclared (first use in this function)0(4@46"'GICR' undeclared (first use in this function)321400599#1247#163#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#68#0#68#0#43"'*' undeclared (first use in this function)0(4@46"'INT1' undeclared (first use in this function)321400599#1410#163#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#68#0#68#0#43"'*' undeclared (first use in this function)0(23@13"At top level:321400599#1573#120#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#0#0#0#0#0"0(22@29"Return type defaults to 'int'321400599#1693#148#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#77#0#77#0#0"0(22@42"Type of 'SIG_INTERRUPT1' defaults to 'int'321400599#1969#161#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#77#0#77#0#0"0(4@47"'MCUCR' undeclared (first use in this function)321400599#2130#164#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#80#0#80#0#43"'*' undeclared (first use in this function)0(4@47"'ISC11' undeclared (first use in this function)321400599#2294#164#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#80#0#80#0#43"'*' undeclared (first use in this function)0(4@37"Expected expression before 'uint16_t'321400599#2458#154#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#83#0#83#0#19"expected * before *0(4@47"'TCNT0' undeclared (first use in this function)321400599#2612#165#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#100#0#100#0#43"'*' undeclared (first use in this function)0(4@37"Expected expression before 'uint16_t'321400599#2777#155#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#104#0#104#0#19"expected * before *0(4@47"'ISC10' undeclared (first use in this function)321400599#2932#165#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#105#0#105#0#43"'*' undeclared (first use in this function)0(4@36"Expected expression before 'uint8_t'321400599#3097#154#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#113#0#113#0#19"expected * before *0(4@36"Expected expression before 'uint8_t'321400599#3251#154#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#113#0#113#0#19"expected * before *0(4@36"Expected expression before 'uint8_t'321400599#3405#154#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#125#0#125#0#19"expected * before *0(4@36"Expected expression before 'uint8_t'321400599#3559#154#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#125#0#125#0#19"expected * before *0(22@40"Control reaches end of non-void function321400599#3713#160#0(6@104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c267486700#175#0#175#0#40"control reaches end of non-void function0(0#0#104"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c8606286624#2036"    cd /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-generated-files.hmap -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-own-target-headers.hmap -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-all-target-headers.hmap -iquote /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-project-headers.hmap -F/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/include -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/DerivedSources/x86_64 -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/DerivedSources -c /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/dcf.c -o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/dcf.o1#
+
+CCompileC build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/main.o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s321402293.388256
+e321402293.446583
+r1
+xCompileC
+xbuild/serialization.build/Debug/serialization.build/Objects-normal/x86_64/main.o
+x/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@115"Compile /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp321402293#321402293#0(0"0(0#0#107"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp8604013984#2059"    cd /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-generated-files.hmap -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-own-target-headers.hmap -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-all-target-headers.hmap -iquote /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-project-headers.hmap -F/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/include -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/DerivedSources/x86_64 -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/DerivedSources -c /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/main.cpp -o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/rolade.o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s321402293.390416
+e321402293.459349
+r1
+xCompileC
+xbuild/serialization.build/Debug/serialization.build/Objects-normal/x86_64/rolade.o
+x/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp321402293#321402293#0(0"0(0#0#109"/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp8610139264#2063"    cd /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-generated-files.hmap -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-own-target-headers.hmap -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-all-target-headers.hmap -iquote /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/serialization-project-headers.hmap -F/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/include -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/DerivedSources/x86_64 -I/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/DerivedSources -c /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/rolade.cpp -o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/rolade.o0#
+
+CLd /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/serialization normal x86_64
+s321402293.459437
+e321402293.477965
+r0
+xLd
+x/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/serialization
+xnormal
+xx86_64
+oUndefined symbols:
+o  "_dcf", referenced from:
+o      GetWindwoUpTimeFromWeekOfDay(time_format*)      in rolade.o
+old: symbol(s) not found
+ocollect2: ld returned 1 exit status
+lSLF07#2@129"Link /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/serialization321402293#321402293#0(172"Undefined symbols:  "_dcf", referenced from:      GetWindwoUpTimeFromWeekOfDay(time_format*)      in rolade.old: symbol(s) not foundcollect2: ld returned 1 exit status4(4@24""_dcf", referenced from:321402293#19#27#0(6@0"321402293#0#0#0#0#0"0(13@59"GetWindwoUpTimeFromWeekOfDay(time_format*)      in rolade.o321402293#46#66#0(6@0"321402293#0#0#0#0#0"0(13@19"Symbol(s) not found321402293#112#24#0(6@0"321402293#0#0#0#0#0"0(13@35"Collect2: ld returned 1 exit status321402293#136#36#0(6@0"321402293#0#0#0#0#0"0(0#0#0"8608121696#822"    cd /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug -F/Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug -filelist /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/serialization.build/Debug/serialization.build/Objects-normal/x86_64/serialization.LinkFileList -mmacosx-version-min=10.6 -o /Users/tucniak/Dropbox/cheesboard/projects/BILDuino/cms/cheesboard-timer-modul/tests/serialization/build/Debug/serialization1#
+

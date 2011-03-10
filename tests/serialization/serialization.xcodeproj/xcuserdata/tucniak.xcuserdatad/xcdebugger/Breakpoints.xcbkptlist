@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "main.cpp"
+         timestampString = "321484559.106537"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1"
+         endingLineNumber = "1">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "main.cpp"
+         timestampString = "321484559.106537"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1"
+         endingLineNumber = "1">
+         <Locations>
+            <Location
+               shouldBeEnabled = "Yes"
+               ignoreCount = "0"
+               continueAfterRunningActions = "No"
+               symbolName = "__tcf_0"
+               urlString = "file://localhost/main.cpp"
+               timestampString = "321488406.314794"
+               startingColumnNumber = "9223372036854775807"
+               endingColumnNumber = "9223372036854775807"
+               startingLineNumber = "4"
+               endingLineNumber = "4">
+            </Location>
+            <Location
+               shouldBeEnabled = "Yes"
+               ignoreCount = "0"
+               continueAfterRunningActions = "No"
+               symbolName = "__static_initialization_and_destruction_0"
+               urlString = "file://localhost/main.cpp"
+               timestampString = "321488406.315094"
+               startingColumnNumber = "9223372036854775807"
+               endingColumnNumber = "9223372036854775807"
+               startingLineNumber = "4"
+               endingLineNumber = "4">
+            </Location>
+         </Locations>
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "rolade_properties.hpp"
+         timestampString = "321487665.585716"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "class RoladeProperties"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "rolade_properties.c"
+         timestampString = "321486986.167482"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "getRawDataSize()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "rolade_properties.cpp"
+         timestampString = "321487660.003026"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "RoladeProperties::Serialize(void *dest, size_t *size)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "main.cpp"
+         timestampString = "321487673.65168"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "12"
+         endingLineNumber = "12"
+         landmarkName = "main (void)"
+         landmarkType = "7">
+      </FileBreakpoint>
+   </FileBreakpoints>
+</Bucket>
