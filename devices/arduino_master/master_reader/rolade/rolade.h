@@ -10,7 +10,7 @@
 
 
 extern "C" {
-#include "rolade_properties.h"
+#include "rolade_struc.h"
 };
 
 

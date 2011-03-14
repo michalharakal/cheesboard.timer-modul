@@ -29,3 +29,9 @@ void RoladeProperties::Serialize(void *dest, size_t *size)
 	*size = sizeof(RoladePropertiesData);
 	memcpy(dest, this, sizeof((RoladePropertiesData*)this)); 
 }
+
+void RoladeProperties::Deserialize(void *src) {
+	memcpy(this, src, sizeof((RoladePropertiesData*)this)); 
+
+}
+

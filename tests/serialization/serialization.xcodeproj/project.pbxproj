@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D36D3C513282F080057BE88 /* rolade_properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D36D3C313282F080057BE88 /* rolade_properties.cpp */; };
+		1D90F262132EC7FE006AD050 /* rolade_properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D90F25D132EC7FE006AD050 /* rolade_properties.cpp */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* serialization.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* serialization.1 */; };
 /* End PBXBuildFile section */
@@ -27,9 +27,9 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1D36D3C313282F080057BE88 /* rolade_properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rolade_properties.cpp; sourceTree = "<group>"; };
-		1D36D3C413282F080057BE88 /* rolade_properties.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rolade_properties.hpp; sourceTree = "<group>"; };
-		1D5FAA7813297AA90020CC02 /* rolade_properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rolade_properties.h; sourceTree = "<group>"; };
+		1D90F25D132EC7FE006AD050 /* rolade_properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rolade_properties.cpp; path = ../../common/rolade_properties.cpp; sourceTree = "<group>"; };
+		1D90F25E132EC7FE006AD050 /* rolade_properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rolade_properties.h; path = ../../common/rolade_properties.h; sourceTree = "<group>"; };
+		1D90F25F132EC7FE006AD050 /* rolade_properties.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rolade_properties.hpp; path = ../../common/rolade_properties.hpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* serialization */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = serialization; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* serialization.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = serialization.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +48,9 @@
 		08FB7794FE84155DC02AAC07 /* serialization */ = {
 			isa = PBXGroup;
 			children = (
+				1D90F25D132EC7FE006AD050 /* rolade_properties.cpp */,
+				1D90F25E132EC7FE006AD050 /* rolade_properties.h */,
+				1D90F25F132EC7FE006AD050 /* rolade_properties.hpp */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
@@ -59,9 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
-				1D36D3C313282F080057BE88 /* rolade_properties.cpp */,
-				1D36D3C413282F080057BE88 /* rolade_properties.hpp */,
-				1D5FAA7813297AA90020CC02 /* rolade_properties.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
-				1D36D3C513282F080057BE88 /* rolade_properties.cpp in Sources */,
+				1D90F262132EC7FE006AD050 /* rolade_properties.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
