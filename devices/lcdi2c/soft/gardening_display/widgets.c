@@ -14,7 +14,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <inttypes.h>
+
+extern "C" {
 #include "graphics.h"
+}
 
 //! bar widget on the position of left [x,y]
 void Bar(int8_t x, int8_t y, uint8_t sizex, uint8_t sizey)
