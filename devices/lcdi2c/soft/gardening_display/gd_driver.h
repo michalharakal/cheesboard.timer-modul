@@ -23,6 +23,7 @@
 #if defined( __cplusplus )
 extern "C" {
 #endif
+    
 
 /* struct containing all infos and other things concerning a display */
 typedef struct {
