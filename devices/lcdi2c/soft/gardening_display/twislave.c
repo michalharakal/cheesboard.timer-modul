@@ -9,6 +9,9 @@ Aus Sicht des Masters läuft der Zugrif auf den Buffer genau wie bei einem I2C-E
 Für den Slave ist es eine globale Variable
 */
 volatile uint8_t buffer_adr; //"Adressregister" für den Buffer
+volatile uint8_t i2cdata[i2c_buffer_size+1];
+volatile uint8_t new_data_here;
+
 
 /*Initaliserung des TWI-Inteface. Muss zu Beginn aufgerufen werden, sowie bei einem Wechsel der Slave Adresse
 Parameter adr: gewünschte Slave-Adresse

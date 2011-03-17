@@ -56,8 +56,8 @@
  *  bei einem I2C-EEPROm ab.
  * Fuer den Slave ist es eine globale Variable
 */
-volatile uint8_t i2cdata[i2c_buffer_size+1];
-volatile uint8_t new_data_here;
+volatile extern uint8_t i2cdata[i2c_buffer_size+1];
+volatile extern uint8_t new_data_here;
 
 
 /**@brief Initaliserung des TWI-Inteface. Muss zu Beginn aufgerufen werden, sowie bei einem Wechsel der Slave Adresse

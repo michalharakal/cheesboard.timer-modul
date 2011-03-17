@@ -17,6 +17,9 @@
 
 #include <inttypes.h>
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
 
 struct EventStruct {
 	uint8_t m_hour;
@@ -29,3 +32,6 @@ void fini_event( EventStruct* data );
 
 #endif
 
+#if defined( __cplusplus )
+}
+#endif

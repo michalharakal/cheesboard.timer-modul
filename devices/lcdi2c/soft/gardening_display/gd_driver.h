@@ -20,6 +20,10 @@
 
 #include <inttypes.h>
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 /* struct containing all infos and other things concerning a display */
 typedef struct {
   uint8_t width;            /* width of display in pixels */
@@ -51,5 +55,9 @@ void gd_hw_backlight(uint8_t on);
 
 //! inits display
 void gd_init(void);
+    
+#if defined( __cplusplus )
+}
+#endif
 
 #endif

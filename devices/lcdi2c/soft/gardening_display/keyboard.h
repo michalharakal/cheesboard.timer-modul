@@ -16,6 +16,10 @@
 
 #include <inttypes.h>
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 #define KEY_PORT        FUNC_KEYS_PORT
 #define KEY_PIN         FUNC_KEYS_PIN
 #define KEY0            0
@@ -34,6 +38,9 @@ void InitFunctionKeys(void);
 uint8_t get_key_press( uint8_t key_mask );
 void keyboard_clear(void); 
 
+#if defined( __cplusplus )
+}
+#endif
 
 
 #endif

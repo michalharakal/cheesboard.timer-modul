@@ -14,6 +14,10 @@
 #include <inttypes.h>
 #include "event_struct.h"
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 // init data sructure with basci data
 void init_event( EventStruct* data )
 {
@@ -28,3 +32,6 @@ void fini_event( EventStruct* data )
 }
 
 
+#if defined( __cplusplus )
+}
+#endif

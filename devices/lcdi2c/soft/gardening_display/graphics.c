@@ -18,6 +18,11 @@
 
 #include <inttypes.h>
 
+
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 #include "gd_driver.h"
 #include "bresenham.h"
 
@@ -171,3 +176,7 @@ void gInit(void)
   gd_init();
 }
 
+    
+#if defined( __cplusplus )
+}
+#endif

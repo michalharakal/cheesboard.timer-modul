@@ -16,6 +16,10 @@
 #ifndef GD_GRAPHICS_H
 #define GD_GRAPHICS_H
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 #include "gd_driver.h"
 
 extern disp_t dd;
@@ -34,6 +38,10 @@ void ShowChr(uint8_t x, uint8_t y, int8_t ch, int8_t color);
 
 //! show text
 void ShowStr(uint8_t x, uint8_t y, char *str, int8_t color);
+    
+#if defined( __cplusplus )
+}
+#endif
 
 
 #endif

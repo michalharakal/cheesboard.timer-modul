@@ -15,6 +15,10 @@
 
 #include <inttypes.h>
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 int8_t dx, dy, s1, s2, swapdir, err, i;
 
 void bresenham_init (uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2) 
@@ -154,3 +158,6 @@ for(x=1;x<r/sqrt(2);x++)
 }
 
 */
+#if defined( __cplusplus )
+}
+#endif

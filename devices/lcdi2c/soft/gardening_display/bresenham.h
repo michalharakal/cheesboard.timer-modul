@@ -15,8 +15,16 @@
 
 #include <inttypes.h>
 
+#if defined( __cplusplus )
+extern "C" {
+#endif
+
 //! line start
 void bresenham_init (uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
 
 //! increment [MoveX] and [MoveY] for the next point
 int8_t bresenham_next (int8_t *MoveX, int8_t *MoveY);
+
+#if defined( __cplusplus )
+}
+#endif
