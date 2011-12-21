@@ -89,11 +89,11 @@ void Rolade::SetAutomaticInterval(uint8_t h_start, uint8_t m_start, uint8_t h_en
 void GetWindwoUpTimeFromWeekOfDay(time_format *pEvent)
 {
     pEvent->hours = 7; // im Sommer 6:30, 
-    pEvent->minutes = 00; // im Winter 7:20 // ab 12.12.2010: 7:45 // ab 07.03.2011: 7:00
+    pEvent->minutes = 30; // im Winter 7:20 // ab 12.12.2010: 7:45 // ab 07.03.2011: 7:00 // ab 10.11.11 7:30
     switch (dcf.wkday) {
     	case 6:  // SA
     	  pEvent->hours = 7;
-          pEvent->minutes = 30;   // war 45; ab 17.07.10: 30; ab 12.12.2010: 45
+          pEvent->minutes = 30;   // war 45 // ab 17.07.10: 30 // ab 12.12.2010: 45
     	  break;
     	case 7:  //SO
     	  pEvent->hours = 8;
