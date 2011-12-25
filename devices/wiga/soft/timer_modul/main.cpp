@@ -49,7 +49,7 @@
 
 #define DEBUG 1
 
-time_format sunset_time, window_time;
+time_format sunset_time, window_time, dawn_time;
 volatile uint32_t roller_shutters_delay = 0;
 volatile uint16_t power_on_led; 
 volatile uint16_t bewaessern_count;
@@ -67,6 +67,7 @@ typedef enum
 {
   stTimeReceive,
   stNormal,
+  stCheckDawn,
   stCheckSunset,
   stDarkness,
 } Status;
@@ -105,7 +106,7 @@ static uint8_t roladen_demaerung=0;
 #define POWER_ON_LED_CYCLES   15 // 15 * 10ms = 150ms, blink takt
 #define BEWAESSERN_CYCLES     12000 // 12000 x 10ms = 120s, ist minimum, sonst schwingt der Ausgang
 
-#define INPUTS_COUNT          5
+#define INPUTS_COUNT          6
 #define AN_INPUTS             5
 
 #define DEMMAERUNG            0
@@ -113,6 +114,8 @@ static uint8_t roladen_demaerung=0;
 #define SONNE2                2
 #define TEMP                  3
 #define REGEN                 4
+#define MORGENSCHEIN          5
+
 
 #define OST                   0
 #define SUED                  1
@@ -406,6 +409,63 @@ void GetBewaessernZeitFromDate(void)
   }  
 }
 
+// Zeit für Tagesschein
+void GetDawnSensorStartFromDate(void)
+{
+    switch (dcf.month) {
+    case  1:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case  2:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case  3:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case  4:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 5:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 6:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 7:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 8:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 9:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 10:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 11:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;
+    case 12:
+    SensorCheckStart.hours = 7;
+    SensorCheckStart.minutes = 30;
+    break;      
+    default:
+      SensorCheckStart.hours = 16;    
+  }  
+}
+
 void GetSensorStartFromDate(void)
 {
     switch (dcf.month) {
@@ -448,6 +508,12 @@ void GetSensorStartFromDate(void)
     default:
       SensorCheckStart.hours = 16;    
   }  
+}
+
+uint8_t ZeitInMorgenInterval(void)
+{	
+  GetDawnSensorStartFromDate();
+  return TimeEventInInterval(&SensorCheckStart, &SensorCheckEnd);
 }
 
 uint8_t ZeitInAbendInterval(void)
@@ -541,6 +607,12 @@ void NewStatus(Status new_status)
   case stTimeReceive:
     LichtAus ();    
 	break;    
+  case stCheckDawn:
+    LichtAus ();    
+    // received valid time so update check time
+	GetDawnSensorStartFromDate(); 
+    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+    break;
   case stCheckSunset:
     // received valid time so update check time
 	GetSensorStartFromDate(); 
@@ -682,6 +754,10 @@ void Takt_10_MiliSec (void)
   Update_LEDs ();    
   switch (status) {
   case stNormal:    
+    // Morgendämerung
+    if (ZeitInMorgenInterval()) 
+      NewStatus (stCheckDawn);    
+    // Dämmerung abend  
     if (ZeitInAbendInterval()) 
       NewStatus (stCheckSunset);    
     break;	    
@@ -690,6 +766,12 @@ void Takt_10_MiliSec (void)
       NewStatus (stNormal);	  
 	}  
     break;	    
+ case stCheckDawn:
+    // Sonne weg 
+    if (aInput[MORGENSCHEIN].HighDa()) {
+      NewStatus (stNormal	);      
+    }  
+  
   case stCheckSunset:
     // Sonne weg 
     if (aInput[DEMMAERUNG].LowDa()) {
@@ -792,7 +874,8 @@ void InitVariables (void)
   aInput[REGEN].SetChannel(3, 1);     
   aInput[REGEN].SetTreshold(500, 0, 0);
   
-
+  aInput[MORGENSCHEIN].SetChannel(2, 0);     // das gleich Eingang wie bei Dämerung
+  aInput[MORGENSCHEIN].SetTreshold(500, 60000, 60000);  // war 600 bis 17.07.10 / war 400 bis 28.09.10
 
   // LEDs
   dOutput[SONNE1].port = PORTC;
