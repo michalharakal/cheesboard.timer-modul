@@ -36,6 +36,7 @@
 
 #include "global.h"
 #include "main.h"
+#include "time_utils.h"
 #include "terminal.h"
 #include "keys.h"
 #include "rolade.h"
@@ -537,7 +538,7 @@ uint8_t WindowZeitInAbendInterval(void)
   before_midnight.hours = 23;
   before_midnight.minutes = 59;
   // different winow up time depending of day of week
-  GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+//  GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
   // evening
   return (TimeEventInInterval(&sunset_time, &before_midnight) || TimeEventInInterval(&after_midnight, &WindowUpTime));    
 }  
@@ -592,7 +593,7 @@ void NewStatus(Status new_status)
 	// received valid time so update check time
 	GetBewaessernZeitFromDate();
 	GetSensorStartFromDate(); 
-    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+//    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
 	current_day = dcf.wkday; 
 	// init roller shutter objects
 	if (first_time) {
@@ -611,12 +612,12 @@ void NewStatus(Status new_status)
     LichtAus ();    
     // received valid time so update check time
 	GetDawnSensorStartFromDate(); 
-    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+//    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
     break;
   case stCheckSunset:
     // received valid time so update check time
 	GetSensorStartFromDate(); 
-    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+  //  GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
     break;  
   case stDarkness:    
     // store sunset time
@@ -625,7 +626,7 @@ void NewStatus(Status new_status)
     sunset_time.seconds = time.seconds;    
     // received valid time so update check time
 	GetSensorStartFromDate(); 
-    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+//    GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
     LichtAn ();
 
 	roladen_demaerung=0;
@@ -672,7 +673,7 @@ void Takt_1_Sec(void)
 	 if (current_day != dcf.wkday) {
 	   current_day = dcf.wkday;
 	   GetSensorStartFromDate(); 
-       GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
+//       GetWindwoUpTimeFromWeekOfDay(&WindowUpTime);  
      } 
 }
 
@@ -767,7 +768,7 @@ void Takt_10_MiliSec (void)
 	}  
     break;	    
  case stCheckDawn:
-    // Sonne weg 
+    // Sonne ausgang 
     if (aInput[MORGENSCHEIN].HighDa()) {
       NewStatus (stNormal	);      
     }  

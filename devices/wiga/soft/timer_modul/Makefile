@@ -82,7 +82,7 @@ OBJDIR = .
 
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC =  keys.c terminal.c  ../common/dcf.c ../common/caux.c ../common/uart.c ../common/twimaster.c 
+SRC =  keys.c time_utils.c terminal.c  ../common/dcf.c ../common/caux.c ../common/uart.c ../common/twimaster.c 
 #clock.c  
 
 # List C++ source files here. (C dependencies are automatically generated.)

@@ -6,7 +6,9 @@
 #define Rolade_h
 
 #include <inttypes.h>
+
 #include "../common/dcf.h"
+
 
 // roller shutter states
 typedef enum
@@ -31,12 +33,14 @@ class Rolade
 	void UpdateStatus (uint8_t sun_here, uint8_t sun_gone, uint8_t sunset);
 	void SetAutomaticInterval(uint8_t h_start, uint8_t m_start, uint8_t h_end, uint8_t m_end);
 	void SetAutomatik(uint8_t automatic);
+	
 	void Init(void);	
 	
     
   private:
     uint8_t _pin;
 	uint8_t _automatic;
+	
 	time_format _automatic_start;
 	time_format _automatic_end;
     RollerStatus status;	
@@ -52,7 +56,5 @@ class Rolade
     uint8_t IsTimeAutomaticStart(void);
     uint8_t IsTimeAutomaticEnd(void);	
 };
-
-extern void GetWindwoUpTimeFromWeekOfDay(time_format *pEvent);
 
 #endif

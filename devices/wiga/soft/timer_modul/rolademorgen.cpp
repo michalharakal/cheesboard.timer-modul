@@ -1,7 +1,14 @@
 /*
   Rolade.cpp - class for rolade states handling
 */
-// letzte Änderung am 30.09.2009 
+// letzte Änderung am:
+// 30.09.2009 
+// 17.07.2010, Rolladen hoch SA: von 7:45 --> 7:30
+// 19.09.2010, Rolladen hoch 7:00
+// 28.09.2010, Rolladen hoch 7:20
+// 12.12.2010, Rolladen hoch 7:45
+//             SA: von 7:30 --> 7:45
+// 07.03.2011, Rolladen hoch 7:00
 
 #include <stdio.h>
 #include <avr/io.h>
@@ -40,29 +47,6 @@ void Rolade::SetPin(uint8_t pin)
   Up(); 
 }
 
-uint8_t IsTimeEvent(time_format *pEvent)
-{
-  if ((pEvent->hours) || (pEvent->minutes))
-    return ((time.hours * 60 + time.minutes) == (pEvent->hours * 60 + pEvent->minutes));   
-  else
-	return 0;	
-}
-
-uint8_t IsTimeLess(time_format *pEvent)
-{
-  if ((pEvent->hours) || (pEvent->minutes))
-    return ((time.hours * 60 + time.minutes) < (pEvent->hours * 60 + pEvent->minutes));   
-  else
-	return 1;	
-}
-
-uint8_t IsTimeGreater(uint8_t pin, time_format *pEvent)
-{
-  if ((pEvent->hours) || (pEvent->minutes))
-    return ((time.hours * 60 + time.minutes) > (pEvent->hours * 60 + pEvent->minutes));   
-  else
-	return 1;	
-}
 
 uint8_t IsInInterval(time_format *pStart, time_format *pEnd)
 {
@@ -81,12 +65,12 @@ void Rolade::SetAutomaticInterval(uint8_t h_start, uint8_t m_start, uint8_t h_en
 
 void GetWindwoUpTimeFromWeekOfDay(time_format *pEvent)
 {
-    pEvent->hours = 6; // im Sommer 6:30, im Winter 7:15, hier und in main.cpp ändern
-    pEvent->minutes = 30;
+    pEvent->hours = 7; // im Sommer 6:30, 
+    pEvent->minutes = 30; // im Winter 7:20 // ab 12.12.2010: 7:45 // ab 07.03.2011: 7:00 // ab 10.11.11 7:30
     switch (dcf.wkday) {
     	case 6:  // SA
     	  pEvent->hours = 7;
-          pEvent->minutes = 30;   // war 45   17.07.10
+          pEvent->minutes = 30;   // war 45 // ab 17.07.10: 30 // ab 12.12.2010: 45
     	  break;
     	case 7:  //SO
     	  pEvent->hours = 8;
