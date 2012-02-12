@@ -86,7 +86,7 @@ SRC =  keys.c terminal.c  ../common/dcf.c ../common/caux.c ../common/uart.c ../c
 #clock.c  
 
 # List C++ source files here. (C dependencies are automatically generated.)
-CPPSRC = $(TARGET).cpp rolade.cpp tim_analog.cpp
+CPPSRC = $(TARGET).cpp rolade_base.cpp rolade_day.cpp tim_analog.cpp
 
 
 # List Assembler source files here.

@@ -38,7 +38,9 @@
 #include "main.h"
 #include "terminal.h"
 #include "keys.h"
-#include "rolade.h"
+#include "rolade_day.h"
+#include "rolade_base.h"
+
 #include "tim_analog.h"
 #include "../common/i2cmaster.h"
 #include "../common/caux.h"
@@ -125,7 +127,7 @@ TimedAnalog aInput[INPUTS_COUNT];
 // LEDs
 tDigitalOut dOutput[AN_INPUTS];
 // roller shutter objects
-Rolade rollade[4];
+RoladeDay rollade[4];
 
 //***************************************
 // hardware 
@@ -533,7 +535,7 @@ void NewStatus(Status new_status)
 	  first_time = 0;
 	  uint8_t i;
 	  for (i=0;i < 4; i++) {
-            rollade[i].SetAutomatik(sonnen_automatik);
+            rollade[i].setAutomaticActive(sonnen_automatik);
   	    rollade[i].Init();
           }
 	}  
@@ -639,9 +641,9 @@ void Takt_10_MiliSec (void)
   // automatic switch
   sonnen_automatik = ((PINB & (1 << T_SONNE_MODE)) == 0);  
 
-  dcf.msec += 10;				// Zeitgeber für DCF-Empfang weiterdrehen	
+  dcf.msec += 10;				// Zeitgeber fŸr DCF-Empfang weiterdrehen	
   if (dcf.msec > 5000) {
-    // signal ausgefahlen
+    // Signal ausgefahlen
     time.dcf_set = 0;
   }
   
@@ -753,8 +755,8 @@ void Takt_10_MiliSec (void)
     // rolades
     for (i=0; i<4; i++) {
         if (last_sonnen_automatik != sonnen_automatik) 
-          rollade[i].SetAutomatik(sonnen_automatik);
-      rollade[i].UpdateStatus(sonne_da, sonne_weg, roladen_demaerung);
+          rollade[i].setAutomaticActive(sonnen_automatik);
+      rollade[i].updateStatus(sonne_da, sonne_weg, roladen_demaerung);
     }
   }  
   // i2c data send only every 150 ms
@@ -846,18 +848,18 @@ void InitVariables (void)
   init_dcf();  
   
   
-  rollade[OST].SetPin(ROLLADEN_OST);
-  rollade[OST].SetAutomaticInterval(8, 00, 14, 00);	// Zeiten Rolläden unten: HH,MM,HH,MM
+  rollade[OST].setPin(ROLLADEN_OST);
+  rollade[OST].setAutomaticInterval(8, 00, 14, 00);	// Zeiten Rolläden unten: HH,MM,HH,MM
   
   
-  rollade[SUED].SetPin(ROLLADEN_SUED);
-  rollade[SUED].SetAutomaticInterval(15, 00, 15, 30);	
+  rollade[SUED].setPin(ROLLADEN_SUED);
+  rollade[SUED].setAutomaticInterval(15, 00, 15, 30);	
   
-  rollade[WEST].SetPin(ROLLADEN_WEST);
-  rollade[WEST].SetAutomaticInterval(16, 0, 20, 00);	// im Sommer 16...20,  war 14...15
+  rollade[WEST].setPin(ROLLADEN_WEST);
+  rollade[WEST].setAutomaticInterval(16, 0, 20, 00);	// im Sommer 16...20,  war 14...15
   
-  rollade[NORD].SetPin(ROLLADEN_NORD);
-  rollade[NORD].SetAutomaticInterval(19, 30, 20, 00);	// im Sommer 19:30...20. gesetzt, damit Rolläden abends runter fahren können, war 14:30-15   
+  rollade[NORD].setPin(ROLLADEN_NORD);
+  rollade[NORD].setAutomaticInterval(19, 30, 20, 00);	// im Sommer 19:30...20. gesetzt, damit Rolläden abends runter fahren können, war 14:30-15   
 }
 
 /**
