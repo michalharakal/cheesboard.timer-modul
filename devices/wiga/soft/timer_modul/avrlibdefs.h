@@ -29,25 +29,25 @@ extern "C" {
 // Code compatibility to new AVR-libc
 // outb(), inb(), BV(), sbi(), cbi(), sei(), cli()
 #ifndef outb
-	#define	outb(addr, data)	addr = (data)
+#define	outb(addr, data)	addr = (data)
 #endif
 #ifndef inb
-	#define	inb(addr)			(addr)
+#define	inb(addr)			(addr)
 #endif
 #ifndef BV
-	#define BV(bit)			(1<<(bit))
+#define BV(bit)			(1<<(bit))
 #endif
 #ifndef cbi
-	#define cbi(reg,bit)	reg &= ~(BV(bit))
+#define cbi(reg,bit)	reg &= ~(BV(bit))
 #endif
 #ifndef sbi
-	#define sbi(reg,bit)	reg |= (BV(bit))
+#define sbi(reg,bit)	reg |= (BV(bit))
 #endif
 #ifndef cli
-	#define cli()			__asm__ __volatile__ ("cli" ::)
+#define cli()			__asm__ __volatile__ ("cli" ::)
 #endif
 #ifndef sei
-	#define sei()			__asm__ __volatile__ ("sei" ::)
+#define sei()			__asm__ __volatile__ ("sei" ::)
 #endif
 
 // support for individual port pin naming in the mega128
@@ -57,14 +57,14 @@ extern "C" {
 // of these defines in newest AVR-GCC
 // do a quick test to see if include is needed
 #ifndef PD0
-	#include "port128.h"
+#include "port128.h"
 #endif
 #endif
 
 // use this for packed structures
 // (this is seldom necessary on an 8-bit architecture like AVR,
 //  but can assist in code portability to AVR)
-#define GNUC_PACKED __attribute__((packed)) 
+#define GNUC_PACKED __attribute__((packed))
 
 // port address helpers
 #define DDR(x) ((x)-1)    // address of data direction register of port x

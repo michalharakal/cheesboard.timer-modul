@@ -6,14 +6,14 @@ extern "C" {
 #define _KEYS_H   1
 
 // global variable
-extern volatile uint8_t key_press;		
+    extern volatile uint8_t key_press;
 
 // key handler
-extern void KeyDebounceTimerHandler(void);
+    extern void KeyDebounceTimerHandler(void);
 
-extern uint8_t get_key_press( uint8_t key_mask );
+    extern uint8_t get_key_press( uint8_t key_mask );
 
-#endif 
+#endif
 
 #ifdef __cplusplus
 }

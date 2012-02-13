@@ -3,7 +3,7 @@
 extern "C" {
 #endif
 
-extern void Terminal(char cmd);
+    extern void Terminal(char cmd);
 
 #ifdef __cplusplus
 }

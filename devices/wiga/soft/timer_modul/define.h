@@ -1,12 +1,12 @@
 // define.h
 /*----------------------------------------------------------------------*/
-/*! \file 
+/*! \file
 --------------------------------------------------------------------------
 
   	<h3> DEFINE.H </h3>
   	Version	1.0
   	Revision	$Revision: 1.2 $
- 	Copyright 	Thomas Wedemeyer, Email: avr@thomas-wedemeyer.de 
+ 	Copyright 	Thomas Wedemeyer, Email: avr@thomas-wedemeyer.de
   	Datum		$Date§
 
 	<h3>Globale Datenstrukturen </h3>
